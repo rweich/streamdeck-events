@@ -3,17 +3,11 @@ import { SentEvents } from './SentEvents';
 
 export default class LogMessageEvent extends AbstractEvent {
   public readonly event = SentEvents.LogMessage;
-  private readonly message: string;
+  private readonly payload: Record<'message', string>;
 
   constructor(message: string) {
     super();
-    this.message = message;
-  }
-
-  protected get payload(): unknown {
-    return {
-      message: this.message,
-    };
+    this.payload = { message };
   }
 
   protected get jsonProps(): string[] {
