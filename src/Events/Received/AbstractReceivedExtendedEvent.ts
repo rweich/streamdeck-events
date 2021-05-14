@@ -1,5 +1,5 @@
 import AbstractReceivedBaseEvent from './AbstractReceivedBaseEvent';
-import { BaseExtendedType } from '@/StreamdeckTypes/BaseExtendedType';
+import { BaseExtendedType } from '@/StreamdeckTypes/Sent/BaseExtendedType';
 
 export default abstract class AbstractReceivedExtendedEvent extends AbstractReceivedBaseEvent {
   protected readonly eventPayload!: BaseExtendedType;

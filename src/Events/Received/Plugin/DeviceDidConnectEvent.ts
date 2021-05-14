@@ -1,5 +1,5 @@
 import AbstractReceivedBaseEvent from '../AbstractReceivedBaseEvent';
-import { DeviceDidConnectType } from '@/StreamdeckTypes';
+import { DeviceDidConnectType } from '@/StreamdeckTypes/Sent';
 import { DeviceType } from './DeviceType';
 
 export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {

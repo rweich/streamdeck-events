@@ -3,7 +3,7 @@ import 'mocha';
 import { expect, use } from 'chai';
 
 import SetTitleEvent from '@/Events/Sent/Plugin/SetTitleEvent';
-import { SetTitleSchema } from '../types';
+import { SetTitleType } from '@/StreamdeckTypes/Received';
 import { TargetEnum } from '@/Events/Sent/Plugin';
 import jsonschema from 'chai-json-schema';
 
@@ -12,15 +12,15 @@ use(jsonschema);
 describe('SetTitleEvent test', () => {
   it('validates a basic title event against the json schema', () => {
     const event = new SetTitleEvent('new title', 'context');
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetTitleSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetTitleType);
   });
   it('validates a targetted event against the json schema', () => {
     const event = new SetTitleEvent('new title', 'context', TargetEnum.Hardware);
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetTitleSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetTitleType);
   });
   it('validates an event with the sate set against the json schema', () => {
     const event = new SetTitleEvent('new title', 'context', TargetEnum.Software, 1);
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetTitleSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetTitleType);
   });
   it('returns the right values for a basic event', () => {
     const event = new SetTitleEvent('new title', 'context');

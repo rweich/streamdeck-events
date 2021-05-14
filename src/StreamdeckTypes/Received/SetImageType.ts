@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-export const SetImageSchema = Type.Object({
+export const SetImageType = Type.Object({
   context: Type.String(),
   event: Type.RegEx(/^setImage$/),
   payload: Type.Object({
@@ -9,5 +9,4 @@ export const SetImageSchema = Type.Object({
     target: Type.Number({ maximum: 2, minimum: 0 }),
   }),
 });
-
-export type SetImageType = Static<typeof SetImageSchema>;
+export type SetImageType = Static<typeof SetImageType>;

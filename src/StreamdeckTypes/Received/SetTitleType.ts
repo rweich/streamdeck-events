@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-export const SetTitleSchema = Type.Object({
+export const SetTitleType = Type.Object({
   context: Type.String(),
   event: Type.RegEx(/^setTitle$/),
   payload: Type.Object({
@@ -9,5 +9,4 @@ export const SetTitleSchema = Type.Object({
     title: Type.String(),
   }),
 });
-
-export type SetTitleType = Static<typeof SetTitleSchema>;
+export type SetTitleType = Static<typeof SetTitleType>;

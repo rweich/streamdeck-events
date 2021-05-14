@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseKeyType } from '@/StreamdeckTypes/BaseKeyType';
+import { BaseKeyType } from '@/StreamdeckTypes/Sent/BaseKeyType';
 
 export const KeyDownEventType = Type.Intersect([
   Type.Omit(BaseKeyType, ['event']),

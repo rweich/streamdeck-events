@@ -2,8 +2,8 @@ import 'mocha';
 
 import { expect, use } from 'chai';
 
-import { WillAppearEvent } from '@/Events/Streamdeck';
-import { WillAppearType } from '@/StreamdeckTypes';
+import { WillAppearEvent } from '@/Events/Streamdeck/Sent';
+import { WillAppearType } from '@/StreamdeckTypes/Sent';
 import jsonschema from 'chai-json-schema';
 
 use(jsonschema);

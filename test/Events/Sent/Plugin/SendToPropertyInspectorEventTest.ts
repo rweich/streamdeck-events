@@ -3,7 +3,7 @@ import 'mocha';
 import { expect, use } from 'chai';
 
 import SendToPropertyInspectorEvent from '@/Events/Sent/Plugin/SendToPropertyInspectorEvent';
-import { SendToPropertyInspectorSchema } from '../types';
+import { SendToPropertyInspectorType } from '@/StreamdeckTypes/Received';
 import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
@@ -11,7 +11,7 @@ use(jsonschema);
 describe('SendToPropertyInspectorEventTest test', () => {
   it('validates the event against the json schema', () => {
     const event = new SendToPropertyInspectorEvent('action', 'context', { foo: 'bar' });
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SendToPropertyInspectorSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SendToPropertyInspectorType);
   });
   it('returns the right values for the event', () => {
     const event = new SendToPropertyInspectorEvent('action', 'context', { foo: 'bar' });

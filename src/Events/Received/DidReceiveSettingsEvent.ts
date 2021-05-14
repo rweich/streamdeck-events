@@ -1,5 +1,5 @@
 import AbstractStateEvent from './Plugin/AbstractStateEvent';
-import { DidReceiveSettingsType } from '@/StreamdeckTypes';
+import { DidReceiveSettingsType } from '@/StreamdeckTypes/Sent';
 
 export default class DidReceiveSettingsEvent extends AbstractStateEvent {
   protected get validationType(): typeof DidReceiveSettingsType {

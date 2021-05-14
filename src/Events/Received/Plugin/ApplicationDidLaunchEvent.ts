@@ -1,5 +1,5 @@
 import AbstractApplicationEvent from './AbstractApplicationEvent';
-import { ApplicationDidLaunchType } from '@/StreamdeckTypes';
+import { ApplicationDidLaunchType } from '@/StreamdeckTypes/Sent';
 
 export default class ApplicationDidLaunchEvent extends AbstractApplicationEvent {
   protected get validationType(): typeof ApplicationDidLaunchType {

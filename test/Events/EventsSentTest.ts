@@ -1,7 +1,7 @@
 import 'mocha';
 
 import { GetSettingsEvent, LogMessageEvent, OpenUrlEvent, RegisterEvent, SetSettingsEvent } from '@/Events/Sent';
-import { GetSettingsType, LogMessageType, OpenUrlType, SetImageType, SetTitleType } from './Sent/types';
+import { GetSettingsType, LogMessageType, OpenUrlType, SetImageType, SetTitleType } from '@/StreamdeckTypes/Received';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 import { expect, use } from 'chai';
 

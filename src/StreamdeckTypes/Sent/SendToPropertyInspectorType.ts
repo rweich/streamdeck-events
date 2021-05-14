@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseSendToType } from '@/StreamdeckTypes/BaseSendToType';
+import { BaseSendToType } from '@/StreamdeckTypes/Sent/BaseSendToType';
 
 export const SendToPropertyInspectorType = Type.Intersect([
   Type.Omit(BaseSendToType, ['event']),

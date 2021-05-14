@@ -1,4 +1,4 @@
-import { WillAppearType } from '@/StreamdeckTypes';
+import { WillAppearType } from '@/StreamdeckTypes/Sent';
 
 export interface WillAppearOptions {
   device: string;

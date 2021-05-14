@@ -49,10 +49,8 @@
   "engines": {
     "node": ">=12"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rweich/streamdeck-events.git"
-  },
+  "repository": "rweich/streamdeck-events",
+  "bugs": "https://github.com/rweich/streamdeck-events/issues",
   "keywords": [
     "streamdeck",
     "elgato",

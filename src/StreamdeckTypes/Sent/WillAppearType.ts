@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseStateType } from '@/StreamdeckTypes/BaseStateType';
+import { BaseStateType } from '@/StreamdeckTypes/Sent/BaseStateType';
 
 export const WillAppearType = Type.Intersect([
   Type.Omit(BaseStateType, ['event']),

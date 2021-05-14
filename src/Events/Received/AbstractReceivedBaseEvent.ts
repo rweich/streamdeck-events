@@ -1,4 +1,4 @@
-import { BaseEventType } from '@/StreamdeckTypes/BaseEventType';
+import { BaseEventType } from '@/StreamdeckTypes/Sent/BaseEventType';
 import { Static } from '@sinclair/typebox';
 import assertType from './AssertType';
 

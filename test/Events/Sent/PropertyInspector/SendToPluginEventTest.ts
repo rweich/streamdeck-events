@@ -3,7 +3,7 @@ import 'mocha';
 import { expect, use } from 'chai';
 
 import SendToPluginEvent from '@/Events/Sent/PropertyInspector/SendToPluginEvent';
-import { SendToPluginSchema } from '../types';
+import { SendToPluginType } from '@/StreamdeckTypes/Received';
 import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
@@ -11,7 +11,7 @@ use(jsonschema);
 describe('SendToPluginEventTest test', () => {
   it('validates the event against the json schema', () => {
     const event = new SendToPluginEvent('action', 'context', { foo: 'bar' });
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SendToPluginSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SendToPluginType);
   });
   it('returns the right values for the event', () => {
     const event = new SendToPluginEvent('action', 'context', { foo: 'bar' });

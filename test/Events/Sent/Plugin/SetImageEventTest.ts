@@ -3,7 +3,7 @@ import 'mocha';
 import { expect, use } from 'chai';
 
 import SetImageEvent from '@/Events/Sent/Plugin/SetImageEvent';
-import { SetImageSchema } from '../types';
+import { SetImageType } from '@/StreamdeckTypes/Received';
 import { TargetEnum } from '@/Events/Sent/Plugin';
 import jsonschema from 'chai-json-schema';
 
@@ -12,15 +12,15 @@ use(jsonschema);
 describe('SetImageEvent test', () => {
   it('validates a basic iamge event against the json schema', () => {
     const event = new SetImageEvent('base64string', 'context');
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetImageSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetImageType);
   });
   it('validates a targetted event against the json schema', () => {
     const event = new SetImageEvent('base64string', 'context', TargetEnum.Software);
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetImageSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetImageType);
   });
   it('validates an event with the sate set against the json schema', () => {
     const event = new SetImageEvent('base64string', 'context', TargetEnum.Both, 0);
-    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetImageSchema);
+    expect(JSON.parse(JSON.stringify(event))).to.be.jsonSchema(SetImageType);
   });
   it('returns the right values for a basic event', () => {
     const event = new SetImageEvent('base64string', 'context');

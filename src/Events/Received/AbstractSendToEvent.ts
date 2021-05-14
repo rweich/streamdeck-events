@@ -1,5 +1,5 @@
 import AbstractReceivedBaseEvent from './AbstractReceivedBaseEvent';
-import { BaseSendToType } from '@/StreamdeckTypes/BaseSendToType';
+import { BaseSendToType } from '@/StreamdeckTypes/Sent/BaseSendToType';
 
 export default abstract class AbstractSendToEvent extends AbstractReceivedBaseEvent {
   protected readonly eventPayload!: BaseSendToType;

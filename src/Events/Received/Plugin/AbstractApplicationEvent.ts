@@ -1,4 +1,4 @@
-import { ApplicationDidLaunchType, ApplicationDidTerminateType } from '@/StreamdeckTypes';
+import { ApplicationDidLaunchType, ApplicationDidTerminateType } from '@/StreamdeckTypes/Sent';
 
 import AbstractReceivedBaseEvent from '../AbstractReceivedBaseEvent';
 

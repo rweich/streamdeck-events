@@ -1,5 +1,5 @@
 import AbstractReceivedBaseEvent from '../AbstractReceivedBaseEvent';
-import { DeviceDidDisconnectType } from '@/StreamdeckTypes';
+import { DeviceDidDisconnectType } from '@/StreamdeckTypes/Sent';
 
 export default class DeviceDidDisconnectEvent extends AbstractReceivedBaseEvent {
   protected readonly eventPayload!: DeviceDidDisconnectType;

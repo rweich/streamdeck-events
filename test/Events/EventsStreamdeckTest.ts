@@ -3,7 +3,7 @@ import 'mocha';
 import { expect, use } from 'chai';
 
 import { EventsStreamdeck } from '@/index';
-import { WillAppearType } from '@/StreamdeckTypes';
+import { WillAppearType } from '@/StreamdeckTypes/Sent';
 import jsonschema from 'chai-json-schema';
 
 use(jsonschema);

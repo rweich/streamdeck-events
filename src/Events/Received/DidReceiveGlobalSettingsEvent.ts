@@ -1,5 +1,5 @@
 import AbstractReceivedBaseEvent from './AbstractReceivedBaseEvent';
-import { DidReceiveGlobalSettingsType } from '@/StreamdeckTypes';
+import { DidReceiveGlobalSettingsType } from '@/StreamdeckTypes/Sent';
 
 export default class DidReceiveGlobalSettingsEvent extends AbstractReceivedBaseEvent {
   protected eventPayload!: DidReceiveGlobalSettingsType;
