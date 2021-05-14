@@ -1,8 +1,8 @@
 import 'mocha';
 
-import DeviceDidDisconnectEvent from '@/Events/Received/plugin/DeviceDidDisconnectEvent';
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
+import DeviceDidDisconnectEvent from '@/Events/Received/Plugin/DeviceDidDisconnectEvent';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/deviceDidDisconnectEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/deviceDidDisconnectEvent.missing-param.json';
 import eventValid from '../fixtures/deviceDidDisconnectEvent.valid.json';

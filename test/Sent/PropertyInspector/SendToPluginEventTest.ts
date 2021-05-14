@@ -2,7 +2,7 @@ import 'mocha';
 
 import { expect, use } from 'chai';
 
-import SendToPluginEvent from '@/Events/Sent/propertyinspector/SendToPluginEvent';
+import SendToPluginEvent from '@/Events/Sent/PropertyInspector/SendToPluginEvent';
 import { SendToPluginSchema } from '../types';
 import jsonschema from 'chai-json-schema';
 

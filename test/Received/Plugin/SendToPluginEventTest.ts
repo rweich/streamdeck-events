@@ -1,8 +1,8 @@
 import 'mocha';
 
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
-import SendToPluginEvent from '@/Events/Received/plugin/SendToPluginEvent';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
+import SendToPluginEvent from '@/Events/Received/Plugin/SendToPluginEvent';
 import eventInvalidType from '../fixtures/sendToPluginEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/sendToPluginEvent.missing-param.json';
 import eventValid from '../fixtures/sendToPluginEvent.valid.json';

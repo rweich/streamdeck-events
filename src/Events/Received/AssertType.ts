@@ -1,5 +1,5 @@
 import Ajv from 'ajv';
-import EventValidationError from './exception/EventValidationError';
+import EventValidationError from './Exception/EventValidationError';
 import { Static } from '@sinclair/typebox';
 
 export default function assertType<T extends Record<string, unknown>>(

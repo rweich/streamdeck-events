@@ -1,9 +1,9 @@
 import 'mocha';
 
-import DeviceDidConnectEvent from '@/Events/Received/plugin/DeviceDidConnectEvent';
-import { DeviceType } from '@/Events/Received/plugin';
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
+import DeviceDidConnectEvent from '@/Events/Received/Plugin/DeviceDidConnectEvent';
+import { DeviceType } from '@/Events/Received/Plugin';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/deviceDidConnectEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/deviceDidConnectEvent.missing-param.json';
 import eventValid from '../fixtures/deviceDidConnectEvent.valid.json';

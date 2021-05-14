@@ -2,9 +2,9 @@ import 'mocha';
 
 import { expect, use } from 'chai';
 
-import SetImageEvent from '@/Events/Sent/plugin/SetImageEvent';
+import SetImageEvent from '@/Events/Sent/Plugin/SetImageEvent';
 import { SetImageSchema } from '../types';
-import { TargetEnum } from '@/Events/Sent/plugin';
+import { TargetEnum } from '@/Events/Sent/Plugin';
 import jsonschema from 'chai-json-schema';
 
 use(jsonschema);

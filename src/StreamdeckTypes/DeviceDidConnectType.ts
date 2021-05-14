@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { DeviceType } from '@/Events/Received/plugin';
+import { DeviceType } from '@/Events/Received/Plugin';
 
 export const DeviceDidConnectType = Type.Object({
   device: Type.String(),

@@ -1,7 +1,7 @@
 import 'mocha';
 
 import DidReceiveSettingsEvent from '@/Events/Received/DidReceiveSettingsEvent';
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { EventsReceived } from '@/Events/Received/EventsReceived';
 import eventInvalidType from './fixtures/didReceiveSettingsEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/didReceiveSettingsEvent.missing-param.json';

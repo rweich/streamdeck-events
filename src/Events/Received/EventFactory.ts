@@ -11,16 +11,16 @@ import {
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
-} from './plugin';
+} from './Plugin';
 
 import DidReceiveGlobalSettingsEvent from './DidReceiveGlobalSettingsEvent';
 import DidReceiveSettingsEvent from './DidReceiveSettingsEvent';
 import { EventsReceived } from './EventsReceived';
-import MissingEventInPayloadError from './exception/MissingEventInPayloadError';
+import MissingEventInPayloadError from './Exception/MissingEventInPayloadError';
 import { ReceivedEventTypes } from '@/Events/Received/ReceivedEventTypes';
-import { ReceivedPluginEvents } from './plugin/ReceivedPluginEvents';
-import { SendToPropertyInspectorEvent } from './propertyinspector';
-import UnknownEventError from './exception/UnknownEventError';
+import { ReceivedPluginEvents } from './Plugin/ReceivedPluginEvents';
+import { SendToPropertyInspectorEvent } from './PropertyInspector';
+import UnknownEventError from './Exception/UnknownEventError';
 
 interface BasicReceivedEvent {
   event: EventsReceived | ReceivedPluginEvents;

@@ -1,8 +1,8 @@
 import 'mocha';
 
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import KeyUpEvent from '@/Events/Received/plugin/KeyUpEvent';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import KeyUpEvent from '@/Events/Received/Plugin/KeyUpEvent';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/keyUpEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyUpEvent.missing-param.json';
 import eventValid from '../fixtures/keyUpEvent.valid.json';

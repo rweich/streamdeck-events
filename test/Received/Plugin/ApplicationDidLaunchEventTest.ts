@@ -1,8 +1,8 @@
 import 'mocha';
 
-import ApplicationDidLaunchEvent from '@/Events/Received/plugin/ApplicationDidLaunchEvent';
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
+import ApplicationDidLaunchEvent from '@/Events/Received/Plugin/ApplicationDidLaunchEvent';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/applicationDidLaunchEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/applicationDidLaunchEvent.missing-param.json';
 import eventValid from '../fixtures/applicationDidLaunchEvent.valid.json';

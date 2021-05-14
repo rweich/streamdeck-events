@@ -1,8 +1,8 @@
 import 'mocha';
 
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
-import WillAppearEvent from '@/Events/Received/plugin/WillAppearEvent';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
+import WillAppearEvent from '@/Events/Received/Plugin/WillAppearEvent';
 import eventInvalidType from '../fixtures/willAppearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/willAppearEvent.missing-param.json';
 import eventValid from '../fixtures/willAppearEvent.valid.json';

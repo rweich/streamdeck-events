@@ -1,5 +1,5 @@
 import { GetSettingsEvent, LogMessageEvent, OpenUrlEvent, RegisterEvent, SetSettingsEvent } from '@/Events/Sent';
-import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/plugin';
+import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 
 export default class EventsSent {
   public getSettings(context: string): GetSettingsEvent {

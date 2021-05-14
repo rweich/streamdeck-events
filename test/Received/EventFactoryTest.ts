@@ -10,12 +10,12 @@ import {
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
-} from '@/Events/Received/plugin';
+} from '@/Events/Received/Plugin';
 
 import EventFactory from '@/Events/Received/EventFactory';
-import MissingEventInPayloadError from '@/Events/Received/exception/MissingEventInPayloadError';
-import { SendToPropertyInspectorEvent } from '@/Events/Received/propertyinspector';
-import UnknownEventError from '@/Events/Received/exception/UnknownEventError';
+import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
+import { SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
+import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 import eventAppDidLaunch from './fixtures/applicationDidLaunchEvent.valid.json';
 import eventAppDidTerminate from './fixtures/applicationDidTerminateEvent.valid.json';
 import eventDeviceconnect from './fixtures/deviceDidConnectEvent.valid.json';

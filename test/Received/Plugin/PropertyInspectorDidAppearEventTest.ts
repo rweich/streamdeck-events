@@ -1,8 +1,8 @@
 import 'mocha';
 
-import EventValidationError from '@/Events/Received/exception/EventValidationError';
-import PropertyInspectorDidAppearEvent from '@/Events/Received/plugin/PropertyInspectorDidAppearEvent';
-import { ReceivedPluginEvents } from '@/Events/Received/plugin/ReceivedPluginEvents';
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import PropertyInspectorDidAppearEvent from '@/Events/Received/Plugin/PropertyInspectorDidAppearEvent';
+import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/propertyInspectorDidAppearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/propertyInspectorDidAppearEvent.missing-param.json';
 import eventValid from '../fixtures/propertyInspectorDidAppearEvent.valid.json';
