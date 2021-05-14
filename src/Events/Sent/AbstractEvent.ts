@@ -6,9 +6,10 @@ export default abstract class AbstractEvent {
   }
 
   public toJSON(): unknown {
-    return this.jsonProps.reduce(
-      (previous, property) => Object.assign(previous, { [property]: this[property as keyof this] }),
-      {},
-    );
+    const value = {};
+    for (const property of this.jsonProps) {
+      Object.assign(value, { [property]: this[property as keyof this] });
+    }
+    return value;
   }
 }
