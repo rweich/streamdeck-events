@@ -2,8 +2,9 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "target": "es2019",
-    "module":"es2020",
+    "module": "es2020",
     "declaration": true,
+    "baseUrl": ".",
     "outDir": "dist",
     "strict": true,
     "noImplicitAny": true,
@@ -20,10 +21,22 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
   },
-//  "files": [
-//    "src/index.ts"
-//  ],
-  "include": ["src" ,"test"]
+  "include": [
+    "src",
+    "test"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

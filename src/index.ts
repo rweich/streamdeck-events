@@ -1,6 +1,3 @@
-export * from './incoming';
-export * from './incoming/plugin';
-export * from './incoming/propertyinspector';
-export * from './outgoing';
-export * from './outgoing/plugin';
-export * from './outgoing/propertyinspector';
+export { default as EventsReceived } from './Events/EventsReceived';
+export { default as EventsSent } from './Events/EventsSent';
+export { default as EventsStreamdeck } from './Events/EventsStreamdeck';

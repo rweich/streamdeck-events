@@ -1,0 +1,42 @@
+import 'mocha';
+
+import EventValidationError from '@/Events/Received/exception/EventValidationError';
+import { ReceivedPropertyinspectorEvents } from '@/Events/Received/propertyinspector/ReceivedPropertyinspectorEvents';
+import { SendToPropertyInspectorEvent } from '@/Events/Received/propertyinspector';
+import eventInvalidType from '../fixtures/sendToPropertyInspectorEvent.invalid-eventtype.json';
+import eventMissingParameter from '../fixtures/sendToPropertyInspectorEvent.missing-param.json';
+import eventValid from '../fixtures/sendToPropertyInspectorEvent.valid.json';
+import { expect } from 'chai';
+
+describe('SendToPropertyinspectorEvent test', () => {
+  it('should create the event when using the correct payload', function () {
+    const event = new SendToPropertyInspectorEvent(eventValid);
+    expect(event.event).to.equal(ReceivedPropertyinspectorEvents.SendToPropertyInspector);
+    expect(event.action).to.equal('com.elgato.example.action1');
+    expect(event.context).to.equal('opaqueValuePI');
+  });
+  it('should throw a validation error on missing parameters', function () {
+    expect(() => new SendToPropertyInspectorEvent(eventMissingParameter)).to.throw(
+      EventValidationError,
+      /required property .*payload/,
+    );
+  });
+  it('should throw a validation error on wrong event type', function () {
+    expect(() => new SendToPropertyInspectorEvent(eventInvalidType)).to.throw(
+      EventValidationError,
+      /should match pattern "\^sendToPropertyInspector\$"/,
+    );
+  });
+  it('should create the event with different valid paylods', function () {
+    const payload = eventValid;
+    payload.payload = { some: 'payload' };
+    expect(new SendToPropertyInspectorEvent(payload).payload.some).to.equal('payload');
+    payload.payload = { some: { inner: 'payload' } };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    expect(new SendToPropertyInspectorEvent(payload).payload.some.inner).to.equal('payload');
+    payload.payload = { a: 'b', c: 'd' };
+    expect(new SendToPropertyInspectorEvent(payload).payload.a).to.equal('b');
+    expect(new SendToPropertyInspectorEvent(payload).payload.c).to.equal('d');
+  });
+});

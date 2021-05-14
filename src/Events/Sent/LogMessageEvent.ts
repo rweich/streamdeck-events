@@ -1,0 +1,22 @@
+import AbstractEvent from './AbstractEvent';
+import { SentEvents } from './SentEvents';
+
+export default class LogMessageEvent extends AbstractEvent {
+  public readonly event = SentEvents.LogMessage;
+  private readonly message: string;
+
+  constructor(message: string) {
+    super();
+    this.message = message;
+  }
+
+  protected get payload(): unknown {
+    return {
+      message: this.message,
+    };
+  }
+
+  protected get jsonProps(): string[] {
+    return [...super.jsonProps, 'payload'];
+  }
+}
