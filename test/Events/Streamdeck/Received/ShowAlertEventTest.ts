@@ -1,0 +1,27 @@
+import { ReceivedStreamdeckEvents, ShowAlertEvent } from '@/Events/Streamdeck/Received';
+
+import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import eventInvalidType from './fixtures/showAlertEvent.invalid-eventtype.json';
+import eventMissingParameter from './fixtures/showAlertEvent.missing-param.json';
+import eventValid from './fixtures/showAlertEvent.valid.json';
+import { expect } from 'chai';
+
+describe('ShowAlertEvent Test', () => {
+  it('should create the event when using the correct payload', function () {
+    const event = new ShowAlertEvent(eventValid);
+    expect(event.event).to.equal(ReceivedStreamdeckEvents.ShowAlert);
+    expect(event.context).to.equal('opaqueValue');
+  });
+  it('should throw a validation error on missing parameters', function () {
+    expect(() => new ShowAlertEvent(eventMissingParameter)).to.throw(
+      EventValidationError,
+      /required property 'context'/,
+    );
+  });
+  it('should throw a validation error on wrong event type', function () {
+    expect(() => new ShowAlertEvent(eventInvalidType)).to.throw(
+      EventValidationError,
+      /should match pattern "\^showAlert\$"/,
+    );
+  });
+});

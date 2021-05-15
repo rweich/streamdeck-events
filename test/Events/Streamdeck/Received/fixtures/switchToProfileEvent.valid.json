@@ -1,0 +1,8 @@
+{
+  "event": "switchToProfile",
+  "context": "opaqueValue",
+  "device": "opaqueValue",
+  "payload": {
+    "profile": "ProfileName"
+  }
+}

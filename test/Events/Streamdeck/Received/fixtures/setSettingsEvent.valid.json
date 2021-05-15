@@ -1,0 +1,8 @@
+{
+  "event": "setSettings",
+  "context": "opaqueValue",
+  "payload": {
+    "foo": "bar",
+    "bar": "baz"
+  }
+}

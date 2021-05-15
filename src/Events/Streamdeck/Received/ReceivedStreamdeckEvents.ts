@@ -1,8 +1,16 @@
 export enum ReceivedStreamdeckEvents {
   GetSettings = 'getSettings',
+  GetGlobalSettings = 'getGlobalSettings',
   LogMessage = 'logMessage',
   OpenUrl = 'openUrl',
+  SendToPlugin = 'sendToPlugin',
+  SendToPropertyInspector = 'sendToPropertyInspector',
+  SetGlobalSettings = 'setGlobalSettings',
   SetImage = 'setImage',
   SetTitle = 'setTitle',
   SetSettings = 'setSettings',
+  SetState = 'setState',
+  ShowAlert = 'showAlert',
+  ShowOk = 'showOk',
+  SwitchToProfile = 'switchToProfile',
 }

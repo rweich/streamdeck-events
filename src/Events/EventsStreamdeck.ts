@@ -3,23 +3,22 @@ import { WillAppearOptions } from '@/Events/Streamdeck/Sent/WillAppearEvent';
 
 export default class EventsStreamdeck {
   public createFromPayload(payload: unknown): unknown {
-    //noop
     /*
     events received from plugin/pi:
-    - setSettings
-    - getSettings
-    - setGlobalSettings
-    - getGlobalSettings
+    + setSettings
+    + getSettings
+    + setGlobalSettings
+    + getGlobalSettings
     + openUrl
     + logMessage
     + setTitle
     + setImage
-    - showAlert
-    - showOk
-    - setState
-    - switchToProfile
-    - sendToPropertyInspector
-    - sendToPlugin
+    + showAlert
+    + showOk
+    + setState
+    + switchToProfile
+    + sendToPropertyInspector
+    + sendToPlugin
      */
     return 'foo';
   }

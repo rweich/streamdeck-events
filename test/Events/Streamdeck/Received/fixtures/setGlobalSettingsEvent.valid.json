@@ -1,0 +1,8 @@
+{
+  "event": "setGlobalSettings",
+  "context": "opaqueValue",
+  "payload": {
+    "bar": "foo",
+    "baz": "bar"
+  }
+}

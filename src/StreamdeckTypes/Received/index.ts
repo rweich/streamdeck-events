@@ -1,19 +1,14 @@
-import { GetSettingsType } from './GetSettingsType';
-import { LogMessageType } from './LogMessageType';
-import { OpenUrlType } from './OpenUrlType';
-import { SendToPluginType } from './SendToPluginType';
-import { SendToPropertyInspectorType } from './SendToPropertyInspectorType';
-import { SetImageType } from './SetImageType';
-import { SetSettingsType } from './SetSettingsType';
-import { SetTitleType } from './SetTitleType';
-
-export {
-  GetSettingsType,
-  LogMessageType,
-  OpenUrlType,
-  SendToPluginType,
-  SendToPropertyInspectorType,
-  SetImageType,
-  SetSettingsType,
-  SetTitleType,
-};
+export * from './GetGlobalSettingsType';
+export * from './GetSettingsType';
+export * from './LogMessageType';
+export * from './OpenUrlType';
+export * from './SendToPluginType';
+export * from './SendToPropertyInspectorType';
+export * from './SetGlobalSettingsType';
+export * from './SetImageType';
+export * from './SetSettingsType';
+export * from './SetStateType';
+export * from './SetTitleType';
+export * from './ShowAlertType';
+export * from './ShowOkType';
+export * from './SwitchToProfileType';

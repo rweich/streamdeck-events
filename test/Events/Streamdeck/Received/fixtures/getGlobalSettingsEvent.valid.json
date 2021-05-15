@@ -1,0 +1,4 @@
+{
+  "event": "getGlobalSettings",
+  "context": "opaqueValue"
+}

@@ -1,0 +1,7 @@
+{
+  "event": "setState",
+  "context": "opaqueValue",
+  "payload": {
+    "state": 1
+  }
+}

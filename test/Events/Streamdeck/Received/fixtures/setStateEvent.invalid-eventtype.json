@@ -1,0 +1,7 @@
+{
+  "event": "showOk",
+  "context": "opaqueValue",
+  "payload": {
+    "state": 1
+  }
+}
