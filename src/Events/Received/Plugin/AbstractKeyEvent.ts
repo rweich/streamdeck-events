@@ -15,8 +15,4 @@ export default abstract class AbstractKeyEvent extends AbstractReceivedExtendedE
   public get isInMultiAction(): boolean {
     return this.eventPayload.payload.isInMultiAction;
   }
-
-  protected get validationType(): typeof BaseKeyType {
-    return BaseKeyType;
-  }
 }

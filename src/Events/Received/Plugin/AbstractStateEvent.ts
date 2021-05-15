@@ -23,8 +23,4 @@ export default abstract class AbstractStateEvent extends AbstractReceivedExtende
   public get state(): number | undefined {
     return this.eventPayload.payload.state;
   }
-
-  protected get validationType(): typeof BaseStateType {
-    return BaseStateType;
-  }
 }

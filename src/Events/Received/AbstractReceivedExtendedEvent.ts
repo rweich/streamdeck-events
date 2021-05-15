@@ -11,8 +11,4 @@ export default abstract class AbstractReceivedExtendedEvent extends AbstractRece
   public get device(): string {
     return this.eventPayload.device;
   }
-
-  protected get validationType(): typeof BaseExtendedType {
-    return BaseExtendedType;
-  }
 }

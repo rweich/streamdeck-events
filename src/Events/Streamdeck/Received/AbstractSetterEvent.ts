@@ -12,8 +12,4 @@ export default abstract class AbstractSetterEvent extends AbstractReceivedContex
   public get target(): TargetEnum {
     return this.eventPayload.payload.target;
   }
-
-  protected get validationType(): typeof BaseSetterType {
-    return BaseSetterType;
-  }
 }

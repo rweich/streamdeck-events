@@ -14,6 +14,8 @@ describe('WillAppearEvent test', () => {
     expect(event.event).to.equal(ReceivedPluginEvents.WillAppear);
     expect(event.action).to.equal('my.willappear.action');
     expect(event.context).to.equal('willappearcontext');
+    expect(event.state).to.be.undefined;
+    expect(Object.keys(event.settings as Record<string, unknown>)).to.be.length(0);
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new WillAppearEvent(eventMissingParameter)).to.throw(

@@ -37,10 +37,6 @@ export default class EventFactory {
     }
 
     switch (payload.event) {
-      case EventsReceived.DidReceiveSettings:
-        return new DidReceiveSettingsEvent(payload);
-      case EventsReceived.DidReceiveGlobalSettings:
-        return new DidReceiveGlobalSettingsEvent(payload);
       case ReceivedPluginEvents.ApplicationDidLaunch:
         return new ApplicationDidLaunchEvent(payload);
       case ReceivedPluginEvents.ApplicationDidTerminate:
@@ -49,6 +45,10 @@ export default class EventFactory {
         return new DeviceDidConnectEvent(payload);
       case ReceivedPluginEvents.DeviceDidDisconnect:
         return new DeviceDidDisconnectEvent(payload);
+      case EventsReceived.DidReceiveSettings:
+        return new DidReceiveSettingsEvent(payload);
+      case EventsReceived.DidReceiveGlobalSettings:
+        return new DidReceiveGlobalSettingsEvent(payload);
       case ReceivedPluginEvents.KeyDown:
         return new KeyDownEvent(payload);
       case ReceivedPluginEvents.KeyUp:

@@ -4,13 +4,17 @@ import {
   ApplicationDidLaunchEvent,
   ApplicationDidTerminateEvent,
   DeviceDidConnectEvent,
+  DeviceDidDisconnectEvent,
   KeyDownEvent,
   KeyUpEvent,
+  PropertyInspectorDidAppearEvent,
+  PropertyInspectorDidDisappearEvent,
   SendToPluginEvent,
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
 } from '@/Events/Received/Plugin';
+import { DidReceiveGlobalSettingsEvent, DidReceiveSettingsEvent } from '@/Events/Received';
 
 import EventFactory from '@/Events/Received/EventFactory';
 import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
@@ -18,9 +22,14 @@ import { SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspecto
 import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 import eventAppDidLaunch from './fixtures/applicationDidLaunchEvent.valid.json';
 import eventAppDidTerminate from './fixtures/applicationDidTerminateEvent.valid.json';
+import eventDeviceDisconnect from './fixtures/deviceDidDisconnectEvent.valid.json';
 import eventDeviceconnect from './fixtures/deviceDidConnectEvent.valid.json';
+import eventDidReceiveGlobalSettings from './fixtures/didReceiveGlobalSettingsEvent.valid.json';
+import eventDidReceiveSettings from './fixtures/didReceiveSettingsEvent.valid.json';
 import eventKeydown from './fixtures/keyDownEvent.valid.json';
 import eventKeyup from './fixtures/keyUpEvent.valid.json';
+import eventPIAppear from './fixtures/propertyInspectorDidAppearEvent.valid.json';
+import eventPIDisappear from './fixtures/propertyInspectorDidDisappearEvent.valid.json';
 import eventSendtoPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
 import eventSendtoplugin from './fixtures/sendToPluginEvent.valid.json';
 import eventTitleparamchange from './fixtures/titleParametersDidChangeEvent.valid.json';
@@ -49,6 +58,24 @@ describe('EventFactory test', () => {
     );
   });
 
+  it('should return a devicedidconnect event', () => {
+    expect(new EventFactory().createByEventPayload(eventDeviceconnect)).to.be.instanceOf(DeviceDidConnectEvent);
+  });
+
+  it('should return a DeviceDidDisconnectEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventDeviceDisconnect)).to.be.instanceOf(DeviceDidDisconnectEvent);
+  });
+
+  it('should return a DidReceiveSettingsEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventDidReceiveSettings)).to.be.instanceOf(DidReceiveSettingsEvent);
+  });
+
+  it('should return a DidReceiveGlobalSettingsEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventDidReceiveGlobalSettings)).to.be.instanceOf(
+      DidReceiveGlobalSettingsEvent,
+    );
+  });
+
   it('should return a keydown event', () => {
     expect(new EventFactory().createByEventPayload(eventKeydown)).to.be.instanceOf(KeyDownEvent);
   });
@@ -57,21 +84,13 @@ describe('EventFactory test', () => {
     expect(new EventFactory().createByEventPayload(eventKeyup)).to.be.instanceOf(KeyUpEvent);
   });
 
-  it('should return a willappear event', () => {
-    expect(new EventFactory().createByEventPayload(eventWillappear)).to.be.instanceOf(WillAppearEvent);
+  it('should return a PropertyInspectorDidAppearEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventPIAppear)).to.be.instanceOf(PropertyInspectorDidAppearEvent);
   });
 
-  it('should return a willdisappear event', () => {
-    expect(new EventFactory().createByEventPayload(eventWilldisappear)).to.be.instanceOf(WillDisappearEvent);
-  });
-
-  it('should return a devicedidconnect event', () => {
-    expect(new EventFactory().createByEventPayload(eventDeviceconnect)).to.be.instanceOf(DeviceDidConnectEvent);
-  });
-
-  it('should return a titelparamchange event', () => {
-    expect(new EventFactory().createByEventPayload(eventTitleparamchange)).to.be.instanceOf(
-      TitleParametersDidChangeEvent,
+  it('should return a PropertyInspectorDidAppearEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventPIDisappear)).to.be.instanceOf(
+      PropertyInspectorDidDisappearEvent,
     );
   });
 
@@ -83,5 +102,19 @@ describe('EventFactory test', () => {
     expect(new EventFactory().createByEventPayload(eventSendtoPropertyInspector)).to.be.instanceOf(
       SendToPropertyInspectorEvent,
     );
+  });
+
+  it('should return a titelparamchange event', () => {
+    expect(new EventFactory().createByEventPayload(eventTitleparamchange)).to.be.instanceOf(
+      TitleParametersDidChangeEvent,
+    );
+  });
+
+  it('should return a willappear event', () => {
+    expect(new EventFactory().createByEventPayload(eventWillappear)).to.be.instanceOf(WillAppearEvent);
+  });
+
+  it('should return a willdisappear event', () => {
+    expect(new EventFactory().createByEventPayload(eventWilldisappear)).to.be.instanceOf(WillDisappearEvent);
   });
 });

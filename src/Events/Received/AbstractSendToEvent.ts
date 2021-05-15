@@ -15,8 +15,4 @@ export default abstract class AbstractSendToEvent extends AbstractReceivedBaseEv
   public get payload(): Record<string, unknown> {
     return this.eventPayload.payload;
   }
-
-  protected get validationType(): typeof BaseSendToType {
-    return BaseSendToType;
-  }
 }
