@@ -1,0 +1,8 @@
+{
+  "event": "setTitle",
+  "context": "opaqueValue",
+  "payload": {
+    "target": "software",
+    "state": 0
+  }
+}

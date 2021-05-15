@@ -1,0 +1,9 @@
+{
+  "event": "setImage",
+  "context": "opaqueValue",
+  "payload": {
+    "title": "MyTitle",
+    "target": 2,
+    "state": 0
+  }
+}

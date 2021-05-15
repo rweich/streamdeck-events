@@ -1,0 +1,6 @@
+{
+  "event": "logMessage",
+  "payload": {
+    "url": "https://www.elgato.com"
+  }
+}

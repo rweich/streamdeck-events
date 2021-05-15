@@ -1,0 +1,9 @@
+{
+  "event": "setImage",
+  "context": "opaqueValue",
+  "payload": {
+    "image": "<base64 encoded image>",
+    "target": 0,
+    "state": 1
+  }
+}

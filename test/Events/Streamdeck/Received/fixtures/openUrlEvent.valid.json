@@ -1,0 +1,6 @@
+{
+  "event": "openUrl",
+  "payload": {
+    "url": "https://www.elgato.com"
+  }
+}

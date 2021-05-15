@@ -1,15 +1,11 @@
-import AbstractReceivedBaseEvent from './AbstractReceivedBaseEvent';
+import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedContextEvent';
 import { BaseExtendedType } from '@/StreamdeckTypes/Sent/BaseExtendedType';
 
-export default abstract class AbstractReceivedExtendedEvent extends AbstractReceivedBaseEvent {
+export default abstract class AbstractReceivedExtendedEvent extends AbstractReceivedContextEvent {
   protected readonly eventPayload!: BaseExtendedType;
 
   public get action(): string {
     return this.eventPayload.action;
-  }
-
-  public get context(): string {
-    return this.eventPayload.context;
   }
 
   public get device(): string {

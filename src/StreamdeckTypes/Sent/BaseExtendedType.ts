@@ -1,12 +1,11 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseEventType } from './BaseEventType';
+import { BaseContextType } from '@/StreamdeckTypes/Sent/BaseContextType';
 
 export const BaseExtendedType = Type.Intersect([
-  BaseEventType,
+  BaseContextType,
   Type.Object({
     action: Type.String(),
-    context: Type.String(),
     device: Type.String(),
   }),
 ]);

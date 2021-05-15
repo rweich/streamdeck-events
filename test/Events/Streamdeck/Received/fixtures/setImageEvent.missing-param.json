@@ -1,0 +1,8 @@
+{
+  "event": "setImage",
+  "context": "opaqueValue",
+  "payload": {
+    "target": 0,
+    "state": 1
+  }
+}

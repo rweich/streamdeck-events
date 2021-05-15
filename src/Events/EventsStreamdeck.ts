@@ -10,10 +10,10 @@ export default class EventsStreamdeck {
     - getSettings
     - setGlobalSettings
     - getGlobalSettings
-    - openUrl
-    - logMessage
-    - setTitle
-    - setImage
+    + openUrl
+    + logMessage
+    + setTitle
+    + setImage
     - showAlert
     - showOk
     - setState

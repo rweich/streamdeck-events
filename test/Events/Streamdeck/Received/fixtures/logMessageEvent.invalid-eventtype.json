@@ -1,0 +1,6 @@
+{
+  "event": "setTitle",
+  "payload": {
+    "message": "Hello World!"
+  }
+}

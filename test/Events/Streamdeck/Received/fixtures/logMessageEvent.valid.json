@@ -1,0 +1,6 @@
+{
+  "event": "logMessage",
+  "payload": {
+    "message": "Hello World!"
+  }
+}
