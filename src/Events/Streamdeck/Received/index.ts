@@ -4,6 +4,7 @@ export { default as GetSettingsEvent } from './GetSettingsEvent';
 export { default as LogMessageEvent } from './LogMessageEvent';
 export { default as OpenUrlEvent } from './OpenUrlEvent';
 export * from './ReceivedStreamdeckEvents';
+export { default as RegisterEvent } from './RegisterEvent';
 export { default as SendToPluginEvent } from './SendToPluginEvent';
 export { default as SendToPropertyInspectorEvent } from './SendToPropertyInspectorEvent';
 export { default as SetGlobalSettingsEvent } from './SetGlobalSettingsEvent';

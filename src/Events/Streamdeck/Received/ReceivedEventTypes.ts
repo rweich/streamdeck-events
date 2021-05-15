@@ -3,6 +3,7 @@ import {
   GetSettingsEvent,
   LogMessageEvent,
   OpenUrlEvent,
+  RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
   SetGlobalSettingsEvent,
@@ -20,6 +21,7 @@ export type ReceivedEventTypes =
   | GetSettingsEvent
   | LogMessageEvent
   | OpenUrlEvent
+  | RegisterEvent
   | SendToPluginEvent
   | SendToPropertyInspectorEvent
   | SetGlobalSettingsEvent

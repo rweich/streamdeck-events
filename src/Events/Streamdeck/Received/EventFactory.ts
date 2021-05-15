@@ -4,6 +4,7 @@ import {
   LogMessageEvent,
   OpenUrlEvent,
   ReceivedStreamdeckEvents,
+  RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
   SetGlobalSettingsEvent,
@@ -21,7 +22,7 @@ import { ReceivedEventTypes } from '@/Events/Streamdeck/Received/ReceivedEventTy
 import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 
 interface ReceivedEvent {
-  event: ReceivedStreamdeckEvents;
+  event: string;
 }
 
 function isBasicReceivedEvent(event: unknown): event is ReceivedEvent {
@@ -32,6 +33,10 @@ export default class EventFactory {
   public createByEventPayload(payload: unknown): ReceivedEventTypes {
     if (!isBasicReceivedEvent(payload)) {
       throw new MissingEventInPayloadError('no event type in received data: ' + JSON.stringify(payload));
+    }
+
+    if (/register/i.test(payload.event)) {
+      return new RegisterEvent(payload);
     }
 
     switch (payload.event) {

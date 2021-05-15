@@ -2,6 +2,7 @@ export * from './GetGlobalSettingsType';
 export * from './GetSettingsType';
 export * from './LogMessageType';
 export * from './OpenUrlType';
+export * from './RegisterEventType';
 export * from './SendToPluginType';
 export * from './SendToPropertyInspectorType';
 export * from './SetGlobalSettingsType';

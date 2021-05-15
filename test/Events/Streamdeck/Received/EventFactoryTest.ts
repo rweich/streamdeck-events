@@ -4,6 +4,7 @@ import {
   GetSettingsEvent,
   LogMessageEvent,
   OpenUrlEvent,
+  RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
   SetGlobalSettingsEvent,
@@ -22,6 +23,7 @@ import eventGetGlobalSettings from './fixtures/getGlobalSettingsEvent.valid.json
 import eventGetSettings from './fixtures/getSettingsEvent.valid.json';
 import eventLogMessage from './fixtures/logMessageEvent.valid.json';
 import eventOpenUrl from './fixtures/openUrlEvent.valid.json';
+import eventRegister from './fixtures/registerEvent.valid.json';
 import eventSendToPlugin from './fixtures/sendToPluginEvent.valid.json';
 import eventSendToPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
 import eventSetGlobalSettings from './fixtures/setGlobalSettingsEvent.valid.json';
@@ -58,6 +60,10 @@ describe('EventFactory test', () => {
 
   it('should return a OpenUrlEvent', () => {
     expect(new EventFactory().createByEventPayload(eventOpenUrl)).to.be.instanceOf(OpenUrlEvent);
+  });
+
+  it('should return a RegisterEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventRegister)).to.be.instanceOf(RegisterEvent);
   });
 
   it('should return a SendToPluginEvent', () => {
