@@ -1,26 +1,11 @@
+import { EventFactory } from '@/Events/Streamdeck/Received';
+import { ReceivedEventTypes } from '@/Events/Streamdeck/Received/ReceivedEventTypes';
 import { WillAppearEvent } from '@/Events/Streamdeck/Sent';
 import { WillAppearOptions } from '@/Events/Streamdeck/Sent/WillAppearEvent';
 
 export default class EventsStreamdeck {
-  public createFromPayload(payload: unknown): unknown {
-    /*
-    events received from plugin/pi:
-    + setSettings
-    + getSettings
-    + setGlobalSettings
-    + getGlobalSettings
-    + openUrl
-    + logMessage
-    + setTitle
-    + setImage
-    + showAlert
-    + showOk
-    + setState
-    + switchToProfile
-    + sendToPropertyInspector
-    + sendToPlugin
-     */
-    return 'foo';
+  public createFromPayload(payload: unknown): ReceivedEventTypes {
+    return new EventFactory().createByEventPayload(payload);
   }
 
   /*

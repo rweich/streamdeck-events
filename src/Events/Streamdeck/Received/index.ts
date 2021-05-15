@@ -1,3 +1,4 @@
+export { default as EventFactory } from './EventFactory';
 export { default as GetGlobalSettingsEvent } from './GetGlobalSettingsEvent';
 export { default as GetSettingsEvent } from './GetSettingsEvent';
 export { default as LogMessageEvent } from './LogMessageEvent';
