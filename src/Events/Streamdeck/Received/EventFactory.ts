@@ -3,7 +3,6 @@ import {
   GetSettingsEvent,
   LogMessageEvent,
   OpenUrlEvent,
-  ReceivedStreamdeckEvents,
   RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
@@ -20,6 +19,8 @@ import {
 import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
 import { ReceivedEventTypes } from '@/Events/Streamdeck/Received/ReceivedEventTypes';
 import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
+
+type EventNames = Exclude<ReceivedEventTypes['event'], 'register'>;
 
 interface ReceivedEvent {
   event: string;
@@ -39,37 +40,40 @@ export default class EventFactory {
       return new RegisterEvent(payload);
     }
 
-    switch (payload.event) {
-      case ReceivedStreamdeckEvents.GetSettings:
-        return new GetSettingsEvent(payload);
-      case ReceivedStreamdeckEvents.GetGlobalSettings:
+    const event: EventNames = payload.event as EventNames;
+
+    switch (event) {
+      case 'getGlobalSettings':
         return new GetGlobalSettingsEvent(payload);
-      case ReceivedStreamdeckEvents.LogMessage:
+      case 'getSettings':
+        return new GetSettingsEvent(payload);
+      case 'logMessage':
         return new LogMessageEvent(payload);
-      case ReceivedStreamdeckEvents.OpenUrl:
+      case 'openUrl':
         return new OpenUrlEvent(payload);
-      case ReceivedStreamdeckEvents.SendToPlugin:
+      case 'sendToPlugin':
         return new SendToPluginEvent(payload);
-      case ReceivedStreamdeckEvents.SendToPropertyInspector:
+      case 'sendToPropertyInspector':
         return new SendToPropertyInspectorEvent(payload);
-      case ReceivedStreamdeckEvents.SetGlobalSettings:
+      case 'setGlobalSettings':
         return new SetGlobalSettingsEvent(payload);
-      case ReceivedStreamdeckEvents.SetImage:
+      case 'setImage':
         return new SetImageEvent(payload);
-      case ReceivedStreamdeckEvents.SetTitle:
+      case 'setTitle':
         return new SetTitleEvent(payload);
-      case ReceivedStreamdeckEvents.SetSettings:
+      case 'setSettings':
         return new SetSettingsEvent(payload);
-      case ReceivedStreamdeckEvents.SetState:
+      case 'setState':
         return new SetStateEvent(payload);
-      case ReceivedStreamdeckEvents.ShowAlert:
+      case 'showAlert':
         return new ShowAlertEvent(payload);
-      case ReceivedStreamdeckEvents.ShowOk:
+      case 'showOk':
         return new ShowOkEvent(payload);
-      case ReceivedStreamdeckEvents.SwitchToProfile:
+      case 'switchToProfile':
         return new SwitchToProfileEvent(payload);
       default:
-        throw new UnknownEventError('unknown event: ' + payload.event + ' in data: ' + JSON.stringify(payload));
+        const checkIfAllEventsAreUsed: never = event; // creates a typeerror when we forget to add an event
+        throw new UnknownEventError(`unknown event: ${event} in data: ${JSON.stringify(payload)}`);
     }
   }
 }

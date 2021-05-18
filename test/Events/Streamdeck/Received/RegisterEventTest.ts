@@ -8,19 +8,20 @@ import { expect } from 'chai';
 describe('RegisterEvent Test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new RegisterEvent(eventValid);
-    expect(event.event).to.equal('inRegisterEvent');
+    expect(event.event).to.equal('register');
+    expect(event.inRegisterEvent).to.equal('inRegisterEvent');
     expect(event.uuid).to.equal('inPluginUUID');
   });
   it('should create the event as long register is somewhere in the event name', function () {
     const event = new RegisterEvent(eventValid);
     eventValid.event = 'register';
-    expect(event.event).to.equal('register');
+    expect(event.inRegisterEvent).to.equal('register');
     eventValid.event = 'Register';
-    expect(event.event).to.equal('Register');
+    expect(event.inRegisterEvent).to.equal('Register');
     eventValid.event = 'myRegisterPlugin';
-    expect(event.event).to.equal('myRegisterPlugin');
+    expect(event.inRegisterEvent).to.equal('myRegisterPlugin');
     eventValid.event = 'fooFaRegister';
-    expect(event.event).to.equal('fooFaRegister');
+    expect(event.inRegisterEvent).to.equal('fooFaRegister');
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new RegisterEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'uuid'/);

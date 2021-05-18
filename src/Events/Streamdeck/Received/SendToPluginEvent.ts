@@ -4,6 +4,10 @@ import { SendToPluginType } from '@/StreamdeckTypes/Received';
 export default class SendToPluginEvent extends AbstractReceivedContextEvent {
   protected readonly eventPayload!: SendToPluginType;
 
+  public get event(): 'sendToPlugin' {
+    return 'sendToPlugin';
+  }
+
   public get action(): string {
     return this.eventPayload.action;
   }

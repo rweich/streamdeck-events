@@ -1,6 +1,5 @@
-import { ReceivedStreamdeckEvents, SetTitleEvent } from '@/Events/Streamdeck/Received';
-
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { SetTitleEvent } from '@/Events/Streamdeck/Received';
 import { TargetEnum } from '@/Events/Sent/Plugin';
 import eventInvalidType from './fixtures/setTitleEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/setTitleEvent.missing-param.json';
@@ -10,7 +9,7 @@ import { expect } from 'chai';
 describe('SetTitleEvent Test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new SetTitleEvent(eventValid);
-    expect(event.event).to.equal(ReceivedStreamdeckEvents.SetTitle);
+    expect(event.event).to.equal('setTitle');
     expect(event.context).to.equal('opaqueValue');
     expect(event.state).to.equal(0);
     expect(event.target).to.equal(TargetEnum.Software);

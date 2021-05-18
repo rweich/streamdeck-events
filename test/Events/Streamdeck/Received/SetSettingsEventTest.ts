@@ -1,6 +1,5 @@
-import { ReceivedStreamdeckEvents, SetSettingsEvent } from '@/Events/Streamdeck/Received';
-
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { SetSettingsEvent } from '@/Events/Streamdeck/Received';
 import eventInvalidType from './fixtures/setSettingsEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/setSettingsEvent.missing-param.json';
 import eventValid from './fixtures/setSettingsEvent.valid.json';
@@ -9,7 +8,7 @@ import { expect } from 'chai';
 describe('SetSettingsEvent Test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new SetSettingsEvent(eventValid);
-    expect(event.event).to.equal(ReceivedStreamdeckEvents.SetSettings);
+    expect(event.event).to.equal('setSettings');
     expect(event.context).to.equal('opaqueValue');
     expect((event.payload as { foo: string }).foo).to.equal('bar');
     expect((event.payload as { bar: string }).bar).to.equal('baz');

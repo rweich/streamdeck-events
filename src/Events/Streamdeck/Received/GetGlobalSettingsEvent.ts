@@ -2,6 +2,10 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { GetGlobalSettingsType } from '@/StreamdeckTypes/Received';
 
 export default class GetGlobalSettingsEvent extends AbstractReceivedContextEvent {
+  public get event(): 'getGlobalSettings' {
+    return 'getGlobalSettings';
+  }
+
   protected get validationType(): typeof GetGlobalSettingsType {
     return GetGlobalSettingsType;
   }

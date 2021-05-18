@@ -4,6 +4,10 @@ import { LogMessageType } from '@/StreamdeckTypes/Received';
 export default class LogMessageEvent extends AbstractReceivedBaseEvent {
   protected readonly eventPayload!: LogMessageType;
 
+  public get event(): 'logMessage' {
+    return 'logMessage';
+  }
+
   public get message(): string {
     return this.eventPayload.payload.message;
   }

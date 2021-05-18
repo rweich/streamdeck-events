@@ -4,6 +4,10 @@ import { SendToPropertyInspectorType } from '@/StreamdeckTypes/Received';
 export default class SendToPropertyInspectorEvent extends AbstractReceivedContextEvent {
   protected readonly eventPayload!: SendToPropertyInspectorType;
 
+  public get event(): 'sendToPropertyInspector' {
+    return 'sendToPropertyInspector';
+  }
+
   public get action(): string {
     return this.eventPayload.action;
   }

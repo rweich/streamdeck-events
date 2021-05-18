@@ -1,6 +1,5 @@
-import { ReceivedStreamdeckEvents, SetImageEvent } from '@/Events/Streamdeck/Received';
-
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { SetImageEvent } from '@/Events/Streamdeck/Received';
 import { TargetEnum } from '@/Events/Sent/Plugin';
 import eventInvalidType from './fixtures/setImageEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/setImageEvent.missing-param.json';
@@ -10,7 +9,7 @@ import { expect } from 'chai';
 describe('SetImageEvent Test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new SetImageEvent(eventValid);
-    expect(event.event).to.equal(ReceivedStreamdeckEvents.SetImage);
+    expect(event.event).to.equal('setImage');
     expect(event.context).to.equal('opaqueValue');
     expect(event.state).to.equal(1);
     expect(event.target).to.equal(TargetEnum.Both);

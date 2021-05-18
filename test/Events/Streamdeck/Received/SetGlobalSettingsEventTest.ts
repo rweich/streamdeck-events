@@ -1,6 +1,5 @@
-import { ReceivedStreamdeckEvents, SetGlobalSettingsEvent } from '@/Events/Streamdeck/Received';
-
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { SetGlobalSettingsEvent } from '@/Events/Streamdeck/Received';
 import eventInvalidType from './fixtures/setGlobalSettingsEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/setGlobalSettingsEvent.missing-param.json';
 import eventValid from './fixtures/setGlobalSettingsEvent.valid.json';
@@ -9,7 +8,7 @@ import { expect } from 'chai';
 describe('SetGlobalSettingsEvent Test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new SetGlobalSettingsEvent(eventValid);
-    expect(event.event).to.equal(ReceivedStreamdeckEvents.SetGlobalSettings);
+    expect(event.event).to.equal('setGlobalSettings');
     expect(event.context).to.equal('opaqueValue');
     expect((event.payload as { bar: string }).bar).to.equal('foo');
     expect((event.payload as { baz: string }).baz).to.equal('bar');
