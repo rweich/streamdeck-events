@@ -28,6 +28,7 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@rweich/eslint-config": "^1.0.1",
     "@rweich/prettier-config": "^1.0.0",
+    "@rweich/semantic-release-config": "^1.0.0",
     "@types/chai": "^4.2.16",
     "@types/chai-json-schema": "^1.4.6",
     "@types/mocha": "^8.2.2",
@@ -40,6 +41,7 @@
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
+    "semantic-release": "^17.4.3",
     "source-map-support": "^0.5.19",
     "ts-node": "^9.1.1",
     "ttypescript": "^1.5.12",
@@ -89,5 +91,9 @@
       "text",
       "lcov"
     ]
+  },
+  "release": {
+    "extends": "@rweich/semantic-release-config",
+    "branches": "main"
   }
 }
