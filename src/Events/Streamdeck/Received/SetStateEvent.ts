@@ -2,11 +2,8 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { SetStateType } from '@/StreamdeckTypes/Received';
 
 export default class SetStateEvent extends AbstractReceivedContextEvent {
+  public readonly event = 'setState';
   protected readonly eventPayload!: SetStateType;
-
-  public get event(): 'setState' {
-    return 'setState';
-  }
 
   public get state(): number {
     return this.eventPayload.payload.state;

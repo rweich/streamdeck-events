@@ -1,6 +1,4 @@
-import SendToPropertyInspectorEvent from './SendToPropertyInspectorEvent';
-import SetImageEvent from './SetImageEvent';
-import SetTitleEvent from './SetTitleEvent';
-import { TargetEnum } from './TargetEnum';
-
-export { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum };
+export { default as SendToPropertyInspectorEvent } from './SendToPropertyInspectorEvent';
+export { default as SetImageEvent } from './SetImageEvent';
+export { default as SetTitleEvent } from './SetTitleEvent';
+export { TargetEnum } from './TargetEnum';

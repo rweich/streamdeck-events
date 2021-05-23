@@ -1,29 +1,13 @@
-import ApplicationDidLaunchEvent from './ApplicationDidLaunchEvent';
-import ApplicationDidTerminateEvent from './ApplicationDidTerminateEvent';
-import DeviceDidConnectEvent from './DeviceDidConnectEvent';
-import DeviceDidDisconnectEvent from './DeviceDidDisconnectEvent';
-import { DeviceType } from './DeviceType';
-import KeyDownEvent from './KeyDownEvent';
-import KeyUpEvent from './KeyUpEvent';
-import PropertyInspectorDidAppearEvent from './PropertyInspectorDidAppearEvent';
-import PropertyInspectorDidDisappearEvent from './PropertyInspectorDidDisappearEvent';
-import SendToPluginEvent from './SendToPluginEvent';
-import TitleParametersDidChangeEvent from './TitleParametersDidChangeEvent';
-import WillAppearEvent from './WillAppearEvent';
-import WillDisappearEvent from './WillDisappearEvent';
-
-export {
-  ApplicationDidLaunchEvent,
-  ApplicationDidTerminateEvent,
-  DeviceDidConnectEvent,
-  DeviceDidDisconnectEvent,
-  DeviceType,
-  KeyDownEvent,
-  KeyUpEvent,
-  PropertyInspectorDidAppearEvent,
-  PropertyInspectorDidDisappearEvent,
-  SendToPluginEvent,
-  TitleParametersDidChangeEvent,
-  WillAppearEvent,
-  WillDisappearEvent,
-};
+export { default as ApplicationDidLaunchEvent } from './ApplicationDidLaunchEvent';
+export { default as ApplicationDidTerminateEvent } from './ApplicationDidTerminateEvent';
+export { default as DeviceDidConnectEvent } from './DeviceDidConnectEvent';
+export { default as DeviceDidDisconnectEvent } from './DeviceDidDisconnectEvent';
+export { DeviceType } from './DeviceType';
+export { default as KeyDownEvent } from './KeyDownEvent';
+export { default as KeyUpEvent } from './KeyUpEvent';
+export { default as PropertyInspectorDidAppearEvent } from './PropertyInspectorDidAppearEvent';
+export { default as PropertyInspectorDidDisappearEvent } from './PropertyInspectorDidDisappearEvent';
+export { default as SendToPluginEvent } from './SendToPluginEvent';
+export { default as TitleParametersDidChangeEvent } from './TitleParametersDidChangeEvent';
+export { default as WillAppearEvent } from './WillAppearEvent';
+export { default as WillDisappearEvent } from './WillDisappearEvent';

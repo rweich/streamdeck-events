@@ -9,7 +9,9 @@ import { expect } from 'chai';
 
 describe('DidReceiveSettingsEvent test', () => {
   it('should create the event when using the correct payload', function () {
-    expect(new DidReceiveGlobalSettingsEvent(eventValid).settings).to.haveOwnProperty('foo');
+    const event: DidReceiveGlobalSettingsEvent = new DidReceiveGlobalSettingsEvent(eventValid);
+    expect(event.settings).to.haveOwnProperty('foo');
+    expect(event.event).to.equal('didReceiveGlobalSettings');
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new DidReceiveGlobalSettingsEvent(eventMissingParameter)).to.throw(EventValidationError, /settings/);

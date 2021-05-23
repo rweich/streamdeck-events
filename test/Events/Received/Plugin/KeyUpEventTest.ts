@@ -2,7 +2,6 @@ import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import KeyUpEvent from '@/Events/Received/Plugin/KeyUpEvent';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/keyUpEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyUpEvent.missing-param.json';
 import eventValid from '../fixtures/keyUpEvent.valid.json';
@@ -14,7 +13,7 @@ describe('KeyUpEvent test', () => {
     expect(event.action).to.equal('some.up.action');
     expect(event.context).to.equal('zxcvfsda');
     expect(event.device).to.equal('rweqasd');
-    expect(event.event).to.equal(ReceivedPluginEvents.KeyUp);
+    expect(event.event).to.equal('keyUp');
     expect(event.column).to.equal(2);
     expect(event.row).to.equal(5);
     expect(event.isInMultiAction).to.be.false;

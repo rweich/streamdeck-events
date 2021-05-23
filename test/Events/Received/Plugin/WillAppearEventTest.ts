@@ -1,7 +1,6 @@
 import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import WillAppearEvent from '@/Events/Received/Plugin/WillAppearEvent';
 import eventInvalidType from '../fixtures/willAppearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/willAppearEvent.missing-param.json';
@@ -11,7 +10,7 @@ import { expect } from 'chai';
 describe('WillAppearEvent test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new WillAppearEvent(eventValid);
-    expect(event.event).to.equal(ReceivedPluginEvents.WillAppear);
+    expect(event.event).to.equal('willAppear');
     expect(event.action).to.equal('my.willappear.action');
     expect(event.context).to.equal('willappearcontext');
     expect(event.state).to.be.undefined;

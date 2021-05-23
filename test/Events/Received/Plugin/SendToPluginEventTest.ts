@@ -1,7 +1,6 @@
 import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import SendToPluginEvent from '@/Events/Received/Plugin/SendToPluginEvent';
 import eventInvalidType from '../fixtures/sendToPluginEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/sendToPluginEvent.missing-param.json';
@@ -11,7 +10,7 @@ import { expect } from 'chai';
 describe('SendToPluginEvent test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new SendToPluginEvent(eventValid);
-    expect(event.event).to.equal(ReceivedPluginEvents.SendToPlugin);
+    expect(event.event).to.equal('sendToPlugin');
     expect(event.action).to.equal('com.elgato.example.action1');
     expect(event.context).to.equal('opaqueValue312');
   });

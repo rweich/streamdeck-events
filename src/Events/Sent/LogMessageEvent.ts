@@ -1,8 +1,7 @@
 import AbstractEvent from './AbstractEvent';
-import { SentEvents } from './SentEvents';
 
 export default class LogMessageEvent extends AbstractEvent {
-  public readonly event = SentEvents.LogMessage;
+  public readonly event = 'logMessage';
   private readonly payload: Record<'message', string>;
 
   constructor(message: string) {

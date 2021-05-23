@@ -1,7 +1,6 @@
 import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import TitleParametersDidChangeEvent from '@/Events/Received/Plugin/TitleParametersDidChangeEvent';
 import eventInvalidType from '../fixtures/titleParametersDidChangeEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/titleParametersDidChangeEvent.missing-param.json';
@@ -14,7 +13,7 @@ describe.skip('TitleParametersDidChangeEvent test', () => {
     expect(event.action).to.equal('tpdc.action');
     expect(event.context).to.equal('conconcon');
     expect(event.device).to.equal('devved');
-    expect(event.event).to.equal(ReceivedPluginEvents.TitleParametersDidChange);
+    expect(event.event).to.equal('titleParametersDidChange');
     // TODO: add missing tests
   });
   it('should throw a validation error on missing parameters', function () {
@@ -26,7 +25,7 @@ describe.skip('TitleParametersDidChangeEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new TitleParametersDidChangeEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^propertyInspectorDidAppear\$"/,
+      /should match pattern "\^titleParametersDidChange\$"/,
     );
   });
 });

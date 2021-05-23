@@ -2,7 +2,6 @@ import 'mocha';
 
 import DeviceDidDisconnectEvent from '@/Events/Received/Plugin/DeviceDidDisconnectEvent';
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/deviceDidDisconnectEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/deviceDidDisconnectEvent.missing-param.json';
 import eventValid from '../fixtures/deviceDidDisconnectEvent.valid.json';
@@ -12,7 +11,7 @@ describe('DeviceDidDisconnectEvent test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new DeviceDidDisconnectEvent(eventValid);
     expect(event.device).to.equal('opaqueValue');
-    expect(event.event).to.equal(ReceivedPluginEvents.DeviceDidDisconnect);
+    expect(event.event).to.equal('deviceDidDisconnect');
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new DeviceDidDisconnectEvent(eventMissingParameter)).to.throw(

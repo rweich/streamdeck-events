@@ -2,11 +2,8 @@ import AbstractSetterEvent from '@/Events/Streamdeck/Received/AbstractSetterEven
 import { SetTitleType } from '@/StreamdeckTypes/Received';
 
 export default class SetTitleEvent extends AbstractSetterEvent {
+  public readonly event = 'setTitle';
   protected readonly eventPayload!: SetTitleType;
-
-  public get event(): 'setTitle' {
-    return 'setTitle';
-  }
 
   public get title(): string {
     return this.eventPayload.payload.title;

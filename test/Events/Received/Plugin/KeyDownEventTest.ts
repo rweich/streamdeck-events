@@ -2,7 +2,6 @@ import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import KeyDownEvent from '@/Events/Received/Plugin/KeyDownEvent';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/keyDownEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyDownEvent.missing-param.json';
 import eventValid from '../fixtures/keyDownEvent.valid.json';
@@ -14,7 +13,7 @@ describe('KeyDownEvent test', () => {
     expect(event.action).to.equal('some.action');
     expect(event.context).to.equal('ewrwerwerwerwer');
     expect(event.device).to.equal('xxzxxzxzxzxxzxzxz');
-    expect(event.event).to.equal(ReceivedPluginEvents.KeyDown);
+    expect(event.event).to.equal('keyDown');
     expect(event.column).to.equal(1);
     expect(event.row).to.equal(3);
     expect(event.isInMultiAction).to.be.false;

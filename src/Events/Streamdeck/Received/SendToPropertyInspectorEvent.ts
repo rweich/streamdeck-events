@@ -2,11 +2,8 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { SendToPropertyInspectorType } from '@/StreamdeckTypes/Received';
 
 export default class SendToPropertyInspectorEvent extends AbstractReceivedContextEvent {
+  public readonly event = 'sendToPropertyInspector';
   protected readonly eventPayload!: SendToPropertyInspectorType;
-
-  public get event(): 'sendToPropertyInspector' {
-    return 'sendToPropertyInspector';
-  }
 
   public get action(): string {
     return this.eventPayload.action;

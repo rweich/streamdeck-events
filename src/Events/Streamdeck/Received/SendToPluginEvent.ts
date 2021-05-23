@@ -2,11 +2,8 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { SendToPluginType } from '@/StreamdeckTypes/Received';
 
 export default class SendToPluginEvent extends AbstractReceivedContextEvent {
+  public readonly event = 'sendToPlugin';
   protected readonly eventPayload!: SendToPluginType;
-
-  public get event(): 'sendToPlugin' {
-    return 'sendToPlugin';
-  }
 
   public get action(): string {
     return this.eventPayload.action;

@@ -2,9 +2,7 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { ShowAlertType } from '@/StreamdeckTypes/Received';
 
 export default class ShowAlertEvent extends AbstractReceivedContextEvent {
-  public get event(): 'showAlert' {
-    return 'showAlert';
-  }
+  public readonly event = 'showAlert';
 
   protected get validationType(): typeof ShowAlertType {
     return ShowAlertType;

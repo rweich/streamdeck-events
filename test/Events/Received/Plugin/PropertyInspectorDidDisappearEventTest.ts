@@ -2,7 +2,6 @@ import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import PropertyInspectorDidDisappearEvent from '@/Events/Received/Plugin/PropertyInspectorDidDisappearEvent';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/propertyInspectorDidDisappearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/propertyInspectorDidDisappearEvent.missing-param.json';
 import eventValid from '../fixtures/propertyInspectorDidDisappearEvent.valid.json';
@@ -14,7 +13,7 @@ describe('PropertyInspectorDidDisappearEvent test', () => {
     expect(event.device).to.equal('opaqueValue23');
     expect(event.context).to.equal('opaqueValue41');
     expect(event.action).to.equal('com.elgato.example.action3');
-    expect(event.event).to.equal(ReceivedPluginEvents.PropertyInspectorDidDisappear);
+    expect(event.event).to.equal('propertyInspectorDidDisappear');
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new PropertyInspectorDidDisappearEvent(eventMissingParameter)).to.throw(

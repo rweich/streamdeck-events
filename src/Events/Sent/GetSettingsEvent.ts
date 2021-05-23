@@ -1,8 +1,7 @@
 import AbstractSentEvent from './AbstractSentEvent';
-import { SentEvents } from './SentEvents';
 
 export default class GetSettingsEvent extends AbstractSentEvent {
-  public readonly event = SentEvents.GetSettings;
+  public readonly event = 'getSettings';
 
   constructor(context: string) {
     super(context);

@@ -12,62 +12,65 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from './Plugin';
+import { ReceivedPropertyInspectorEventTypes, SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
 
 import DidReceiveGlobalSettingsEvent from './DidReceiveGlobalSettingsEvent';
 import DidReceiveSettingsEvent from './DidReceiveSettingsEvent';
-import { EventsReceived } from './EventsReceived';
 import MissingEventInPayloadError from './Exception/MissingEventInPayloadError';
-import { ReceivedEventTypes } from '@/Events/Received/ReceivedEventTypes';
-import { ReceivedPluginEvents } from './Plugin/ReceivedPluginEvents';
-import { SendToPropertyInspectorEvent } from './PropertyInspector';
+import { ReceivedPluginEventTypes } from '@/Events/Received/Plugin/ReceivedPluginEventTypes';
 import UnknownEventError from './Exception/UnknownEventError';
 
-interface BasicReceivedEvent {
-  event: EventsReceived | ReceivedPluginEvents;
+type EventNames = ReceivedPluginEventTypes['event'] | ReceivedPropertyInspectorEventTypes['event'];
+
+interface ReceivedEvent {
+  event: string;
 }
 
-function isBasicReceivedEvent(event: unknown): event is BasicReceivedEvent {
-  return (event as BasicReceivedEvent).hasOwnProperty('event') && (event as BasicReceivedEvent)['event'].length > 0;
+function isBasicReceivedEvent(event: unknown): event is ReceivedEvent {
+  return (event as ReceivedEvent).hasOwnProperty('event') && (event as ReceivedEvent)['event'].length > 0;
 }
 
 export default class EventFactory {
-  public createByEventPayload(payload: unknown): ReceivedEventTypes {
+  public createByEventPayload(payload: unknown): ReceivedPluginEventTypes | ReceivedPropertyInspectorEventTypes {
     if (!isBasicReceivedEvent(payload)) {
       throw new MissingEventInPayloadError('no event type in received data: ' + JSON.stringify(payload));
     }
 
-    switch (payload.event) {
-      case ReceivedPluginEvents.ApplicationDidLaunch:
+    const event: EventNames = payload.event as EventNames;
+
+    switch (event) {
+      case 'applicationDidLaunch':
         return new ApplicationDidLaunchEvent(payload);
-      case ReceivedPluginEvents.ApplicationDidTerminate:
+      case 'applicationDidTerminate':
         return new ApplicationDidTerminateEvent(payload);
-      case ReceivedPluginEvents.DeviceDidConnect:
+      case 'deviceDidConnect':
         return new DeviceDidConnectEvent(payload);
-      case ReceivedPluginEvents.DeviceDidDisconnect:
+      case 'deviceDidDisconnect':
         return new DeviceDidDisconnectEvent(payload);
-      case EventsReceived.DidReceiveSettings:
+      case 'didReceiveSettings':
         return new DidReceiveSettingsEvent(payload);
-      case EventsReceived.DidReceiveGlobalSettings:
+      case 'didReceiveGlobalSettings':
         return new DidReceiveGlobalSettingsEvent(payload);
-      case ReceivedPluginEvents.KeyDown:
+      case 'keyDown':
         return new KeyDownEvent(payload);
-      case ReceivedPluginEvents.KeyUp:
+      case 'keyUp':
         return new KeyUpEvent(payload);
-      case ReceivedPluginEvents.PropertyInspectorDidAppear:
+      case 'propertyInspectorDidAppear':
         return new PropertyInspectorDidAppearEvent(payload);
-      case ReceivedPluginEvents.PropertyInspectorDidDisappear:
+      case 'propertyInspectorDidDisappear':
         return new PropertyInspectorDidDisappearEvent(payload);
-      case ReceivedPluginEvents.SendToPlugin:
+      case 'sendToPlugin':
         return new SendToPluginEvent(payload);
-      case ReceivedPluginEvents.SendToPropertyInspector:
+      case 'sendToPropertyInspector':
         return new SendToPropertyInspectorEvent(payload);
-      case ReceivedPluginEvents.TitleParametersDidChange:
+      case 'titleParametersDidChange':
         return new TitleParametersDidChangeEvent(payload);
-      case ReceivedPluginEvents.WillAppear:
+      case 'willAppear':
         return new WillAppearEvent(payload);
-      case ReceivedPluginEvents.WillDisappear:
+      case 'willDisappear':
         return new WillDisappearEvent(payload);
       default:
+        const checkIfAllEventsAreUsed: never = event; // creates a typeerror when we forget to add an event
         throw new UnknownEventError('unknown event: ' + payload.event + ' in data: ' + JSON.stringify(payload));
     }
   }

@@ -3,6 +3,7 @@ import { DeviceDidConnectType } from '@/StreamdeckTypes/Sent';
 import { DeviceType } from './DeviceType';
 
 export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {
+  public readonly event = 'deviceDidConnect';
   protected readonly eventPayload!: DeviceDidConnectType;
 
   public get device(): string {

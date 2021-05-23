@@ -2,11 +2,8 @@ import AbstractSetterEvent from '@/Events/Streamdeck/Received/AbstractSetterEven
 import { SetImageType } from '@/StreamdeckTypes/Received';
 
 export default class SetImageEvent extends AbstractSetterEvent {
+  public readonly event = 'setImage';
   protected readonly eventPayload!: SetImageType;
-
-  public get event(): 'setImage' {
-    return 'setImage';
-  }
 
   public get image(): string {
     return this.eventPayload.payload.image;

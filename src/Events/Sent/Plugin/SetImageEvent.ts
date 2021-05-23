@@ -1,9 +1,8 @@
 import AbstractSentSetterEvent from '../AbstractSentSetterEvent';
-import { SentPluginEvents } from './SentPluginEvents';
 import { TargetEnum } from './TargetEnum';
 
 export default class SetImageEvent extends AbstractSentSetterEvent {
-  public readonly event = SentPluginEvents.SetImage;
+  public readonly event = 'setImage';
   public readonly image: string;
   public readonly target: TargetEnum;
   public readonly state: number | undefined;

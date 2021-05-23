@@ -1,8 +1,9 @@
 import { EventFactory } from '@/Events/Received';
-import { ReceivedEventTypes } from '@/Events/Received/ReceivedEventTypes';
+import { ReceivedPluginEventTypes } from '@/Events/Received/Plugin/ReceivedPluginEventTypes';
+import { ReceivedPropertyInspectorEventTypes } from '@/Events/Received/PropertyInspector';
 
 export default class EventsReceived {
-  public createFromPayload(payload: unknown): ReceivedEventTypes {
+  public createFromPayload(payload: unknown): ReceivedPluginEventTypes | ReceivedPropertyInspectorEventTypes {
     return new EventFactory().createByEventPayload(payload);
   }
 }

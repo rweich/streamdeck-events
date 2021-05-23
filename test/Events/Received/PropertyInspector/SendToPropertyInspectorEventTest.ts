@@ -1,7 +1,6 @@
 import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPropertyinspectorEvents } from '@/Events/Received/PropertyInspector/ReceivedPropertyinspectorEvents';
 import { SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
 import eventInvalidType from '../fixtures/sendToPropertyInspectorEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/sendToPropertyInspectorEvent.missing-param.json';
@@ -11,7 +10,7 @@ import { expect } from 'chai';
 describe('SendToPropertyinspectorEvent test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new SendToPropertyInspectorEvent(eventValid);
-    expect(event.event).to.equal(ReceivedPropertyinspectorEvents.SendToPropertyInspector);
+    expect(event.event).to.equal('sendToPropertyInspector');
     expect(event.action).to.equal('com.elgato.example.action1');
     expect(event.context).to.equal('opaqueValuePI');
   });

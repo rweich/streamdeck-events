@@ -2,11 +2,8 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { SetGlobalSettingsType } from '@/StreamdeckTypes/Received';
 
 export default class SetGlobalSettingsEvent extends AbstractReceivedContextEvent {
+  public readonly event = 'setGlobalSettings';
   protected readonly eventPayload!: SetGlobalSettingsType;
-
-  public get event(): 'setGlobalSettings' {
-    return 'setGlobalSettings';
-  }
 
   public get payload(): unknown {
     return this.eventPayload.payload;

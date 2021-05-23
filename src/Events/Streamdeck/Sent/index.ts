@@ -1,3 +1,1 @@
-import WillAppearEvent from '@/Events/Streamdeck/Sent/WillAppearEvent';
-
-export { WillAppearEvent };
+export { default as WillAppearEvent } from '@/Events/Streamdeck/Sent/WillAppearEvent';

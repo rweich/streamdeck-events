@@ -1,3 +1,2 @@
-import SendToPropertyInspectorEvent from './SendToPropertyInspectorEvent';
-
-export { SendToPropertyInspectorEvent };
+export { default as SendToPropertyInspectorEvent } from './SendToPropertyInspectorEvent';
+export { ReceivedPropertyInspectorEventTypes } from './ReceivedPropertyInspectorEventTypes';

@@ -1,3 +1,1 @@
-import SendToPluginEvent from './SendToPluginEvent';
-
-export { SendToPluginEvent };
+export { default as SendToPluginEvent } from './SendToPluginEvent';

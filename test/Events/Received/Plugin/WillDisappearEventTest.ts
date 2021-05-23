@@ -1,7 +1,6 @@
 import 'mocha';
 
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import WillDisappearEvent from '@/Events/Received/Plugin/WillDisappearEvent';
 import eventInvalidType from '../fixtures/willDisappearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/willDisappearEvent.missing-param.json';
@@ -11,7 +10,7 @@ import { expect } from 'chai';
 describe('WillDisappearEvent test', () => {
   it('should create the event when using the correct payload', function () {
     const event = new WillDisappearEvent(eventValid);
-    expect(event.event).to.equal(ReceivedPluginEvents.WillDisappear);
+    expect(event.event).to.equal('willDisappear');
     expect(event.action).to.equal('dsaaction');
     expect(event.context).to.equal('disacontext');
   });

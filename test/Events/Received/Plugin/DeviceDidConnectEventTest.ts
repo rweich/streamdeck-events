@@ -3,7 +3,6 @@ import 'mocha';
 import DeviceDidConnectEvent from '@/Events/Received/Plugin/DeviceDidConnectEvent';
 import { DeviceType } from '@/Events/Received/Plugin';
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { ReceivedPluginEvents } from '@/Events/Received/Plugin/ReceivedPluginEvents';
 import eventInvalidType from '../fixtures/deviceDidConnectEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/deviceDidConnectEvent.missing-param.json';
 import eventValid from '../fixtures/deviceDidConnectEvent.valid.json';
@@ -17,7 +16,7 @@ describe('DeviceDidConnectEvent test', () => {
     expect(event.type).to.equal(DeviceType.StreamDeckXL);
     expect(event.columns).to.equal(8);
     expect(event.rows).to.equal(4);
-    expect(event.event).to.equal(ReceivedPluginEvents.DeviceDidConnect);
+    expect(event.event).to.equal('deviceDidConnect');
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new DeviceDidConnectEvent(eventMissingParameter)).to.throw(

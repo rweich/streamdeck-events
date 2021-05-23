@@ -2,11 +2,8 @@ import AbstractReceivedBaseEvent from '@/Events/Received/AbstractReceivedBaseEve
 import { RegisterEventType } from '@/StreamdeckTypes/Received';
 
 export default class RegisterEvent extends AbstractReceivedBaseEvent {
+  public readonly event = 'register';
   protected readonly eventPayload!: RegisterEventType;
-
-  public get event(): 'register' {
-    return 'register';
-  }
 
   /**
    * Returns the original name of the register event

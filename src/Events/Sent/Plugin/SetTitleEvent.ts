@@ -1,9 +1,8 @@
 import AbstractSentSetterEvent from '../AbstractSentSetterEvent';
-import { SentPluginEvents } from './SentPluginEvents';
 import { TargetEnum } from './TargetEnum';
 
 export default class SetTitleEvent extends AbstractSentSetterEvent {
-  public readonly event = SentPluginEvents.SetTitle;
+  public readonly event = 'setTitle';
   public readonly title: string;
   public readonly target: TargetEnum;
   public readonly state: number | undefined;

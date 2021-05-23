@@ -3,15 +3,12 @@ import { Static } from '@sinclair/typebox';
 import assertType from './AssertType';
 
 export default abstract class AbstractReceivedBaseEvent {
+  public abstract readonly event: string;
   protected readonly eventPayload: BaseEventType;
 
   public constructor(payload: unknown) {
     this.assertType(payload);
     this.eventPayload = payload;
-  }
-
-  public get event(): string {
-    return this.eventPayload.event;
   }
 
   protected abstract get validationType(): typeof BaseEventType;

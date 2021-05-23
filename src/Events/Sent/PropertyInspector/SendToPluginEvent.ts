@@ -1,8 +1,7 @@
 import AbstractSentSetterEvent from '../AbstractSentSetterEvent';
-import { SentPropertyinspectorEvents } from './SentPropertyinspectorEvents';
 
 export default class SendToPluginEvent extends AbstractSentSetterEvent {
-  public readonly event = SentPropertyinspectorEvents.SendToPlugin;
+  public readonly event = 'sendToPlugin';
   protected readonly payload: unknown;
   private readonly action: string;
 

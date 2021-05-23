@@ -2,11 +2,8 @@ import AbstractReceivedContextEvent from '@/Events/Received/AbstractReceivedCont
 import { SwitchToProfileType } from '@/StreamdeckTypes/Received';
 
 export default class SwitchToProfileEvent extends AbstractReceivedContextEvent {
+  public readonly event = 'switchToProfile';
   protected readonly eventPayload!: SwitchToProfileType;
-
-  public get event(): 'switchToProfile' {
-    return 'switchToProfile';
-  }
 
   public get device(): string {
     return this.eventPayload.device;

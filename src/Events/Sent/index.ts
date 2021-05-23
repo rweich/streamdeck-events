@@ -1,7 +1,5 @@
-import GetSettingsEvent from './GetSettingsEvent';
-import LogMessageEvent from './LogMessageEvent';
-import OpenUrlEvent from './OpenUrlEvent';
-import RegisterEvent from './RegisterEvent';
-import SetSettingsEvent from './SetSettingsEvent';
-
-export { GetSettingsEvent, LogMessageEvent, OpenUrlEvent, RegisterEvent, SetSettingsEvent };
+export { default as GetSettingsEvent } from './GetSettingsEvent';
+export { default as LogMessageEvent } from './LogMessageEvent';
+export { default as OpenUrlEvent } from './OpenUrlEvent';
+export { default as RegisterEvent } from './RegisterEvent';
+export { default as SetSettingsEvent } from './SetSettingsEvent';

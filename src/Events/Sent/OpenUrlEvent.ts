@@ -1,8 +1,7 @@
 import AbstractEvent from './AbstractEvent';
-import { SentEvents } from './SentEvents';
 
 export default class OpenUrlEvent extends AbstractEvent {
-  public readonly event = SentEvents.OpenUrl;
+  public readonly event = 'openUrl';
   private readonly payload: Record<'url', string>;
 
   constructor(url: string) {
