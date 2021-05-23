@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/rweich/streamdeck-events/compare/v1.0.0...v1.1.0) (2021-05-23)
+
+
+### Features
+
+* add event names to the received plugin/pi events ([f9e3a29](https://github.com/rweich/streamdeck-events/commit/f9e3a294605840d30f1313baef5b6a9d24fd4ca1))
+
 # 1.0.0 (2021-05-19)
 
 

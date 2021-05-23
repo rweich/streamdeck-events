@@ -1,6 +1,6 @@
 {
   "name": "@rweich/streamdeck-events",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A colletion of streamdeck events in typescript.",
   "author": "rweich",
   "license": "MIT",
