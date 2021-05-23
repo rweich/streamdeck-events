@@ -20,7 +20,7 @@ describe('GetSettingsEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new GetSettingsEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^getSettings\$"/,
+      /must match pattern "\^getSettings\$"/,
     );
   });
 });

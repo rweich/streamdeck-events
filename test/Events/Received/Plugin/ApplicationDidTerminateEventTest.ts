@@ -22,7 +22,7 @@ describe('ApplicationDidTerminateEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new ApplicationDidTerminateEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^applicationDidTerminate\$"/,
+      /must match pattern "\^applicationDidTerminate\$"/,
     );
   });
 });

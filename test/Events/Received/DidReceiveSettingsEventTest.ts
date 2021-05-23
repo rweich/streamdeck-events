@@ -24,7 +24,7 @@ describe('DidReceiveSettingsEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new DidReceiveSettingsEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^didReceiveSettings\$"/,
+      /must match pattern "\^didReceiveSettings\$"/,
     );
   });
 });

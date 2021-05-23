@@ -22,6 +22,6 @@ describe('KeyUpEvent test', () => {
     expect(() => new KeyUpEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'column'/);
   });
   it('should throw a validation error on wrong event type', function () {
-    expect(() => new KeyUpEvent(eventInvalidType)).to.throw(EventValidationError, /should match pattern "\^keyUp\$"/);
+    expect(() => new KeyUpEvent(eventInvalidType)).to.throw(EventValidationError, /must match pattern "\^keyUp\$"/);
   });
 });

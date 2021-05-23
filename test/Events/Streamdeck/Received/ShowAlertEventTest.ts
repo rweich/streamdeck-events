@@ -20,7 +20,7 @@ describe('ShowAlertEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new ShowAlertEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^showAlert\$"/,
+      /must match pattern "\^showAlert\$"/,
     );
   });
 });

@@ -25,7 +25,7 @@ describe('WillAppearEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new WillAppearEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^willAppear\$"/,
+      /must match pattern "\^willAppear\$"/,
     );
   });
 });

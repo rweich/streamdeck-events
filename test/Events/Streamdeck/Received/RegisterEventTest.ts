@@ -29,7 +29,7 @@ describe('RegisterEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new RegisterEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\[Rr]egister"/,
+      /must match pattern "\[Rr]egister"/,
     );
   });
 });

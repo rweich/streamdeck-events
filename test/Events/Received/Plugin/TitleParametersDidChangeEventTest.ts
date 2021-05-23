@@ -25,7 +25,7 @@ describe.skip('TitleParametersDidChangeEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new TitleParametersDidChangeEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^titleParametersDidChange\$"/,
+      /must match pattern "\^titleParametersDidChange\$"/,
     );
   });
 });

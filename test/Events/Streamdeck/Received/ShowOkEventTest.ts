@@ -15,6 +15,6 @@ describe('ShowOkEvent Test', () => {
     expect(() => new ShowOkEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'context'/);
   });
   it('should throw a validation error on wrong event type', function () {
-    expect(() => new ShowOkEvent(eventInvalidType)).to.throw(EventValidationError, /should match pattern "\^showOk\$"/);
+    expect(() => new ShowOkEvent(eventInvalidType)).to.throw(EventValidationError, /must match pattern "\^showOk\$"/);
   });
 });

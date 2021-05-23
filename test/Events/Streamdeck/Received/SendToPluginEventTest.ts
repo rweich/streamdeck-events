@@ -22,7 +22,7 @@ describe('SendToPluginEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new SendToPluginEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^sendToPlugin\$"/,
+      /must match pattern "\^sendToPlugin\$"/,
     );
   });
 });

@@ -22,7 +22,7 @@ describe('SendToPropertyInspectorEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new SendToPropertyInspectorEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^sendToPropertyInspector\$"/,
+      /must match pattern "\^sendToPropertyInspector\$"/,
     );
   });
 });
