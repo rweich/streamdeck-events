@@ -22,9 +22,6 @@ describe('KeyDownEvent test', () => {
     expect(() => new KeyDownEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'context'/);
   });
   it('should throw a validation error on wrong event type', function () {
-    expect(() => new KeyDownEvent(eventInvalidType)).to.throw(
-      EventValidationError,
-      /should match pattern "\^keyDown\$"/,
-    );
+    expect(() => new KeyDownEvent(eventInvalidType)).to.throw(EventValidationError, /must match pattern "\^keyDown\$"/);
   });
 });

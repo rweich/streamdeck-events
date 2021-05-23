@@ -20,7 +20,7 @@ describe('GetGlobalSettingsEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new GetGlobalSettingsEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^getGlobalSettings\$"/,
+      /must match pattern "\^getGlobalSettings\$"/,
     );
   });
 });

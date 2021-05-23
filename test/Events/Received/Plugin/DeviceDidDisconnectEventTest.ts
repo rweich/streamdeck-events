@@ -22,7 +22,7 @@ describe('DeviceDidDisconnectEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new DeviceDidDisconnectEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^deviceDidDisconnect\$"/,
+      /must match pattern "\^deviceDidDisconnect\$"/,
     );
   });
 });

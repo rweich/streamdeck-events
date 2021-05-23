@@ -21,7 +21,7 @@ describe('SetImageEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new SetImageEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^setImage\$"/,
+      /must match pattern "\^setImage\$"/,
     );
   });
 });

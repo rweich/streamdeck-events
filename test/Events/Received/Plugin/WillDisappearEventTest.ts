@@ -23,7 +23,7 @@ describe('WillDisappearEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new WillDisappearEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^willDisappear\$"/,
+      /must match pattern "\^willDisappear\$"/,
     );
   });
 });

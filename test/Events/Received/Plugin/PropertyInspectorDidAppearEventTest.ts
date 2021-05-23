@@ -24,7 +24,7 @@ describe('PropertyInspectorDidAppearEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new PropertyInspectorDidAppearEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^propertyInspectorDidAppear\$"/,
+      /must match pattern "\^propertyInspectorDidAppear\$"/,
     );
   });
 });

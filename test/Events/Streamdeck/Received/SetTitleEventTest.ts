@@ -21,7 +21,7 @@ describe('SetTitleEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new SetTitleEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^setTitle\$"/,
+      /must match pattern "\^setTitle\$"/,
     );
   });
 });

@@ -21,7 +21,7 @@ describe('SetStateEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new SetStateEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^setState\$"/,
+      /must match pattern "\^setState\$"/,
     );
   });
 });

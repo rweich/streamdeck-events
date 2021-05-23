@@ -20,7 +20,7 @@ describe('LogMessageEvent Test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new LogMessageEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^logMessage\$"/,
+      /must match pattern "\^logMessage\$"/,
     );
   });
 });

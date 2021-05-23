@@ -14,6 +14,7 @@ describe('DeviceDidConnectEvent test', () => {
     expect(event.device).to.equal('dededededded');
     expect(event.name).to.equal('Stream Deck XL');
     expect(event.type).to.equal(DeviceType.StreamDeckXL);
+    expect(event.typeName).to.equal('StreamDeckXL');
     expect(event.columns).to.equal(8);
     expect(event.rows).to.equal(4);
     expect(event.event).to.equal('deviceDidConnect');
@@ -27,7 +28,7 @@ describe('DeviceDidConnectEvent test', () => {
   it('should throw a validation error on wrong event type', function () {
     expect(() => new DeviceDidConnectEvent(eventInvalidType)).to.throw(
       EventValidationError,
-      /should match pattern "\^deviceDidConnect\$"/,
+      /must match pattern "\^deviceDidConnect\$"/,
     );
   });
 });

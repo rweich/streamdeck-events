@@ -15,9 +15,6 @@ describe('OpenUrlEvent Test', () => {
     expect(() => new OpenUrlEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'url'/);
   });
   it('should throw a validation error on wrong event type', function () {
-    expect(() => new OpenUrlEvent(eventInvalidType)).to.throw(
-      EventValidationError,
-      /should match pattern "\^openUrl\$"/,
-    );
+    expect(() => new OpenUrlEvent(eventInvalidType)).to.throw(EventValidationError, /must match pattern "\^openUrl\$"/);
   });
 });
