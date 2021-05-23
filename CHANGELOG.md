@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/rweich/streamdeck-events/compare/v1.1.0...v1.2.0) (2021-05-23)
+
+
+### Features
+
+* add typeName prop to DeviceDidConnectEvent ([4e7b3d9](https://github.com/rweich/streamdeck-events/commit/4e7b3d9bfa775d68636772a5b334b99157e26526))
+
 # [1.1.0](https://github.com/rweich/streamdeck-events/compare/v1.0.0...v1.1.0) (2021-05-23)
 
 
