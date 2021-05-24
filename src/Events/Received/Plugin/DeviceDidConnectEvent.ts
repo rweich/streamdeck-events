@@ -30,6 +30,7 @@ export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {
         return 'StreamDeckMobile';
       case DeviceType.CorsairGKeys:
         return 'CorsairGKeys';
+      /* istanbul ignore next - just a typecheck - unreachable code, based on the payload validation */
       default:
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const completeCheck: never = this.eventPayload.deviceInfo.type;
