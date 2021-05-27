@@ -9,6 +9,7 @@ import {
   SetStateEvent,
   ShowAlertEvent,
   ShowOkEvent,
+  SwitchToProfileEvent,
 } from '@/Events/Sent';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 
@@ -83,5 +84,9 @@ export default class EventsSent {
 
   public showOk(context: string): ShowOkEvent {
     return new ShowOkEvent(context);
+  }
+
+  public switchToProfile(profile: string, context: string, device: string): SwitchToProfileEvent {
+    return new SwitchToProfileEvent(profile, context, device);
   }
 }

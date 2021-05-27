@@ -8,3 +8,4 @@ export { default as SetSettingsEvent } from './SetSettingsEvent';
 export { default as SetStateEvent } from './SetStateEvent';
 export { default as ShowAlertEvent } from './ShowAlertEvent';
 export { default as ShowOkEvent } from './ShowOkEvent';
+export { default as SwitchToProfileEvent } from './SwitchToProfileEvent';
