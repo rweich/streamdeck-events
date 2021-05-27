@@ -6,6 +6,7 @@ import {
   RegisterEvent,
   SetGlobalSettingsEvent,
   SetSettingsEvent,
+  SetStateEvent,
 } from '@/Events/Sent';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 
@@ -58,6 +59,10 @@ export default class EventsSent {
 
   public setSettings(context: string, payload: unknown): SetSettingsEvent {
     return new SetSettingsEvent(context, payload);
+  }
+
+  public setState(state: number, context: string): SetStateEvent {
+    return new SetStateEvent(state, context);
   }
 
   public setTitle(title: string, context: string, target: TargetType = 'both', state?: number): SetTitleEvent {
