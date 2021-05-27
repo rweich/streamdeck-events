@@ -15,6 +15,7 @@ import {
   SetTitleType,
   ShowAlertType,
   ShowOkType,
+  SwitchToProfileType,
 } from '@/StreamdeckTypes/Received';
 import { expect, use } from 'chai';
 
@@ -129,5 +130,11 @@ describe('EventsSent test', () => {
     const event = new EventsSent().showOk('thecontext');
     const parsed: ShowOkType = JSON.parse(JSON.stringify(event));
     expect(parsed).to.be.jsonSchema(ShowOkType);
+  });
+  it('creates the SwitchToProfileEvent', () => {
+    const event = new EventsSent().switchToProfile('profilename', 'context', 'device');
+    const parsed: SwitchToProfileType = JSON.parse(JSON.stringify(event));
+    expect(parsed).to.be.jsonSchema(SwitchToProfileType);
+    expect(parsed.payload.profile).to.equal('profilename');
   });
 });
