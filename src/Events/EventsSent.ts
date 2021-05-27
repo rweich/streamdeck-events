@@ -1,4 +1,12 @@
-import { GetSettingsEvent, LogMessageEvent, OpenUrlEvent, RegisterEvent, SetSettingsEvent } from '@/Events/Sent';
+import {
+  GetGlobalSettingsEvent,
+  GetSettingsEvent,
+  LogMessageEvent,
+  OpenUrlEvent,
+  RegisterEvent,
+  SetGlobalSettingsEvent,
+  SetSettingsEvent,
+} from '@/Events/Sent';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 
 import { SendToPluginEvent } from '@/Events/Sent/PropertyInspector';
@@ -6,6 +14,10 @@ import { SendToPluginEvent } from '@/Events/Sent/PropertyInspector';
 type TargetType = 'both' | 'hardware' | 'software';
 
 export default class EventsSent {
+  public getGlobalSettings(context: string): GetGlobalSettingsEvent {
+    return new GetGlobalSettingsEvent(context);
+  }
+
   public getSettings(context: string): GetSettingsEvent {
     return new GetSettingsEvent(context);
   }
@@ -38,6 +50,10 @@ export default class EventsSent {
       targetEnum = TargetEnum.Software;
     }
     return new SetImageEvent(image, context, targetEnum, state);
+  }
+
+  public setGlobalSettings(context: string, payload: unknown): SetGlobalSettingsEvent {
+    return new SetGlobalSettingsEvent(context, payload);
   }
 
   public setSettings(context: string, payload: unknown): SetSettingsEvent {
