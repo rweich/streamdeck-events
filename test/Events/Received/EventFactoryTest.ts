@@ -10,6 +10,7 @@ import {
   PropertyInspectorDidAppearEvent,
   PropertyInspectorDidDisappearEvent,
   SendToPluginEvent,
+  SystemDidWakeUpEvent,
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
@@ -32,6 +33,7 @@ import eventPIAppear from './fixtures/propertyInspectorDidAppearEvent.valid.json
 import eventPIDisappear from './fixtures/propertyInspectorDidDisappearEvent.valid.json';
 import eventSendtoPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
 import eventSendtoplugin from './fixtures/sendToPluginEvent.valid.json';
+import eventSystemDidWakeUp from './fixtures/systemDidWakeUpEvent.valid.json';
 import eventTitleparamchange from './fixtures/titleParametersDidChangeEvent.valid.json';
 import eventWillappear from './fixtures/willAppearEvent.valid.json';
 import eventWilldisappear from './fixtures/willDisappearEvent.valid.json';
@@ -96,6 +98,10 @@ describe('EventFactory test', () => {
 
   it('should return a sendtoplugin event', () => {
     expect(new EventFactory().createByEventPayload(eventSendtoplugin)).to.be.instanceOf(SendToPluginEvent);
+  });
+
+  it('should return a systemdidwakeup event', () => {
+    expect(new EventFactory().createByEventPayload(eventSystemDidWakeUp)).to.be.instanceOf(SystemDidWakeUpEvent);
   });
 
   it('should return a sendtopropertyinspector event', () => {

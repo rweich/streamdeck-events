@@ -8,6 +8,7 @@ import {
   PropertyInspectorDidAppearEvent,
   PropertyInspectorDidDisappearEvent,
   SendToPluginEvent,
+  SystemDidWakeUpEvent,
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
@@ -63,6 +64,8 @@ export default class EventFactory {
         return new SendToPluginEvent(payload);
       case 'sendToPropertyInspector':
         return new SendToPropertyInspectorEvent(payload);
+      case 'systemDidWakeUp':
+        return new SystemDidWakeUpEvent(payload);
       case 'titleParametersDidChange':
         return new TitleParametersDidChangeEvent(payload);
       case 'willAppear':

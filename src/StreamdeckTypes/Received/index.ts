@@ -13,3 +13,4 @@ export * from './SetTitleType';
 export * from './ShowAlertType';
 export * from './ShowOkType';
 export * from './SwitchToProfileType';
+export * from './SystemDidWakeUpType';
