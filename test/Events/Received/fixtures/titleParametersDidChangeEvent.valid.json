@@ -6,15 +6,15 @@
   "payload": {
     "coordinates": {
       "column": 1,
-      "row": 0
+      "row": 4
     },
     "settings": {},
     "state": 0,
-    "title": "",
+    "title": "a title",
     "titleParameters": {
-      "fontFamily": "",
+      "fontFamily": "font",
       "fontSize": 13,
-      "fontStyle": "",
+      "fontStyle": "bold",
       "fontUnderline": false,
       "showTitle": true,
       "titleAlignment": "middle",
