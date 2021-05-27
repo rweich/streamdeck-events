@@ -3,7 +3,7 @@ import AbstractEvent from './AbstractEvent';
 export default abstract class AbstractSentEvent extends AbstractEvent {
   public readonly context: string;
 
-  protected constructor(context: string) {
+  public constructor(context: string) {
     super();
     this.context = context;
   }

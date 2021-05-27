@@ -13,6 +13,8 @@ import {
   SetSettingsType,
   SetStateType,
   SetTitleType,
+  ShowAlertType,
+  ShowOkType,
 } from '@/StreamdeckTypes/Received';
 import { expect, use } from 'chai';
 
@@ -117,5 +119,15 @@ describe('EventsSent test', () => {
 
     event = new EventsSent().setTitle('thetitle', 'thecontext');
     expect(JSON.parse(JSON.stringify(event)).payload.target).to.equal(TargetEnum.Both);
+  });
+  it('creates the ShowAlertEvent', () => {
+    const event = new EventsSent().showAlert('thecontext');
+    const parsed: ShowAlertType = JSON.parse(JSON.stringify(event));
+    expect(parsed).to.be.jsonSchema(ShowAlertType);
+  });
+  it('creates the ShowOkEvent', () => {
+    const event = new EventsSent().showOk('thecontext');
+    const parsed: ShowOkType = JSON.parse(JSON.stringify(event));
+    expect(parsed).to.be.jsonSchema(ShowOkType);
   });
 });
