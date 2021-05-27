@@ -1,7 +1,22 @@
 import 'mocha';
 
-import { GetSettingsEvent, LogMessageEvent, OpenUrlEvent, RegisterEvent, SetSettingsEvent } from '@/Events/Sent';
-import { GetSettingsType, LogMessageType, OpenUrlType, SetImageType, SetTitleType } from '@/StreamdeckTypes/Received';
+import {
+  GetGlobalSettingsEvent,
+  GetSettingsEvent,
+  LogMessageEvent,
+  OpenUrlEvent,
+  RegisterEvent,
+  SetGlobalSettingsEvent,
+  SetSettingsEvent,
+} from '@/Events/Sent';
+import {
+  GetGlobalSettingsType,
+  GetSettingsType,
+  LogMessageType,
+  OpenUrlType,
+  SetImageType,
+  SetTitleType,
+} from '@/StreamdeckTypes/Received';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 import { expect, use } from 'chai';
 
@@ -12,6 +27,12 @@ import jsonschema from 'chai-json-schema';
 use(jsonschema);
 
 describe('EventsSent test', () => {
+  it('creates the GetGlobalSettingsEvent', () => {
+    const event = new EventsSent().getGlobalSettings('getglobalsettings-context');
+    const parsed: GetGlobalSettingsType = JSON.parse(JSON.stringify(event));
+    expect(parsed).to.be.jsonSchema(GetGlobalSettingsEvent);
+    expect(parsed.context).to.equal('getglobalsettings-context');
+  });
   it('creates the GetSettingsEvent', () => {
     const event = new EventsSent().getSettings('getsettings-context');
     const parsed: GetSettingsType = JSON.parse(JSON.stringify(event));
@@ -66,6 +87,12 @@ describe('EventsSent test', () => {
 
     event = new EventsSent().setImage('theimage', 'thecontext');
     expect(JSON.parse(JSON.stringify(event)).payload.target).to.equal(TargetEnum.Both);
+  });
+  it('creates the SetGlobalSettingsEvent', () => {
+    const event = new EventsSent().setGlobalSettings('thecontext', { some: 'payload' });
+    const parsed: { payload: { some: string } } = JSON.parse(JSON.stringify(event));
+    expect(parsed).to.be.jsonSchema(SetGlobalSettingsEvent);
+    expect(parsed.payload.some).to.equal('payload');
   });
   it('creates the SetSettingsEvent', () => {
     const event = new EventsSent().setSettings('thecontext', { some: 'payload' });
