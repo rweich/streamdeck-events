@@ -7,6 +7,8 @@ import {
   SetGlobalSettingsEvent,
   SetSettingsEvent,
   SetStateEvent,
+  ShowAlertEvent,
+  ShowOkEvent,
 } from '@/Events/Sent';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
 
@@ -73,5 +75,13 @@ export default class EventsSent {
       targetEnum = TargetEnum.Software;
     }
     return new SetTitleEvent(title, context, targetEnum, state);
+  }
+
+  public showAlert(context: string): ShowAlertEvent {
+    return new ShowAlertEvent(context);
+  }
+
+  public showOk(context: string): ShowOkEvent {
+    return new ShowOkEvent(context);
   }
 }
