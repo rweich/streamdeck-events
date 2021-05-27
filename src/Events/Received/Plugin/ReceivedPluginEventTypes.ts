@@ -8,6 +8,7 @@ import {
   PropertyInspectorDidAppearEvent,
   PropertyInspectorDidDisappearEvent,
   SendToPluginEvent,
+  SystemDidWakeUpEvent,
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
@@ -26,6 +27,7 @@ export type ReceivedPluginEventTypes =
   | PropertyInspectorDidAppearEvent
   | PropertyInspectorDidDisappearEvent
   | SendToPluginEvent
+  | SystemDidWakeUpEvent
   | TitleParametersDidChangeEvent
   | WillAppearEvent
   | WillDisappearEvent;
