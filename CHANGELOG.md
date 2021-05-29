@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/rweich/streamdeck-events/compare/v1.2.0...v1.3.0) (2021-05-29)
+
+
+### Features
+
+* add Get/SetGlobalSettingsEvent ([d19e25a](https://github.com/rweich/streamdeck-events/commit/d19e25a4ab417d0c7ef2425d1913dbea1718cc62))
+* add SetStateEvent ([b4f136c](https://github.com/rweich/streamdeck-events/commit/b4f136cb130c3a32834ccef372a7f37356861024))
+* add ShowAlert/ShowOkEvent ([ce31347](https://github.com/rweich/streamdeck-events/commit/ce313473be1bf49ab8106d6be34f8e35f480b434))
+* add SwitchToProfileEvent ([4a5b4f0](https://github.com/rweich/streamdeck-events/commit/4a5b4f0fb2a2e05481665c2797e8933415da3a15))
+* add SystemDidWakeUpEvent ([7ee5237](https://github.com/rweich/streamdeck-events/commit/7ee523755e0031ba5042494d9b752b5e2c6f2f0f))
+* add TitleParametersDidChangeEvent ([5f64c11](https://github.com/rweich/streamdeck-events/commit/5f64c114ffb6ab8ca7e1fb3c0d6df4fd07fca10e))
+
 # [1.2.0](https://github.com/rweich/streamdeck-events/compare/v1.1.0...v1.2.0) (2021-05-23)
 
 
