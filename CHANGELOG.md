@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.3.2](https://github.com/rweich/streamdeck-events/compare/v1.3.1...v1.3.2) (2021-08-05)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump tar from 6.1.0 to 6.1.5 ([aee421e](https://github.com/rweich/streamdeck-events/commit/aee421e66483459152a6238e7e016c3c431d49d9))
+
 ### [1.3.1](https://github.com/rweich/streamdeck-events/compare/v1.3.0...v1.3.1) (2021-06-12)
 
 
