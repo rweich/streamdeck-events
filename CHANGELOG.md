@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.3.5](https://github.com/rweich/streamdeck-events/compare/v1.3.4...v1.3.5) (2021-09-15)
+
+
+### Miscellaneous Chores
+
+* update dependencies ([14db6dc](https://github.com/rweich/streamdeck-events/commit/14db6dc7c2184ea457ecfb004c4841564a0cf00a))
+
 ### [1.3.4](https://github.com/rweich/streamdeck-events/compare/v1.3.3...v1.3.4) (2021-09-01)
 
 
