@@ -15,4 +15,8 @@ export default abstract class AbstractKeyEvent extends AbstractReceivedExtendedE
   public get isInMultiAction(): boolean {
     return this.eventPayload.payload.isInMultiAction;
   }
+
+  public get state(): number | undefined {
+    return this.eventPayload.payload.state;
+  }
 }
