@@ -5,6 +5,7 @@ import KeyDownEvent from '@/Events/Received/Plugin/KeyDownEvent';
 import eventInvalidType from '../fixtures/keyDownEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyDownEvent.missing-param.json';
 import eventValid from '../fixtures/keyDownEvent.valid.json';
+import eventValidWithState from '../fixtures/keyDownEvent.valid.withstate.json';
 import { expect } from 'chai';
 
 describe('KeyDownEvent test', () => {
@@ -17,11 +18,16 @@ describe('KeyDownEvent test', () => {
     expect(event.column).to.equal(1);
     expect(event.row).to.equal(3);
     expect(event.isInMultiAction).to.be.false;
+    expect(event.state).to.be.undefined;
   });
   it('should throw a validation error on missing keydown parameters', function () {
     expect(() => new KeyDownEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'context'/);
   });
   it('should throw a validation error on wrong event type', function () {
     expect(() => new KeyDownEvent(eventInvalidType)).to.throw(EventValidationError, /must match pattern "\^keyDown\$"/);
+  });
+  it('should have a state set on a multi state event', function () {
+    const event = new KeyDownEvent(eventValidWithState);
+    expect(event.state).to.equal(1);
   });
 });

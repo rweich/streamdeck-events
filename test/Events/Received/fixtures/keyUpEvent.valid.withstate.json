@@ -1,0 +1,15 @@
+{
+  "action": "some.up.action",
+  "context": "zxcvfsda",
+  "device": "rweqasd",
+  "event": "keyUp",
+  "payload": {
+    "coordinates": {
+      "column": 3,
+      "row": 3
+    },
+    "isInMultiAction": false,
+    "settings": {},
+    "state": 0
+  }
+}
