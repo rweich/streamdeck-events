@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/rweich/streamdeck-events/compare/v1.3.5...v1.4.0) (2021-12-04)
+
+
+### Features
+
+* add state property to key events ([#14](https://github.com/rweich/streamdeck-events/issues/14)) ([c043b20](https://github.com/rweich/streamdeck-events/commit/c043b201189bad728e7533439b8e7a77109c51a9))
+
 ### [1.3.5](https://github.com/rweich/streamdeck-events/compare/v1.3.4...v1.3.5) (2021-09-15)
 
 
