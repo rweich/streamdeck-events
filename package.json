@@ -91,7 +91,6 @@
     ]
   },
   "release": {
-    "extends": "@rweich/semantic-release-config",
-    "branches": "main"
+    "extends": "@rweich/semantic-release-config"
   }
 }
