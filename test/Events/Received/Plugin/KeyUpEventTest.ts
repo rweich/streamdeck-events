@@ -21,6 +21,7 @@ describe('KeyUpEvent test', () => {
     expect(event.row).to.equal(5);
     expect(event.isInMultiAction).to.be.false;
     expect(event.state).to.be.undefined;
+    expect(event.userDesiredState).to.be.undefined;
   });
   it('should create the event when using the correct payload (with state)', function () {
     const event = new KeyUpEvent(eventValidState);
@@ -32,6 +33,7 @@ describe('KeyUpEvent test', () => {
     expect(event.row).to.equal(3);
     expect(event.isInMultiAction).to.be.false;
     expect(event.state).to.equal(0);
+    expect(event.userDesiredState).to.be.undefined;
   });
   it('should create the event when using the correct payload in a multiaction', function () {
     const event = new KeyUpEvent(eventValidMultiaction);
@@ -43,6 +45,7 @@ describe('KeyUpEvent test', () => {
     expect(event.row).to.be.undefined;
     expect(event.isInMultiAction).to.be.true;
     expect(event.state).to.be.undefined;
+    expect(event.userDesiredState).to.equal(0);
   });
   it('should create the event when using the correct payload in a multiaction (with state)', function () {
     const event = new KeyUpEvent(eventValidMultiactionState);
@@ -54,6 +57,7 @@ describe('KeyUpEvent test', () => {
     expect(event.row).to.be.undefined;
     expect(event.isInMultiAction).to.be.true;
     expect(event.state).to.equal(1);
+    expect(event.userDesiredState).to.equal(0);
   });
   it('should throw a validation error on missing keydown parameters', function () {
     expect(() => new KeyUpEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'column'/);
