@@ -19,4 +19,8 @@ export default abstract class AbstractKeyEvent extends AbstractReceivedExtendedE
   public get state(): number | undefined {
     return this.eventPayload.payload.state;
   }
+
+  public get userDesiredState(): number | undefined {
+    return this.eventPayload.payload.userDesiredState;
+  }
 }
