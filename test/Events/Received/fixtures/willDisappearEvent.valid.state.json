@@ -1,0 +1,15 @@
+{
+  "action": "dsaaction",
+  "context": "disacontext",
+  "device": "thedevice",
+  "event": "willDisappear",
+  "payload": {
+    "coordinates": {
+      "column": 5,
+      "row": 3
+    },
+    "isInMultiAction": false,
+    "settings": {},
+    "state": 1
+  }
+}

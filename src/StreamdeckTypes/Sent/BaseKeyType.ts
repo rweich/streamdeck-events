@@ -8,7 +8,7 @@ export const BaseKeyType = Type.Intersect([
   Type.Object({
     event: Type.RegEx(/^keyDown|keyUp$/),
     payload: Type.Object({
-      coordinates: BaseCoordinatesPayloadType,
+      coordinates: Type.Optional(BaseCoordinatesPayloadType),
       isInMultiAction: Type.Boolean(),
       settings: Type.Any(),
       state: Type.Optional(Type.Number({ maximum: 1, minimum: 0 })),

@@ -5,6 +5,9 @@ import WillAppearEvent from '@/Events/Received/Plugin/WillAppearEvent';
 import eventInvalidType from '../fixtures/willAppearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/willAppearEvent.missing-param.json';
 import eventValid from '../fixtures/willAppearEvent.valid.json';
+import eventValidMultiAction from '../fixtures/willAppearEvent.valid.multiaction.json';
+import eventValidMultiActionState from '../fixtures/willAppearEvent.valid.multiaction.state.json';
+import eventValidState from '../fixtures/willAppearEvent.valid.state.json';
 import { expect } from 'chai';
 
 describe('WillAppearEvent test', () => {
@@ -14,6 +17,42 @@ describe('WillAppearEvent test', () => {
     expect(event.action).to.equal('my.willappear.action');
     expect(event.context).to.equal('willappearcontext');
     expect(event.state).to.be.undefined;
+    expect(event.isInMultiAction).to.be.false;
+    expect(event.row).to.equal(0);
+    expect(event.column).to.equal(1);
+    expect(Object.keys(event.settings as Record<string, unknown>)).to.be.length(0);
+  });
+  it('should create the event when using the correct payload (with state)', function () {
+    const event = new WillAppearEvent(eventValidState);
+    expect(event.event).to.equal('willAppear');
+    expect(event.action).to.equal('my.willappear.action');
+    expect(event.context).to.equal('willappearcontext');
+    expect(event.state).to.equal(1);
+    expect(event.isInMultiAction).to.be.false;
+    expect(event.row).to.equal(3);
+    expect(event.column).to.equal(5);
+    expect(Object.keys(event.settings as Record<string, unknown>)).to.be.length(0);
+  });
+  it('should create the event when using the correct multiaction payload', function () {
+    const event = new WillAppearEvent(eventValidMultiAction);
+    expect(event.event).to.equal('willAppear');
+    expect(event.action).to.equal('my.willappear.action');
+    expect(event.context).to.equal('willappearcontext');
+    expect(event.state).to.be.undefined;
+    expect(event.isInMultiAction).to.be.true;
+    expect(event.column).to.be.undefined;
+    expect(event.row).to.be.undefined;
+    expect(Object.keys(event.settings as Record<string, unknown>)).to.be.length(0);
+  });
+  it('should create the event when using the correct multiaction payload (with state)', function () {
+    const event = new WillAppearEvent(eventValidMultiActionState);
+    expect(event.event).to.equal('willAppear');
+    expect(event.action).to.equal('my.willappear.action');
+    expect(event.context).to.equal('willappearcontext');
+    expect(event.state).to.equal(0);
+    expect(event.isInMultiAction).to.be.true;
+    expect(event.column).to.be.undefined;
+    expect(event.row).to.be.undefined;
     expect(Object.keys(event.settings as Record<string, unknown>)).to.be.length(0);
   });
   it('should throw a validation error on missing parameters', function () {

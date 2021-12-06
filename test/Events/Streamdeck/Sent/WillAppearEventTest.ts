@@ -19,8 +19,8 @@ describe('WillAppearEvent test', () => {
     expect(parse.action).to.equal('action312');
     expect(parse.context).to.equal('context312');
     expect(parse.event).to.equal('willAppear');
-    expect(parse.payload.coordinates.column).to.equal(1);
-    expect(parse.payload.coordinates.row).to.equal(1);
+    expect(parse.payload.coordinates?.column).to.equal(1);
+    expect(parse.payload.coordinates?.row).to.equal(1);
     expect(parse.payload.isInMultiAction).to.be.false;
   });
   it('returns the right values for the changed options', () => {
@@ -32,8 +32,8 @@ describe('WillAppearEvent test', () => {
       settings: { bar: 'baz', foo: true },
     });
     const parse: WillAppearType = JSON.parse(JSON.stringify(event));
-    expect(parse.payload.coordinates.column).to.equal(3);
-    expect(parse.payload.coordinates.row).to.equal(4);
+    expect(parse.payload.coordinates?.column).to.equal(3);
+    expect(parse.payload.coordinates?.row).to.equal(4);
     expect(parse.payload.isInMultiAction).to.be.true;
     expect((parse.payload.settings as Record<string, boolean>).foo).to.be.true;
     expect((parse.payload.settings as Record<string, string>).bar).to.equal('baz');

@@ -8,7 +8,7 @@ export const BaseStateType = Type.Object({
   device: Type.String(),
   event: Type.RegEx(/^willAppear|willDisappear|didReceiveSettings$/),
   payload: Type.Object({
-    coordinates: BaseCoordinatesPayloadType,
+    coordinates: Type.Optional(BaseCoordinatesPayloadType),
     isInMultiAction: Type.Boolean(),
     settings: Type.Unknown(),
     state: Type.Optional(Type.Number()),

@@ -5,7 +5,9 @@ import KeyDownEvent from '@/Events/Received/Plugin/KeyDownEvent';
 import eventInvalidType from '../fixtures/keyDownEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyDownEvent.missing-param.json';
 import eventValid from '../fixtures/keyDownEvent.valid.json';
-import eventValidWithState from '../fixtures/keyDownEvent.valid.withstate.json';
+import eventValidMultiaction from '../fixtures/keyDownEvent.valid.multiaction.json';
+import eventValidMultiactionState from '../fixtures/keyDownEvent.valid.multiaction.state.json';
+import eventValidState from '../fixtures/keyDownEvent.valid.state.json';
 import { expect } from 'chai';
 
 describe('KeyDownEvent test', () => {
@@ -20,14 +22,43 @@ describe('KeyDownEvent test', () => {
     expect(event.isInMultiAction).to.be.false;
     expect(event.state).to.be.undefined;
   });
+  it('should create the event when using the correct payload with state', function () {
+    const event = new KeyDownEvent(eventValidState);
+    expect(event.action).to.equal('some.action');
+    expect(event.context).to.equal('ewrwerwerwerwer');
+    expect(event.device).to.equal('xxzxxzxzxzxxzxzxz');
+    expect(event.event).to.equal('keyDown');
+    expect(event.column).to.equal(2);
+    expect(event.row).to.equal(4);
+    expect(event.isInMultiAction).to.be.false;
+    expect(event.state).to.equal(1);
+  });
+  it('should create the event when using the correct payload in a multiaction', function () {
+    const event = new KeyDownEvent(eventValidMultiaction);
+    expect(event.action).to.equal('some.action');
+    expect(event.context).to.equal('ewrwerwerwerwer');
+    expect(event.device).to.equal('xxzxxzxzxzxxzxzxz');
+    expect(event.event).to.equal('keyDown');
+    expect(event.column).to.be.undefined;
+    expect(event.row).to.be.undefined;
+    expect(event.isInMultiAction).to.be.true;
+    expect(event.state).to.be.undefined;
+  });
+  it('should create the event when using the correct payload in a multiaction (with state)', function () {
+    const event = new KeyDownEvent(eventValidMultiactionState);
+    expect(event.action).to.equal('some.action');
+    expect(event.context).to.equal('ewrwerwerwerwer');
+    expect(event.device).to.equal('xxzxxzxzxzxxzxzxz');
+    expect(event.event).to.equal('keyDown');
+    expect(event.column).to.be.undefined;
+    expect(event.row).to.be.undefined;
+    expect(event.isInMultiAction).to.be.true;
+    expect(event.state).to.equal(1);
+  });
   it('should throw a validation error on missing keydown parameters', function () {
     expect(() => new KeyDownEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'context'/);
   });
   it('should throw a validation error on wrong event type', function () {
     expect(() => new KeyDownEvent(eventInvalidType)).to.throw(EventValidationError, /must match pattern "\^keyDown\$"/);
-  });
-  it('should have a state set on a multi state event', function () {
-    const event = new KeyDownEvent(eventValidWithState);
-    expect(event.state).to.equal(1);
   });
 });

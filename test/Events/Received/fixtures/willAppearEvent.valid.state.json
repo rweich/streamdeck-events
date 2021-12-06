@@ -1,0 +1,15 @@
+{
+  "action": "my.willappear.action",
+  "context": "willappearcontext",
+  "device": "dev",
+  "event": "willAppear",
+  "payload": {
+    "coordinates": {
+      "column": 5,
+      "row": 3
+    },
+    "isInMultiAction": false,
+    "settings": {},
+    "state": 1
+  }
+}
