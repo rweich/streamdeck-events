@@ -1,0 +1,11 @@
+{
+  "action": "some.up.action",
+  "context": "zxcvfsda",
+  "device": "rweqasd",
+  "event": "keyUp",
+  "payload": {
+    "isInMultiAction": true,
+    "settings": {},
+    "userDesiredState": 0
+  }
+}

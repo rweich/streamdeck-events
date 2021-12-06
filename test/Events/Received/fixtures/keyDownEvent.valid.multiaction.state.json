@@ -4,12 +4,9 @@
   "device": "xxzxxzxzxzxxzxzxz",
   "event": "keyDown",
   "payload": {
-    "coordinates": {
-      "column": 3,
-      "row": 3
-    },
-    "isInMultiAction": false,
+    "isInMultiAction": true,
     "settings": {},
-    "state": 1
+    "state": 1,
+    "userDesiredState": 0
   }
 }

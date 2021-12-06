@@ -1,0 +1,11 @@
+{
+  "action": "aaa.action",
+  "context": "asdf",
+  "device": "fasd",
+  "event": "willDisappear",
+  "payload": {
+    "isInMultiAction": true,
+    "settings": {},
+    "state": 0
+  }
+}

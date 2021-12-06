@@ -8,12 +8,12 @@ export default abstract class AbstractStateEvent extends AbstractReceivedExtende
     return this.eventPayload.payload.settings;
   }
 
-  public get row(): number {
-    return this.eventPayload.payload.coordinates.row;
+  public get row(): number | undefined {
+    return this.eventPayload.payload.coordinates?.row;
   }
 
-  public get column(): number {
-    return this.eventPayload.payload.coordinates.column;
+  public get column(): number | undefined {
+    return this.eventPayload.payload.coordinates?.column;
   }
 
   public get isInMultiAction(): boolean {

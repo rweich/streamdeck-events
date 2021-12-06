@@ -1,0 +1,11 @@
+{
+  "action": "some.action",
+  "context": "ewrwerwerwerwer",
+  "device": "xxzxxzxzxzxxzxzxz",
+  "event": "keyDown",
+  "payload": {
+    "isInMultiAction": true,
+    "settings": {},
+    "userDesiredState": 0
+  }
+}

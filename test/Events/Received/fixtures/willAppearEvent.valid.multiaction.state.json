@@ -1,0 +1,11 @@
+{
+  "action": "my.willappear.action",
+  "context": "willappearcontext",
+  "device": "dev",
+  "event": "willAppear",
+  "payload": {
+    "isInMultiAction": true,
+    "settings": {},
+    "state": 0
+  }
+}
