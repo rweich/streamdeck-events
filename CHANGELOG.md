@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/rweich/streamdeck-events/compare/v1.4.0...v2.0.0) (2021-12-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* the row/column props in keyup/keydown,
+willappear/willdisappear and didreceivesettings events might be undefined now
+
+### Features
+
+* expose userdesiredstate prop in keyevents ([#14](https://github.com/rweich/streamdeck-events/issues/14)) ([9c7a5b6](https://github.com/rweich/streamdeck-events/commit/9c7a5b6dacad00ebb8ee1e2b6ad5fb9ecf101e3f))
+
+
+### Bug Fixes
+
+* wrong event specs for multiactions ([c8b1968](https://github.com/rweich/streamdeck-events/commit/c8b196855ed2a7c12714c0d447a0800aecce65d6))
+
 ## [1.4.0](https://github.com/rweich/streamdeck-events/compare/v1.3.5...v1.4.0) (2021-12-04)
 
 
