@@ -1,5 +1,6 @@
-import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 import { TitleParametersDidChangeType } from '@/StreamdeckTypes/Sent';
+
+import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 
 export default class TitleParametersDidChangeEvent extends AbstractReceivedExtendedEvent {
   public readonly event = 'titleParametersDidChange';

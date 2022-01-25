@@ -1,10 +1,10 @@
 import 'mocha';
 
 import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
 
 import SetGlobalSettingsEvent from '@/Events/Sent/SetGlobalSettingsEvent';
 import { SetGlobalSettingsType } from '@/StreamdeckTypes/Received';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 

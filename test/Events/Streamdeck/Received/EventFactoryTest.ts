@@ -1,3 +1,7 @@
+import { expect } from 'chai';
+
+import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
+import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 import {
   EventFactory,
   GetGlobalSettingsEvent,
@@ -17,8 +21,6 @@ import {
   SwitchToProfileEvent,
 } from '@/Events/Streamdeck/Received';
 
-import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
-import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 import eventGetGlobalSettings from './fixtures/getGlobalSettingsEvent.valid.json';
 import eventGetSettings from './fixtures/getSettingsEvent.valid.json';
 import eventLogMessage from './fixtures/logMessageEvent.valid.json';
@@ -34,7 +36,6 @@ import eventSetTitle from './fixtures/setTitleEvent.valid.json';
 import eventShowAlert from './fixtures/showAlertEvent.valid.json';
 import eventShowOk from './fixtures/showOkEvent.valid.json';
 import eventSwitchToProfile from './fixtures/switchToProfileEvent.valid.json';
-import { expect } from 'chai';
 
 describe('EventFactory test', () => {
   it('throws an error if no event type is specified', () => {

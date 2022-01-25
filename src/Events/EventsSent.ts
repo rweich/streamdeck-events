@@ -12,7 +12,6 @@ import {
   SwitchToProfileEvent,
 } from '@/Events/Sent';
 import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
-
 import { SendToPluginEvent } from '@/Events/Sent/PropertyInspector';
 
 type TargetType = 'both' | 'hardware' | 'software';

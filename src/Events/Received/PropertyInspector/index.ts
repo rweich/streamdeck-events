@@ -1,2 +1,2 @@
-export { default as SendToPropertyInspectorEvent } from './SendToPropertyInspectorEvent';
 export { ReceivedPropertyInspectorEventTypes } from './ReceivedPropertyInspectorEventTypes';
+export { default as SendToPropertyInspectorEvent } from './SendToPropertyInspectorEvent';

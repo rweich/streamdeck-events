@@ -1,3 +1,10 @@
+import { ReceivedPluginEventTypes } from '@/Events/Received/Plugin/ReceivedPluginEventTypes';
+import { ReceivedPropertyInspectorEventTypes, SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
+
+import DidReceiveGlobalSettingsEvent from './DidReceiveGlobalSettingsEvent';
+import DidReceiveSettingsEvent from './DidReceiveSettingsEvent';
+import MissingEventInPayloadError from './Exception/MissingEventInPayloadError';
+import UnknownEventError from './Exception/UnknownEventError';
 import {
   ApplicationDidLaunchEvent,
   ApplicationDidTerminateEvent,
@@ -13,13 +20,6 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from './Plugin';
-import { ReceivedPropertyInspectorEventTypes, SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
-
-import DidReceiveGlobalSettingsEvent from './DidReceiveGlobalSettingsEvent';
-import DidReceiveSettingsEvent from './DidReceiveSettingsEvent';
-import MissingEventInPayloadError from './Exception/MissingEventInPayloadError';
-import { ReceivedPluginEventTypes } from '@/Events/Received/Plugin/ReceivedPluginEventTypes';
-import UnknownEventError from './Exception/UnknownEventError';
 
 type EventNames = ReceivedPluginEventTypes['event'] | ReceivedPropertyInspectorEventTypes['event'];
 

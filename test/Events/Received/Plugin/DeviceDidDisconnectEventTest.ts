@@ -1,11 +1,13 @@
 import 'mocha';
 
-import DeviceDidDisconnectEvent from '@/Events/Received/Plugin/DeviceDidDisconnectEvent';
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import DeviceDidDisconnectEvent from '@/Events/Received/Plugin/DeviceDidDisconnectEvent';
+
 import eventInvalidType from '../fixtures/deviceDidDisconnectEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/deviceDidDisconnectEvent.missing-param.json';
 import eventValid from '../fixtures/deviceDidDisconnectEvent.valid.json';
-import { expect } from 'chai';
 
 describe('DeviceDidDisconnectEvent test', () => {
   it('should create the event when using the correct payload', function () {

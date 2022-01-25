@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { GetGlobalSettingsEvent } from '@/Events/Streamdeck/Received';
+
 import eventInvalidType from './fixtures/getGlobalSettingsEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/getGlobalSettingsEvent.missing-param.json';
 import eventValid from './fixtures/getGlobalSettingsEvent.valid.json';
-import { expect } from 'chai';
 
 describe('GetGlobalSettingsEvent Test', () => {
   it('should create the event when using the correct payload', function () {

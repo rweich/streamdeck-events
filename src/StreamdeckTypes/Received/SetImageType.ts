@@ -1,5 +1,6 @@
-import { BaseSetterPayloadType, BaseSetterType } from '@/StreamdeckTypes/Received/BaseSetterType';
 import { Static, Type } from '@sinclair/typebox';
+
+import { BaseSetterPayloadType, BaseSetterType } from '@/StreamdeckTypes/Received/BaseSetterType';
 
 export const SetImageType = Type.Intersect([
   Type.Omit(BaseSetterType, ['event', 'payload']),

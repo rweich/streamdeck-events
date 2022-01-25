@@ -1,10 +1,10 @@
 import 'mocha';
 
 import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
 
 import ShowAlertEvent from '@/Events/Sent/ShowAlertEvent';
 import { ShowAlertType } from '@/StreamdeckTypes/Received';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 

@@ -1,8 +1,9 @@
+import { Static, TSchema } from '@sinclair/typebox';
 import Ajv from 'ajv';
-import EventValidationError from './Exception/EventValidationError';
-import { Static } from '@sinclair/typebox';
 
-export default function assertType<T extends Record<string, unknown>>(
+import EventValidationError from './Exception/EventValidationError';
+
+export default function assertType<T extends TSchema>(
   type: T,
   payload: unknown,
 ): asserts payload is Static<typeof type> {

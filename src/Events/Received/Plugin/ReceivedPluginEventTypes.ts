@@ -1,3 +1,4 @@
+import { ReceivedEventTypes } from '@/Events/Received';
 import {
   ApplicationDidLaunchEvent,
   ApplicationDidTerminateEvent,
@@ -13,8 +14,6 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from '@/Events/Received/Plugin';
-
-import { ReceivedEventTypes } from '@/Events/Received';
 
 export type ReceivedPluginEventTypes =
   | ReceivedEventTypes

@@ -1,5 +1,11 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
+import { DidReceiveGlobalSettingsEvent, DidReceiveSettingsEvent } from '@/Events/Received';
+import EventFactory from '@/Events/Received/EventFactory';
+import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
+import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 import {
   ApplicationDidLaunchEvent,
   ApplicationDidTerminateEvent,
@@ -15,29 +21,24 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from '@/Events/Received/Plugin';
-import { DidReceiveGlobalSettingsEvent, DidReceiveSettingsEvent } from '@/Events/Received';
-
-import EventFactory from '@/Events/Received/EventFactory';
-import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
 import { SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
-import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
+
 import eventAppDidLaunch from './fixtures/applicationDidLaunchEvent.valid.json';
 import eventAppDidTerminate from './fixtures/applicationDidTerminateEvent.valid.json';
-import eventDeviceDisconnect from './fixtures/deviceDidDisconnectEvent.valid.json';
 import eventDeviceconnect from './fixtures/deviceDidConnectEvent.valid.json';
+import eventDeviceDisconnect from './fixtures/deviceDidDisconnectEvent.valid.json';
 import eventDidReceiveGlobalSettings from './fixtures/didReceiveGlobalSettingsEvent.valid.json';
 import eventDidReceiveSettings from './fixtures/didReceiveSettingsEvent.valid.json';
 import eventKeydown from './fixtures/keyDownEvent.valid.json';
 import eventKeyup from './fixtures/keyUpEvent.valid.json';
 import eventPIAppear from './fixtures/propertyInspectorDidAppearEvent.valid.json';
 import eventPIDisappear from './fixtures/propertyInspectorDidDisappearEvent.valid.json';
-import eventSendtoPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
 import eventSendtoplugin from './fixtures/sendToPluginEvent.valid.json';
+import eventSendtoPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
 import eventSystemDidWakeUp from './fixtures/systemDidWakeUpEvent.valid.json';
 import eventTitleparamchange from './fixtures/titleParametersDidChangeEvent.valid.json';
 import eventWillappear from './fixtures/willAppearEvent.valid.json';
 import eventWilldisappear from './fixtures/willDisappearEvent.valid.json';
-import { expect } from 'chai';
 
 describe('EventFactory test', () => {
   it('throws an error if no event type is specified', () => {

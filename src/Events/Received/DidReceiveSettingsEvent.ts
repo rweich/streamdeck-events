@@ -1,5 +1,6 @@
-import AbstractStateEvent from './Plugin/AbstractStateEvent';
 import { DidReceiveSettingsType } from '@/StreamdeckTypes/Sent';
+
+import AbstractStateEvent from './Plugin/AbstractStateEvent';
 
 export default class DidReceiveSettingsEvent extends AbstractStateEvent {
   public readonly event = 'didReceiveSettings';

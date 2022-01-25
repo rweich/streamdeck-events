@@ -1,5 +1,7 @@
-import { BaseEventType } from '@/StreamdeckTypes/Sent/BaseEventType';
 import { Static } from '@sinclair/typebox';
+
+import { BaseEventType } from '@/StreamdeckTypes/Sent/BaseEventType';
+
 import assertType from './AssertType';
 
 export default abstract class AbstractReceivedBaseEvent {

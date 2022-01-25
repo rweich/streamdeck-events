@@ -1,5 +1,6 @@
-import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 import { BaseKeyType } from '@/StreamdeckTypes/Sent/BaseKeyType';
+
+import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 
 export default abstract class AbstractKeyEvent extends AbstractReceivedExtendedEvent {
   protected readonly eventPayload!: BaseKeyType;

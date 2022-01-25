@@ -1,14 +1,16 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import DidReceiveSettingsEvent from '@/Events/Received/DidReceiveSettingsEvent';
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+
 import eventInvalidType from './fixtures/didReceiveSettingsEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/didReceiveSettingsEvent.missing-param.json';
 import eventValid from './fixtures/didReceiveSettingsEvent.valid.json';
 import eventValidMultiaction from './fixtures/didReceiveSettingsEvent.valid.multiaction.json';
 import eventValidMultiactionState from './fixtures/didReceiveSettingsEvent.valid.multiaction.state.json';
 import eventValidState from './fixtures/didReceiveSettingsEvent.valid.state.json';
-import { expect } from 'chai';
 
 describe('DidReceiveSettingsEvent test', () => {
   it('should create the event when using the correct payload', function () {

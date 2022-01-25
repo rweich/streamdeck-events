@@ -1,3 +1,5 @@
+import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
+import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 import {
   GetGlobalSettingsEvent,
   GetSettingsEvent,
@@ -15,10 +17,7 @@ import {
   ShowOkEvent,
   SwitchToProfileEvent,
 } from '@/Events/Streamdeck/Received';
-
-import MissingEventInPayloadError from '@/Events/Received/Exception/MissingEventInPayloadError';
 import { ReceivedEventTypes } from '@/Events/Streamdeck/Received/ReceivedEventTypes';
-import UnknownEventError from '@/Events/Received/Exception/UnknownEventError';
 
 type EventNames = Exclude<ReceivedEventTypes['event'], 'register'>;
 

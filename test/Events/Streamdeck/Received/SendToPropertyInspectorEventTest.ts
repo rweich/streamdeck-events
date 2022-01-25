@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { SendToPropertyInspectorEvent } from '@/Events/Streamdeck/Received';
+
 import eventInvalidType from './fixtures/sendToPropertyInspectorEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/sendToPropertyInspectorEvent.missing-param.json';
 import eventValid from './fixtures/sendToPropertyInspectorEvent.valid.json';
-import { expect } from 'chai';
 
 describe('SendToPropertyInspectorEvent Test', () => {
   it('should create the event when using the correct payload', function () {

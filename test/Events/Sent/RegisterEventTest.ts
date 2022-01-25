@@ -1,10 +1,10 @@
 import 'mocha';
 
+import { Type } from '@sinclair/typebox';
 import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
 
 import RegisterEvent from '@/Events/Sent/RegisterEvent';
-import { Type } from '@sinclair/typebox';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 

@@ -1,11 +1,11 @@
 import 'mocha';
 
 import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
 
+import { TargetEnum } from '@/Events/Sent/Plugin';
 import SetTitleEvent from '@/Events/Sent/Plugin/SetTitleEvent';
 import { SetTitleType } from '@/StreamdeckTypes/Received';
-import { TargetEnum } from '@/Events/Sent/Plugin';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 
