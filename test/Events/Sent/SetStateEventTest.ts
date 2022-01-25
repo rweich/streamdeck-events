@@ -1,10 +1,10 @@
 import 'mocha';
 
 import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
 
 import SetStateEvent from '@/Events/Sent/SetStateEvent';
 import { SetStateType } from '@/StreamdeckTypes/Received';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 

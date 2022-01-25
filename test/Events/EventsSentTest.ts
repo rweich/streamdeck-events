@@ -1,5 +1,10 @@
 import 'mocha';
 
+import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
+
+import { TargetEnum } from '@/Events/Sent/Plugin';
+import { EventsSent } from '@/index';
 import {
   GetGlobalSettingsType,
   GetSettingsType,
@@ -17,11 +22,6 @@ import {
   ShowOkType,
   SwitchToProfileType,
 } from '@/StreamdeckTypes/Received';
-import { expect, use } from 'chai';
-
-import { EventsSent } from '@/index';
-import { TargetEnum } from '@/Events/Sent/Plugin';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 

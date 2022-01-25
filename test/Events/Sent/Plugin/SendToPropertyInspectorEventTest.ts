@@ -1,10 +1,10 @@
 import 'mocha';
 
 import { expect, use } from 'chai';
+import jsonschema from 'chai-json-schema';
 
 import SendToPropertyInspectorEvent from '@/Events/Sent/Plugin/SendToPropertyInspectorEvent';
 import { SendToPropertyInspectorType } from '@/StreamdeckTypes/Received';
-import jsonschema from 'chai-json-schema';
 
 use(jsonschema);
 

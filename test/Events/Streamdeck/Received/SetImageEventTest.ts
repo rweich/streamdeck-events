@@ -1,10 +1,12 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
-import { SetImageEvent } from '@/Events/Streamdeck/Received';
 import { TargetEnum } from '@/Events/Sent/Plugin';
+import { SetImageEvent } from '@/Events/Streamdeck/Received';
+
 import eventInvalidType from './fixtures/setImageEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/setImageEvent.missing-param.json';
 import eventValid from './fixtures/setImageEvent.valid.json';
-import { expect } from 'chai';
 
 describe('SetImageEvent Test', () => {
   it('should create the event when using the correct payload', function () {

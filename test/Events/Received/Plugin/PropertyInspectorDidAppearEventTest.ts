@@ -1,11 +1,13 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import PropertyInspectorDidAppearEvent from '@/Events/Received/Plugin/PropertyInspectorDidAppearEvent';
+
 import eventInvalidType from '../fixtures/propertyInspectorDidAppearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/propertyInspectorDidAppearEvent.missing-param.json';
 import eventValid from '../fixtures/propertyInspectorDidAppearEvent.valid.json';
-import { expect } from 'chai';
 
 describe('PropertyInspectorDidAppearEvent test', () => {
   it('should create the event when using the correct payload', function () {

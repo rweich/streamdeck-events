@@ -1,11 +1,13 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import SendToPluginEvent from '@/Events/Received/Plugin/SendToPluginEvent';
+
 import eventInvalidType from '../fixtures/sendToPluginEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/sendToPluginEvent.missing-param.json';
 import eventValid from '../fixtures/sendToPluginEvent.valid.json';
-import { expect } from 'chai';
 
 describe('SendToPluginEvent test', () => {
   it('should create the event when using the correct payload', function () {

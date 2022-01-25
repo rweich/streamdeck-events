@@ -1,5 +1,6 @@
-import AbstractKeyEvent from './AbstractKeyEvent';
 import { KeyDownEventType } from '@/StreamdeckTypes/Sent';
+
+import AbstractKeyEvent from './AbstractKeyEvent';
 
 export default class KeyDownEvent extends AbstractKeyEvent {
   public readonly event = 'keyDown';

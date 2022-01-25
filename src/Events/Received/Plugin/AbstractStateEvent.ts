@@ -1,5 +1,6 @@
-import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 import { BaseStateType } from '@/StreamdeckTypes/Sent/BaseStateType';
+
+import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 
 export default abstract class AbstractStateEvent extends AbstractReceivedExtendedEvent {
   protected eventPayload!: BaseStateType;

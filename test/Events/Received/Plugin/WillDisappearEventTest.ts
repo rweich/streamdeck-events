@@ -1,14 +1,16 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import WillDisappearEvent from '@/Events/Received/Plugin/WillDisappearEvent';
+
 import eventInvalidType from '../fixtures/willDisappearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/willDisappearEvent.missing-param.json';
 import eventValid from '../fixtures/willDisappearEvent.valid.json';
 import eventValidMultiaction from '../fixtures/willDisappearEvent.valid.multiaction.json';
 import eventValidMultiactionState from '../fixtures/willDisappearEvent.valid.multiaction.state.json';
 import eventValidState from '../fixtures/willDisappearEvent.valid.state.json';
-import { expect } from 'chai';
 
 describe('WillDisappearEvent test', () => {
   it('should create the event when using the correct payload', function () {

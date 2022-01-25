@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { ShowAlertEvent } from '@/Events/Streamdeck/Received';
+
 import eventInvalidType from './fixtures/showAlertEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/showAlertEvent.missing-param.json';
 import eventValid from './fixtures/showAlertEvent.valid.json';
-import { expect } from 'chai';
 
 describe('ShowAlertEvent Test', () => {
   it('should create the event when using the correct payload', function () {

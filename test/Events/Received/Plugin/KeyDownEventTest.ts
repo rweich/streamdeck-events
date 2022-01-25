@@ -1,14 +1,16 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import KeyDownEvent from '@/Events/Received/Plugin/KeyDownEvent';
+
 import eventInvalidType from '../fixtures/keyDownEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyDownEvent.missing-param.json';
 import eventValid from '../fixtures/keyDownEvent.valid.json';
 import eventValidMultiaction from '../fixtures/keyDownEvent.valid.multiaction.json';
 import eventValidMultiactionState from '../fixtures/keyDownEvent.valid.multiaction.state.json';
 import eventValidState from '../fixtures/keyDownEvent.valid.state.json';
-import { expect } from 'chai';
 
 describe('KeyDownEvent test', () => {
   it('should create the event when using the correct payload', function () {

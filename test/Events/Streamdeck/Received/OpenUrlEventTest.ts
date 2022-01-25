@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import OpenUrlEvent from '@/Events/Streamdeck/Received/OpenUrlEvent';
+
 import eventInvalidType from './fixtures/openUrlEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/openUrlEvent.missing-param.json';
 import eventValid from './fixtures/openUrlEvent.valid.json';
-import { expect } from 'chai';
 
 describe('OpenUrlEvent Test', () => {
   it('should create the event when using the correct payload', function () {

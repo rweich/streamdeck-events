@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { RegisterEvent } from '@/Events/Streamdeck/Received';
+
 import eventInvalidType from './fixtures/registerEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/registerEvent.missing-param.json';
 import eventValid from './fixtures/registerEvent.valid.json';
-import { expect } from 'chai';
 
 describe('RegisterEvent Test', () => {
   it('should create the event when using the correct payload', function () {

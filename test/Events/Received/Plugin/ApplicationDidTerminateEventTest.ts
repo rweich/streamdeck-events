@@ -1,11 +1,13 @@
 import 'mocha';
 
-import ApplicationDidTerminateEvent from '@/Events/Received/Plugin/ApplicationDidTerminateEvent';
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import ApplicationDidTerminateEvent from '@/Events/Received/Plugin/ApplicationDidTerminateEvent';
+
 import eventInvalidType from '../fixtures/applicationDidTerminateEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/applicationDidTerminateEvent.missing-param.json';
 import eventValid from '../fixtures/applicationDidTerminateEvent.valid.json';
-import { expect } from 'chai';
 
 describe('ApplicationDidTerminateEvent test', () => {
   it('should create the event when using the correct payload', function () {

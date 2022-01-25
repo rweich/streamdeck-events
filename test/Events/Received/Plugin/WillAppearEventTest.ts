@@ -1,14 +1,16 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import WillAppearEvent from '@/Events/Received/Plugin/WillAppearEvent';
+
 import eventInvalidType from '../fixtures/willAppearEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/willAppearEvent.missing-param.json';
 import eventValid from '../fixtures/willAppearEvent.valid.json';
 import eventValidMultiAction from '../fixtures/willAppearEvent.valid.multiaction.json';
 import eventValidMultiActionState from '../fixtures/willAppearEvent.valid.multiaction.state.json';
 import eventValidState from '../fixtures/willAppearEvent.valid.state.json';
-import { expect } from 'chai';
 
 describe('WillAppearEvent test', () => {
   it('should create the event when using the correct payload', function () {

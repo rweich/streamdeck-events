@@ -1,5 +1,6 @@
-import AbstractApplicationEvent from './AbstractApplicationEvent';
 import { ApplicationDidTerminateType } from '@/StreamdeckTypes/Sent';
+
+import AbstractApplicationEvent from './AbstractApplicationEvent';
 
 export default class ApplicationDidTerminateEvent extends AbstractApplicationEvent {
   public readonly event = 'applicationDidTerminate';

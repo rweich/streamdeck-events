@@ -1,11 +1,13 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import SystemDidWakeUpEvent from '@/Events/Received/Plugin/SystemDidWakeUpEvent';
+
 import eventInvalidType from '../fixtures/systemDidWakeUpEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/systemDidWakeUpEvent.missing-param.json';
 import eventValid from '../fixtures/systemDidWakeUpEvent.valid.json';
-import { expect } from 'chai';
 
 describe('SystemDidWakeUpEvent test', () => {
   it('should create the event when using the correct payload', function () {

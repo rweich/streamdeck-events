@@ -1,11 +1,13 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import TitleParametersDidChangeEvent from '@/Events/Received/Plugin/TitleParametersDidChangeEvent';
+
 import eventInvalidType from '../fixtures/titleParametersDidChangeEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/titleParametersDidChangeEvent.missing-param.json';
 import eventValid from '../fixtures/titleParametersDidChangeEvent.valid.json';
-import { expect } from 'chai';
 
 describe('TitleParametersDidChangeEvent test', () => {
   it('should create the event when using the correct payload', function () {

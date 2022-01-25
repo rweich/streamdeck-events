@@ -1,5 +1,6 @@
-import AbstractApplicationEvent from './AbstractApplicationEvent';
 import { ApplicationDidLaunchType } from '@/StreamdeckTypes/Sent';
+
+import AbstractApplicationEvent from './AbstractApplicationEvent';
 
 export default class ApplicationDidLaunchEvent extends AbstractApplicationEvent {
   public readonly event = 'applicationDidLaunch';

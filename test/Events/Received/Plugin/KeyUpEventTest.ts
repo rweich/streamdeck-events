@@ -1,14 +1,16 @@
 import 'mocha';
 
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import KeyUpEvent from '@/Events/Received/Plugin/KeyUpEvent';
+
 import eventInvalidType from '../fixtures/keyUpEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/keyUpEvent.missing-param.json';
 import eventValid from '../fixtures/keyUpEvent.valid.json';
 import eventValidMultiaction from '../fixtures/keyUpEvent.valid.multiaction.json';
 import eventValidMultiactionState from '../fixtures/keyUpEvent.valid.multiaction.state.json';
 import eventValidState from '../fixtures/keyUpEvent.valid.state.json';
-import { expect } from 'chai';
 
 describe('KeyUpEvent test', () => {
   it('should create the event when using the correct payload', function () {

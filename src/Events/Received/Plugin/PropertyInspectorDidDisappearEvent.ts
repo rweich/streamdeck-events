@@ -1,5 +1,6 @@
-import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 import { PropertyInspectorDidDisppearType } from '@/StreamdeckTypes/Sent';
+
+import AbstractReceivedExtendedEvent from '../AbstractReceivedExtendedEvent';
 
 export default class PropertyInspectorDidDisappearEvent extends AbstractReceivedExtendedEvent {
   public readonly event = 'propertyInspectorDidDisappear';

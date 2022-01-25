@@ -1,12 +1,14 @@
 import 'mocha';
 
-import DeviceDidConnectEvent from '@/Events/Received/Plugin/DeviceDidConnectEvent';
-import { DeviceType } from '@/Events/Received/Plugin';
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
+import { DeviceType } from '@/Events/Received/Plugin';
+import DeviceDidConnectEvent from '@/Events/Received/Plugin/DeviceDidConnectEvent';
+
 import eventInvalidType from '../fixtures/deviceDidConnectEvent.invalid-eventtype.json';
 import eventMissingParameter from '../fixtures/deviceDidConnectEvent.missing-param.json';
 import eventValid from '../fixtures/deviceDidConnectEvent.valid.json';
-import { expect } from 'chai';
 
 describe('DeviceDidConnectEvent test', () => {
   it('should create the event when using the correct payload', function () {

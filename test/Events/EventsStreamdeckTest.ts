@@ -1,12 +1,13 @@
 import 'mocha';
 
 import { expect, use } from 'chai';
-
-import { EventsStreamdeck } from '@/index';
-import { ShowOkEvent } from '@/Events/Streamdeck/Received';
-import { WillAppearType } from '@/StreamdeckTypes/Sent';
-import eventShowOk from './Streamdeck/Received/fixtures/showOkEvent.valid.json';
 import jsonschema from 'chai-json-schema';
+
+import { ShowOkEvent } from '@/Events/Streamdeck/Received';
+import { EventsStreamdeck } from '@/index';
+import { WillAppearType } from '@/StreamdeckTypes/Sent';
+
+import eventShowOk from './Streamdeck/Received/fixtures/showOkEvent.valid.json';
 
 use(jsonschema);
 

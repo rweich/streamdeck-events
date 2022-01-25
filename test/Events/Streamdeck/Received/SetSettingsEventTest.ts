@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { SetSettingsEvent } from '@/Events/Streamdeck/Received';
+
 import eventInvalidType from './fixtures/setSettingsEvent.invalid-eventtype.json';
 import eventMissingParameter from './fixtures/setSettingsEvent.missing-param.json';
 import eventValid from './fixtures/setSettingsEvent.valid.json';
-import { expect } from 'chai';
 
 describe('SetSettingsEvent Test', () => {
   it('should create the event when using the correct payload', function () {
