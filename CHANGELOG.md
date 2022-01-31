@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/rweich/streamdeck-events/compare/v2.0.0...v3.0.0) (2022-01-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* the minimum required version of node is now v14.17
+
+### Bug Fixes
+
+* linting and test errors ([bdf9604](https://github.com/rweich/streamdeck-events/commit/bdf9604fef19ce02ac81a09d14c049630180aaa4))
+
+
+### Miscellaneous Chores
+
+* drop support for node v12 and v15 ([353f05d](https://github.com/rweich/streamdeck-events/commit/353f05df210e95b1de51b62ef3473079b61fbefb))
+* update dependencies (major) ([4fa8c53](https://github.com/rweich/streamdeck-events/commit/4fa8c53724a161e35c5ae4ed0f2a5e054f859312))
+
 ## [2.0.0](https://github.com/rweich/streamdeck-events/compare/v1.4.0...v2.0.0) (2021-12-07)
 
 
