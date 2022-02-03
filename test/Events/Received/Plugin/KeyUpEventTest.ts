@@ -10,6 +10,7 @@ import eventMissingParameter from '../fixtures/keyUpEvent.missing-param.json';
 import eventValid from '../fixtures/keyUpEvent.valid.json';
 import eventValidMultiaction from '../fixtures/keyUpEvent.valid.multiaction.json';
 import eventValidMultiactionState from '../fixtures/keyUpEvent.valid.multiaction.state.json';
+import eventValidStateIs2 from '../fixtures/keyUpEvent.valid.state.is2.json';
 import eventValidState from '../fixtures/keyUpEvent.valid.state.json';
 
 describe('KeyUpEvent test', () => {
@@ -60,6 +61,18 @@ describe('KeyUpEvent test', () => {
     expect(event.isInMultiAction).to.be.true;
     expect(event.state).to.equal(1);
     expect(event.userDesiredState).to.equal(0);
+  });
+  it('should allow the state to be >= 1', function () {
+    const event = new KeyUpEvent(eventValidStateIs2);
+    expect(event.action).to.equal('dev.com.test');
+    expect(event.context).to.equal('fasdasdf');
+    expect(event.device).to.equal('rweqqwer');
+    expect(event.event).to.equal('keyUp');
+    expect(event.column).to.equal(2);
+    expect(event.row).to.equal(2);
+    expect(event.isInMultiAction).to.be.false;
+    expect(event.state).to.equal(2);
+    expect(event.userDesiredState).to.be.undefined;
   });
   it('should throw a validation error on missing keydown parameters', function () {
     expect(() => new KeyUpEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'column'/);

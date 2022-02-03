@@ -1,0 +1,15 @@
+{
+  "action": "dev.com.test",
+  "context": "fasdasdf",
+  "device": "rweqqwer",
+  "event": "keyUp",
+  "payload": {
+    "coordinates": {
+      "column": 2,
+      "row": 2
+    },
+    "isInMultiAction": false,
+    "settings": {},
+    "state": 2
+  }
+}
