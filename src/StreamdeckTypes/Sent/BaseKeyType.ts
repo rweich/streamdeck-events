@@ -11,7 +11,7 @@ export const BaseKeyType = Type.Intersect([
       coordinates: Type.Optional(BaseCoordinatesPayloadType),
       isInMultiAction: Type.Boolean(),
       settings: Type.Any(),
-      state: Type.Optional(Type.Number({ maximum: 1, minimum: 0 })),
+      state: Type.Optional(Type.Number({ minimum: 0 })),
       userDesiredState: Type.Optional(Type.Number({ maximum: 1, minimum: 0 })),
     }),
   }),
