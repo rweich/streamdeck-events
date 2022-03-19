@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.0](https://github.com/rweich/streamdeck-events/compare/v3.0.1...v3.1.0) (2022-03-19)
+
+
+### Features
+
+* expose settings on key-events ([#21](https://github.com/rweich/streamdeck-events/issues/21)) ([249a39c](https://github.com/rweich/streamdeck-events/commit/249a39cfa761fd87a63849063045055d92afee3d))
+
 ### [3.0.1](https://github.com/rweich/streamdeck-events/compare/v3.0.0...v3.0.1) (2022-02-03)
 
 
