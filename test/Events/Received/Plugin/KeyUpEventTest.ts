@@ -10,6 +10,7 @@ import eventMissingParameter from '../fixtures/keyUpEvent.missing-param.json';
 import eventValid from '../fixtures/keyUpEvent.valid.json';
 import eventValidMultiaction from '../fixtures/keyUpEvent.valid.multiaction.json';
 import eventValidMultiactionState from '../fixtures/keyUpEvent.valid.multiaction.state.json';
+import eventValidSettings from '../fixtures/keyUpEvent.valid.settings.json';
 import eventValidStateIs2 from '../fixtures/keyUpEvent.valid.state.is2.json';
 import eventValidState from '../fixtures/keyUpEvent.valid.state.json';
 
@@ -73,6 +74,22 @@ describe('KeyUpEvent test', () => {
     expect(event.isInMultiAction).to.be.false;
     expect(event.state).to.equal(2);
     expect(event.userDesiredState).to.be.undefined;
+  });
+  it('should create the event with settings', function () {
+    const event = new KeyUpEvent(eventValidSettings);
+    expect(event.action).to.equal('some.up.action');
+    expect(event.context).to.equal('zxcvfsda');
+    expect(event.device).to.equal('rweqasd');
+    expect(event.event).to.equal('keyUp');
+    expect(event.column).to.equal(2);
+    expect(event.row).to.equal(5);
+    expect(event.isInMultiAction).to.be.false;
+    expect(event.state).to.be.undefined;
+    expect(event.userDesiredState).to.be.undefined;
+    expect(event.settings).to.haveOwnProperty('background');
+    expect((event.settings as { background: string }).background).to.equal('blue');
+    expect(event.settings).to.haveOwnProperty('number');
+    expect((event.settings as { number: string }).number).to.equal('6');
   });
   it('should throw a validation error on missing keydown parameters', function () {
     expect(() => new KeyUpEvent(eventMissingParameter)).to.throw(EventValidationError, /required property 'column'/);
