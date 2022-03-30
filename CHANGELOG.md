@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [3.1.2](https://github.com/rweich/streamdeck-events/compare/v3.1.1...v3.1.2) (2022-03-30)
+
+
+### Miscellaneous Chores
+
+* add @types/node package ([08d8466](https://github.com/rweich/streamdeck-events/commit/08d8466a0a59eb5159f5bcfa7fc9d032109f874a))
+* update to newest typebox package ([53f5441](https://github.com/rweich/streamdeck-events/commit/53f54415e1d792a6007814b440f68a2e5ff6572c))
+
 ### [3.1.1](https://github.com/rweich/streamdeck-events/compare/v3.1.0...v3.1.1) (2022-03-29)
 
 
