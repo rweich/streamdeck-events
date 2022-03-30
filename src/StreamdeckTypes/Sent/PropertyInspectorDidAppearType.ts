@@ -1,11 +1,9 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BasePropertyInspectorType } from '@/StreamdeckTypes/Sent/BasePropertyInspectorType';
+import { BasePropertyInspectorProperties } from '@/StreamdeckTypes/Sent/BasePropertyInspectorType';
 
-export const PropertyInspectorDidAppearType = Type.Intersect([
-  Type.Omit(BasePropertyInspectorType, ['event']),
-  Type.Object({
-    event: Type.RegEx(/^propertyInspectorDidAppear$/),
-  }),
-]);
+export const PropertyInspectorDidAppearType = Type.Object({
+  ...BasePropertyInspectorProperties,
+  event: Type.RegEx(/^propertyInspectorDidAppear$/),
+});
 export type PropertyInspectorDidAppearType = Static<typeof PropertyInspectorDidAppearType>;

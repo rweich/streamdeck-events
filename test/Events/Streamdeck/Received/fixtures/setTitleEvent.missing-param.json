@@ -2,7 +2,7 @@
   "event": "setTitle",
   "context": "opaqueValue",
   "payload": {
-    "target": "software",
+    "target": 2,
     "state": 0
   }
 }

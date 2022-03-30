@@ -1,17 +1,15 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseSetterPayloadType, BaseSetterType } from '@/StreamdeckTypes/Received/BaseSetterType';
+import { BaseSetterPayloadType, BaseSetterProperties } from '@/StreamdeckTypes/Received/BaseSetterType';
 
-export const SetTitleType = Type.Intersect([
-  Type.Omit(BaseSetterType, ['event', 'payload']),
-  Type.Object({
-    event: Type.RegEx(/^setTitle$/),
-    payload: Type.Intersect([
-      BaseSetterPayloadType,
-      Type.Object({
-        title: Type.String(),
-      }),
-    ]),
-  }),
-]);
+export const SetTitleType = Type.Object({
+  ...BaseSetterProperties,
+  event: Type.RegEx(/^setTitle$/),
+  payload: Type.Intersect([
+    BaseSetterPayloadType,
+    Type.Object({
+      title: Type.String(),
+    }),
+  ]),
+});
 export type SetTitleType = Static<typeof SetTitleType>;
