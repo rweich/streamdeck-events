@@ -1,11 +1,9 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseStateType } from '@/StreamdeckTypes/Sent/BaseStateType';
+import { BaseStateProperties } from '@/StreamdeckTypes/Sent/BaseStateType';
 
-export const WillDisappearType = Type.Intersect([
-  Type.Omit(BaseStateType, ['event']),
-  Type.Object({
-    event: Type.RegEx(/^willDisappear$/),
-  }),
-]);
+export const WillDisappearType = Type.Object({
+  ...BaseStateProperties,
+  event: Type.RegEx(/^willDisappear$/),
+});
 export type WillDisappearType = Static<typeof WillDisappearType>;

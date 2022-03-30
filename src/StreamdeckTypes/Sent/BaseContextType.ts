@@ -1,11 +1,11 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseEventType } from './BaseEventType';
+import { BaseEventProperties } from './BaseEventType';
 
-export const BaseContextType = Type.Intersect([
-  BaseEventType,
-  Type.Object({
-    context: Type.String(),
-  }),
-]);
+export const BaseContextProperties = {
+  ...BaseEventProperties,
+  context: Type.String(),
+};
+
+export const BaseContextType = Type.Object(BaseContextProperties);
 export type BaseContextType = Static<typeof BaseContextType>;

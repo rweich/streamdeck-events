@@ -5,9 +5,11 @@ export const BaseSetterPayloadType = Type.Object({
   target: Type.Number({ maximum: 2, minimum: 0 }),
 });
 
-export const BaseSetterType = Type.Object({
+export const BaseSetterProperties = {
   context: Type.String(),
   event: Type.RegEx(/^setImage|setTitle$/),
   payload: BaseSetterPayloadType,
-});
+};
+
+export const BaseSetterType = Type.Object(BaseSetterProperties);
 export type BaseSetterType = Static<typeof BaseSetterType>;
