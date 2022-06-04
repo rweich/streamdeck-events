@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [3.1.3](https://github.com/rweich/streamdeck-events/compare/v3.1.2...v3.1.3) (2022-06-04)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump npm from 8.5.5 to 8.12.0 ([b1d046a](https://github.com/rweich/streamdeck-events/commit/b1d046a3d1048b68175dd84c951edee2bdaed3fc))
+* **deps:** bump semver-regex from 3.1.3 to 3.1.4 ([f469921](https://github.com/rweich/streamdeck-events/commit/f4699211b004c76273a4f64bc250bfa91963a1fe))
+
 ### [3.1.2](https://github.com/rweich/streamdeck-events/compare/v3.1.1...v3.1.2) (2022-03-30)
 
 
