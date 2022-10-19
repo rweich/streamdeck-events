@@ -72,9 +72,9 @@ export default class EventFactory {
         return new WillAppearEvent(payload);
       case 'willDisappear':
         return new WillDisappearEvent(payload);
-      default:
+      default: // creates a typeerror when we forget to add an event
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const checkIfAllEventsAreUsed: never = event; // creates a typeerror when we forget to add an event
+        const checkIfAllEventsAreUsed: never = event;
         throw new UnknownEventError('unknown event: ' + payload.event + ' in data: ' + JSON.stringify(payload));
     }
   }

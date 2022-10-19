@@ -70,9 +70,9 @@ export default class EventFactory {
         return new ShowOkEvent(payload);
       case 'switchToProfile':
         return new SwitchToProfileEvent(payload);
-      default:
+      default: // creates a typeerror when we forget to add an event
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const checkIfAllEventsAreUsed: never = event; // creates a typeerror when we forget to add an event
+        const checkIfAllEventsAreUsed: never = event;
         throw new UnknownEventError(`unknown event: ${event} in data: ${JSON.stringify(payload)}`);
     }
   }
