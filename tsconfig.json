@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     "target": "es2019",
-    "module": "es2020",
+    "module": "CommonJS",
     "declaration": true,
     "baseUrl": ".",
     "outDir": "dist",
