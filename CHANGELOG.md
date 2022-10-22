@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0](https://github.com/rweich/streamdeck-events/compare/v3.1.4...v4.0.0) (2022-10-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* change module-type in tsconfig to commonjs
+
+### Bug Fixes
+
+* change module-type in tsconfig to commonjs ([4c63ac3](https://github.com/rweich/streamdeck-events/commit/4c63ac32f64bb7b81b37c0db935e2527b600e7d7))
+* don't run githooks on CI ([c61926e](https://github.com/rweich/streamdeck-events/commit/c61926eac81f22f53491819000e269a09d2d0c6f))
+
+
+### Miscellaneous Chores
+
+* update dependencies (major) ([810b15a](https://github.com/rweich/streamdeck-events/commit/810b15a17d2a43a7ce929000cf6c82569b2faea0))
+
 ### [3.1.4](https://github.com/rweich/streamdeck-events/compare/v3.1.3...v3.1.4) (2022-06-10)
 
 
