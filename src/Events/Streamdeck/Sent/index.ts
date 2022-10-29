@@ -1,1 +1,9 @@
+export { default as DeviceDidConnectEvent } from '@/Events/Streamdeck/Sent/DeviceDidConnectEvent';
+export { default as DeviceDidDisconnectEvent } from '@/Events/Streamdeck/Sent/DeviceDidDisconnectEvent';
+export { default as DidReceiveGlobalSettingsEvent } from '@/Events/Streamdeck/Sent/DidReceiveGlobalSettingsEvent';
+export { default as DidReceiveSettingsEvent } from '@/Events/Streamdeck/Sent/DidReceiveSettingsEvent';
+export { default as KeyDownEvent } from '@/Events/Streamdeck/Sent/KeyDownEvent';
+export { default as KeyUpEvent } from '@/Events/Streamdeck/Sent/KeyUpEvent';
+export { default as TitleParametersDidChangeEvent } from '@/Events/Streamdeck/Sent/TitleParametersDidChangeEvent';
 export { default as WillAppearEvent } from '@/Events/Streamdeck/Sent/WillAppearEvent';
+export { default as WillDisappearEvent } from '@/Events/Streamdeck/Sent/WillDisappearEvent';

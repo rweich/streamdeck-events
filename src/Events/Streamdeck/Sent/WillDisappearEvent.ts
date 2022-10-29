@@ -1,7 +1,7 @@
 import AbstractStateEvent, { StateOptions } from '@/Events/Streamdeck/Sent/AbstractStateEvent';
 
-export default class WillAppearEvent extends AbstractStateEvent {
+export default class WillDisappearEvent extends AbstractStateEvent {
   public constructor(action: string, context: string, options?: Partial<StateOptions>) {
-    super('willAppear', action, context, options);
+    super('willDisappear', action, context, options);
   }
 }
