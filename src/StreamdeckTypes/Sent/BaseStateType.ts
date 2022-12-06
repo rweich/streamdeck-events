@@ -8,6 +8,7 @@ export const BaseStateProperties = {
   device: Type.String(),
   event: Type.RegEx(/^willAppear|willDisappear|didReceiveSettings$/),
   payload: Type.Object({
+    controller: Type.Optional(Type.RegEx(/^Keypad|Encoder$/)),
     coordinates: Type.Optional(BaseCoordinatesPayloadType),
     isInMultiAction: Type.Boolean(),
     settings: Type.Unknown(),
