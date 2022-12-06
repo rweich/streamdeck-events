@@ -1,0 +1,17 @@
+{
+  "action": "ts.streamdeck.events.dialPressTest",
+  "context": "FEDCBA9876543210FEDCBA9876543210",
+  "device": "0123456789ABCDEF0123456789ABCDEF",
+  "event": "dialPress",
+  "payload": {
+    "controller": "Encoder",
+    "coordinates": {
+      "column": 1,
+      "row": 0
+    },
+    "pressed": false,
+    "settings": {
+      "key": "value"
+    }
+  }
+}

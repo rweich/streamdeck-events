@@ -20,6 +20,7 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from './Plugin';
+import {DialPressEvent, DialRotateEvent, TouchTapEvent} from "@/Events/Received/Plugin/Dial";
 
 type EventNames = ReceivedPluginEventTypes['event'] | ReceivedPropertyInspectorEventTypes['event'];
 
@@ -48,6 +49,10 @@ export default class EventFactory {
         return new DeviceDidConnectEvent(payload);
       case 'deviceDidDisconnect':
         return new DeviceDidDisconnectEvent(payload);
+      case 'dialPress':
+        return new DialPressEvent(payload);
+      case 'dialRotate':
+        return new DialRotateEvent(payload);
       case 'didReceiveSettings':
         return new DidReceiveSettingsEvent(payload);
       case 'didReceiveGlobalSettings':
@@ -68,6 +73,8 @@ export default class EventFactory {
         return new SystemDidWakeUpEvent(payload);
       case 'titleParametersDidChange':
         return new TitleParametersDidChangeEvent(payload);
+      case 'touchTap':
+        return new TouchTapEvent(payload);
       case 'willAppear':
         return new WillAppearEvent(payload);
       case 'willDisappear':

@@ -23,6 +23,12 @@ import {
 } from '@/Events/Received/Plugin';
 import { SendToPropertyInspectorEvent } from '@/Events/Received/PropertyInspector';
 
+import {
+  DialPressEvent,
+  DialRotateEvent,
+  TouchTapEvent
+} from "@/Events/Received/Plugin/Dial";
+
 import eventAppDidLaunch from './fixtures/applicationDidLaunchEvent.valid.json';
 import eventAppDidTerminate from './fixtures/applicationDidTerminateEvent.valid.json';
 import eventDeviceconnect from './fixtures/deviceDidConnectEvent.valid.json';
@@ -39,6 +45,11 @@ import eventSystemDidWakeUp from './fixtures/systemDidWakeUpEvent.valid.json';
 import eventTitleparamchange from './fixtures/titleParametersDidChangeEvent.valid.json';
 import eventWillappear from './fixtures/willAppearEvent.valid.json';
 import eventWilldisappear from './fixtures/willDisappearEvent.valid.json';
+
+// dial events
+import eventDialPress from './fixtures/dialPressEvent/valid.json';
+import eventDialRotate from './fixtures/dialRotateEvent/valid.json';
+import eventTouchTap from './fixtures/touchTapEvent/valid.json';
 
 describe('EventFactory test', () => {
   it('throws an error if no event type is specified', () => {
@@ -124,4 +135,16 @@ describe('EventFactory test', () => {
   it('should return a willdisappear event', () => {
     expect(new EventFactory().createByEventPayload(eventWilldisappear)).to.be.instanceOf(WillDisappearEvent);
   });
+
+  it('should return a dialPress event', () => {
+    expect(new EventFactory().createByEventPayload(eventDialPress)).to.be.instanceOf(DialPressEvent);
+  });
+
+  it('should return a dialRotate event', () => {
+    expect(new EventFactory().createByEventPayload(eventDialRotate)).to.be.instanceOf(DialRotateEvent);
+  })
+
+  it('should return a touchTap event', () => {
+    expect(new EventFactory().createByEventPayload(eventTouchTap)).to.be.instanceOf(TouchTapEvent);
+  })
 });

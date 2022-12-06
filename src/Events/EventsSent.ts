@@ -11,7 +11,14 @@ import {
   ShowOkEvent,
   SwitchToProfileEvent,
 } from '@/Events/Sent';
-import { SendToPropertyInspectorEvent, SetImageEvent, SetTitleEvent, TargetEnum } from '@/Events/Sent/Plugin';
+import {
+  SendToPropertyInspectorEvent,
+  SetFeedbackEvent,
+  SetFeedbackLayoutEvent,
+  SetImageEvent,
+  SetTitleEvent,
+  TargetEnum
+} from '@/Events/Sent/Plugin';
 import { SendToPluginEvent } from '@/Events/Sent/PropertyInspector';
 
 type TargetType = 'both' | 'hardware' | 'software';
@@ -87,5 +94,13 @@ export default class EventsSent {
 
   public switchToProfile(profile: string, context: string, device: string): SwitchToProfileEvent {
     return new SwitchToProfileEvent(profile, context, device);
+  }
+
+  public setFeedback(payload: unknown, context: string) {
+    return new SetFeedbackEvent(payload, context);
+  }
+
+  public setFeedbackLayout(layout: string, context: string) {
+    return new SetFeedbackLayoutEvent(layout, context);
   }
 }
