@@ -8,6 +8,8 @@ import {
   RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
+  SetFeedbackEvent,
+  SetFeedbackLayoutEvent,
   SetGlobalSettingsEvent,
   SetImageEvent,
   SetSettingsEvent,
@@ -54,6 +56,10 @@ export default class EventFactory {
         return new SendToPluginEvent(payload);
       case 'sendToPropertyInspector':
         return new SendToPropertyInspectorEvent(payload);
+      case 'setFeedback':
+        return new SetFeedbackEvent(payload);
+      case 'setFeedbackLayout':
+        return new SetFeedbackLayoutEvent(payload);
       case 'setGlobalSettings':
         return new SetGlobalSettingsEvent(payload);
       case 'setImage':

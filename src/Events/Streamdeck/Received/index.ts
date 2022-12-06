@@ -6,6 +6,8 @@ export { default as OpenUrlEvent } from './OpenUrlEvent';
 export { default as RegisterEvent } from './RegisterEvent';
 export { default as SendToPluginEvent } from './SendToPluginEvent';
 export { default as SendToPropertyInspectorEvent } from './SendToPropertyInspectorEvent';
+export { default as SetFeedbackEvent } from './SetFeedbackEvent';
+export { default as SetFeedbackLayoutEvent } from './SetFeedbackLayoutEvent';
 export { default as SetGlobalSettingsEvent } from './SetGlobalSettingsEvent';
 export { default as SetImageEvent } from './SetImageEvent';
 export { default as SetSettingsEvent } from './SetSettingsEvent';
