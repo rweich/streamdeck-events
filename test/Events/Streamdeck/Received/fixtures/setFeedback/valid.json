@@ -1,0 +1,12 @@
+{
+  "context": "FEDCBA9876543210FEDCBA9876543210",
+  "event": "setFeedback",
+  "payload": {
+    "indicator": {
+      "value": 0,
+      "opacity": 1,
+      "enabled": true
+    },
+    "value": "0%"
+  }
+}

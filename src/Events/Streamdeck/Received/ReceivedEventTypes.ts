@@ -6,6 +6,8 @@ import {
   RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
+  SetFeedbackEvent,
+  SetFeedbackLayoutEvent,
   SetGlobalSettingsEvent,
   SetImageEvent,
   SetSettingsEvent,
@@ -24,6 +26,8 @@ export type ReceivedEventTypes =
   | RegisterEvent
   | SendToPluginEvent
   | SendToPropertyInspectorEvent
+  | SetFeedbackEvent
+  | SetFeedbackLayoutEvent
   | SetGlobalSettingsEvent
   | SetImageEvent
   | SetSettingsEvent
