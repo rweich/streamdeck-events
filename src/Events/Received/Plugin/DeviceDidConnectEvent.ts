@@ -1,7 +1,7 @@
-import {DeviceDidConnectType} from '@/StreamdeckTypes/Sent';
+import { DeviceDidConnectType } from '@/StreamdeckTypes/Sent';
 
 import AbstractReceivedBaseEvent from '../AbstractReceivedBaseEvent';
-import {DeviceType} from './DeviceType';
+import { DeviceType } from './DeviceType';
 
 export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {
   public readonly event = 'deviceDidConnect';
@@ -19,7 +19,9 @@ export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {
     return this.eventPayload.deviceInfo.type;
   }
 
-  public get typeName(): 'StreamDeck' | 'StreamDeckMini' | 'StreamDeckXL' | 'StreamDeckMobile' | 'CorsairGKeys' | 'StreamDeckPlus' {
+  public get typeName(): keyof typeof DeviceType {
+    // ToDo: redeclare this as just string? Does it really need to be typed this strictly?
+
     switch (this.eventPayload.deviceInfo.type) {
       case DeviceType.StreamDeck:
         return 'StreamDeck';
@@ -31,8 +33,12 @@ export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {
         return 'StreamDeckMobile';
       case DeviceType.CorsairGKeys:
         return 'CorsairGKeys';
+      case DeviceType.StreamDeckPedal:
+        return 'StreamDeckPedal';
+      case DeviceType.CorsairVoyager:
+        return 'CorsairVoyager';
       case DeviceType.StreamDeckPlus:
-        return 'StreamDeckPlus'
+        return 'StreamDeckPlus';
       /* istanbul ignore next - just a typecheck - unreachable code, based on the payload validation */
       default:
         // eslint-disable-next-line @typescript-eslint/no-unused-vars

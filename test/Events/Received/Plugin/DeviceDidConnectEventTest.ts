@@ -33,6 +33,12 @@ describe('DeviceDidConnectEvent test', () => {
     expect(new DeviceDidConnectEvent(eventJson).typeName).to.equal('StreamDeckMobile');
     eventJson.deviceInfo.type = DeviceType.CorsairGKeys;
     expect(new DeviceDidConnectEvent(eventJson).typeName).to.equal('CorsairGKeys');
+    eventJson.deviceInfo.type = DeviceType.StreamDeckPedal;
+    expect(new DeviceDidConnectEvent(eventJson).typeName).to.equal('StreamDeckPedal');
+    eventJson.deviceInfo.type = DeviceType.CorsairVoyager;
+    expect(new DeviceDidConnectEvent(eventJson).typeName).to.equal('CorsairVoyager');
+    eventJson.deviceInfo.type = DeviceType.StreamDeckPlus;
+    expect(new DeviceDidConnectEvent(eventJson).typeName).to.equal('StreamDeckPlus');
   });
   it('should throw a validation error on missing parameters', function () {
     expect(() => new DeviceDidConnectEvent(eventMissingParameter)).to.throw(
