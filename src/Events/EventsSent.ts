@@ -20,7 +20,7 @@ import {
   TargetEnum,
 } from '@/Events/Sent/Plugin';
 import { SendToPluginEvent } from '@/Events/Sent/PropertyInspector';
-import { LayoutFeedback } from '@/StreamdeckTypes/Received/Feedback/LayoutFeedback';
+import { LayoutFeedback, LayoutFeedbackKey } from '@/StreamdeckTypes/Received/Feedback/LayoutFeedback';
 
 type TargetType = 'both' | 'hardware' | 'software';
 
@@ -101,7 +101,7 @@ export default class EventsSent {
     return new SetFeedbackEvent(payload, context);
   }
 
-  public setFeedbackLayout(layout: string, context: string) {
+  public setFeedbackLayout(layout: LayoutFeedbackKey | string, context: string) {
     return new SetFeedbackLayoutEvent(layout, context);
   }
 }
