@@ -17,9 +17,10 @@ import {
   SetFeedbackLayoutEvent,
   SetImageEvent,
   SetTitleEvent,
-  TargetEnum
+  TargetEnum,
 } from '@/Events/Sent/Plugin';
 import { SendToPluginEvent } from '@/Events/Sent/PropertyInspector';
+import { LayoutFeedback } from '@/StreamdeckTypes/Received/Feedback/LayoutFeedback';
 
 type TargetType = 'both' | 'hardware' | 'software';
 
@@ -96,7 +97,7 @@ export default class EventsSent {
     return new SwitchToProfileEvent(profile, context, device);
   }
 
-  public setFeedback(payload: unknown, context: string) {
+  public setFeedback(payload: LayoutFeedback, context: string) {
     return new SetFeedbackEvent(payload, context);
   }
 
