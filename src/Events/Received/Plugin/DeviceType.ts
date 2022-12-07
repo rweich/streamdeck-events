@@ -4,5 +4,7 @@ export enum DeviceType {
   StreamDeckXL,
   StreamDeckMobile,
   CorsairGKeys,
-  StreamDeckPlus = 7
+  StreamDeckPedal,
+  CorsairVoyager,
+  StreamDeckPlus,
 }
