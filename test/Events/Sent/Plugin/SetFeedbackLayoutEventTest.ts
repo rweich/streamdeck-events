@@ -3,8 +3,8 @@ import 'mocha';
 import { expect, use } from 'chai';
 import jsonschema from 'chai-json-schema';
 
-import {SetFeedbackLayoutEvent} from '@/Events/Sent/Plugin';
-import {SetFeedbackLayoutType} from "@/StreamdeckTypes/Received/SetFeedbackLayoutType";
+import { SetFeedbackLayoutEvent } from '@/Events/Sent/Plugin';
+import { SetFeedbackLayoutType } from '@/StreamdeckTypes/Received/SetFeedbackLayoutType';
 
 use(jsonschema);
 

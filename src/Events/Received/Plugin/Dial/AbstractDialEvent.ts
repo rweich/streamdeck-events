@@ -1,8 +1,8 @@
-import AbstractReceivedExtendedEvent from "@/Events/Received/AbstractReceivedExtendedEvent";
-import {BaseDialType} from "@/StreamdeckTypes/Sent/Dial/BaseDialType";
+import AbstractReceivedExtendedEvent from '@/Events/Received/AbstractReceivedExtendedEvent';
+import { BaseDialType } from '@/StreamdeckTypes/Sent/Dial/BaseDialType';
 
 export default abstract class AbstractDialEvent extends AbstractReceivedExtendedEvent {
-  declare protected readonly eventPayload: BaseDialType;
+  protected declare readonly eventPayload: BaseDialType;
 
   public get settings(): unknown {
     return this.eventPayload.payload.settings;
