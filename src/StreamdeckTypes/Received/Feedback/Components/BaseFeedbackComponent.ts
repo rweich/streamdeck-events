@@ -16,14 +16,18 @@ const TransformableFeedbackComponentProperties = {
   // translate: Type.Unknown(),
 };
 
+export const BaseComponentValueType = Type.Union([Type.String(), Type.Number(), Type.Null()]);
+
 export const BaseFeedbackComponentProperties = {
   ...OutlinableFeedbackComponentProperties,
   ...TransformableFeedbackComponentProperties,
 
   background: OptionalNullable(Type.String()),
   enabled: Type.Optional(Type.Boolean()),
-  value: Type.Optional(Type.Union([Type.String(), Type.Number(), Type.Null()])),
+  value: Type.Optional(BaseComponentValueType),
   zOrder: Type.Optional(Type.Number()),
 };
 export const BaseFeedbackComponent = Type.Object(BaseFeedbackComponentProperties);
 export type BaseFeedbackComponent = Static<typeof BaseFeedbackComponent>;
+
+export const WrappedBaseComponent = Type.Union([BaseFeedbackComponent, BaseComponentValueType]);

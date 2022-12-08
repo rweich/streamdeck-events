@@ -1,6 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BarFeedbackComponentProperties } from './BarFeedbackComponent';
+import { BarFeedbackComponentProperties, BarValueType } from './BarFeedbackComponent';
 import { OptionalNullable } from './BaseFeedbackComponent';
 
 export const GrooveBarFeedbackComponentProperties = {
@@ -10,3 +10,5 @@ export const GrooveBarFeedbackComponentProperties = {
 };
 export const GrooveBarFeedbackComponent = Type.Object(GrooveBarFeedbackComponentProperties);
 export type GrooveBarFeedbackComponent = Static<typeof GrooveBarFeedbackComponent>;
+
+export const WrappedGrooveBarFeedbackComponent = Type.Union([GrooveBarFeedbackComponent, BarValueType]);

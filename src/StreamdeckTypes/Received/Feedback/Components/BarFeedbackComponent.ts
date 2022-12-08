@@ -10,6 +10,8 @@ export enum BarComponentSubtype {
   ROUNDED_BAR = 4,
 }
 
+export const BarValueType = Type.Number({ maximum: 100, minimum: 0 });
+
 export const BarFeedbackComponentProperties = {
   ...BaseFeedbackComponentProperties,
 
@@ -20,7 +22,9 @@ export const BarFeedbackComponentProperties = {
   border_w: OptionalNullable(Type.Number({ default: 0, minimum: 0 })),
 
   subtype: OptionalNullable(Type.Enum(BarComponentSubtype, { default: BarComponentSubtype.ROUNDED_BAR })),
-  value: OptionalNullable(Type.Number({ maximum: 100, minimum: 0 })),
+  value: OptionalNullable(BarValueType),
 };
 export const BarFeedbackComponent = Type.Object(BarFeedbackComponentProperties);
 export type BarFeedbackComponent = Static<typeof BarFeedbackComponent>;
+
+export const WrappedBarFeedbackComponent = Type.Union([BarFeedbackComponent, BarValueType]);
