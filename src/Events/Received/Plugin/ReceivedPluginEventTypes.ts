@@ -14,11 +14,7 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from '@/Events/Received/Plugin';
-
-import {
-  DialPressEvent,
-  DialRotateEvent, TouchTapEvent
-} from "@/Events/Received/Plugin/Dial";
+import { DialPressEvent, DialRotateEvent, TouchTapEvent } from '@/Events/Received/Plugin/Dial';
 
 export type ReceivedPluginEventTypes =
   | ReceivedEventTypes

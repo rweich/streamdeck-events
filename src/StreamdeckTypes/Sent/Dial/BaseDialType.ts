@@ -1,11 +1,12 @@
-import {BaseExtendedProperties} from "@/StreamdeckTypes/Sent/BaseExtendedType";
-import {Static, Type} from "@sinclair/typebox";
-import {BaseCoordinatesPayloadType} from "@/StreamdeckTypes/Sent/BaseCoordinatesPayloadType";
+import { Static, Type } from '@sinclair/typebox';
+
+import { BaseCoordinatesPayloadType } from '@/StreamdeckTypes/Sent/BaseCoordinatesPayloadType';
+import { BaseExtendedProperties } from '@/StreamdeckTypes/Sent/BaseExtendedType';
 
 export const BaseDialPayloadProperties = {
   controller: Type.RegEx(/^Encoder$/),
   coordinates: Type.Optional(BaseCoordinatesPayloadType),
-  settings: Type.Any()
+  settings: Type.Any(),
 };
 
 export const BaseDialProperties = {

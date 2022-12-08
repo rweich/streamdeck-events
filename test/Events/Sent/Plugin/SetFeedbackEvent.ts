@@ -3,19 +3,19 @@ import 'mocha';
 import { expect, use } from 'chai';
 import jsonschema from 'chai-json-schema';
 
-import {SetFeedbackEvent} from '@/Events/Sent/Plugin';
-import {SetFeedbackType} from "@/StreamdeckTypes/Received/SetFeedbackType";
+import { SetFeedbackEvent } from '@/Events/Sent/Plugin';
+import { SetFeedbackType } from '@/StreamdeckTypes/Received/SetFeedbackType';
 
 use(jsonschema);
 
 describe('SetFeedbackEvent test', () => {
   const payload = {
-    "value": {
-      "value": "123",
-      "enabled": true,
-      "color": "green"
-    }
-  }
+    value: {
+      color: 'green',
+      enabled: true,
+      value: '123',
+    },
+  };
 
   it('validates a basic feedback layout against the json schema', () => {
     const event = new SetFeedbackEvent(payload, 'context');
