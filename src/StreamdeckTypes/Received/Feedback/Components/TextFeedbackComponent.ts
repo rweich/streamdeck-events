@@ -1,7 +1,7 @@
 import { Static, Type } from '@sinclair/typebox';
 
 import { FontFamily, FontStyle, TextAlignment } from '../Misc/TextTypes';
-import { BaseFeedbackComponentProperties, OptionalNullable } from './BaseFeedbackComponent';
+import { BaseComponentValueType, BaseFeedbackComponentProperties, OptionalNullable } from './BaseFeedbackComponent';
 
 export const FontProperties = {
   family: Type.Optional(Type.Enum(FontFamily)),
@@ -21,3 +21,5 @@ export const TextFeedbackComponentProperties = {
 };
 export const TextFeedbackComponent = Type.Object(TextFeedbackComponentProperties);
 export type TextFeedbackComponent = Static<typeof TextFeedbackComponent>;
+
+export const WrappedTextFeedbackComponent = Type.Union([TextFeedbackComponent, BaseComponentValueType]);
