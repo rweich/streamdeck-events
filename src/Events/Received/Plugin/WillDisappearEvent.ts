@@ -1,8 +1,7 @@
+import AbstractVisibilityEvent from '@/Events/Received/Plugin/AbstractVisibilityEvent';
 import { WillDisappearType } from '@/StreamdeckTypes/Sent';
 
-import AbstractStateEvent from './AbstractStateEvent';
-
-export default class WillDisappearEvent extends AbstractStateEvent {
+export default class WillDisappearEvent extends AbstractVisibilityEvent {
   public readonly event = 'willDisappear';
 
   protected get validationType(): typeof WillDisappearType {
