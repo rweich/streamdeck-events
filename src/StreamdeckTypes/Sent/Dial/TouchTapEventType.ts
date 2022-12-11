@@ -5,7 +5,7 @@ import { BaseDialPayloadProperties, BaseDialProperties } from './BaseDialType';
 export const TouchTapPayloadProperties = {
   ...BaseDialPayloadProperties,
   hold: Type.Boolean(),
-  tapPos: Type.Array(Type.Number(), { maxItems: 2, minItems: 2 }),
+  tapPos: Type.Tuple([Type.Number(), Type.Number()]),
 };
 
 export const TouchTapEventProperties = {

@@ -3,6 +3,7 @@ export { default as ApplicationDidTerminateEvent } from './ApplicationDidTermina
 export { default as DeviceDidConnectEvent } from './DeviceDidConnectEvent';
 export { default as DeviceDidDisconnectEvent } from './DeviceDidDisconnectEvent';
 export { DeviceType } from './DeviceType';
+export { DialPressEvent, DialRotateEvent, TouchTapEvent } from './Dial';
 export { default as KeyDownEvent } from './KeyDownEvent';
 export { default as KeyUpEvent } from './KeyUpEvent';
 export { default as PropertyInspectorDidAppearEvent } from './PropertyInspectorDidAppearEvent';

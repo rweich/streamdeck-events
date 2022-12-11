@@ -20,8 +20,6 @@ export default class DeviceDidConnectEvent extends AbstractReceivedBaseEvent {
   }
 
   public get typeName(): keyof typeof DeviceType {
-    // ToDo: redeclare this as just string? Does it really need to be typed this strictly?
-
     switch (this.eventPayload.deviceInfo.type) {
       case DeviceType.StreamDeck:
         return 'StreamDeck';

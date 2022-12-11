@@ -13,7 +13,7 @@ export default class TouchTapEvent extends AbstractDialEvent {
     return this.eventPayload.payload.hold;
   }
 
-  public get tapPos(): Array<number> {
+  public get tapPos(): [number, number] {
     return this.eventPayload.payload.tapPos;
   }
 }
