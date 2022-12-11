@@ -6,14 +6,12 @@ export const OptionalNullable = <T extends TSchema>(type: T) => Type.Optional(Nu
 const OutlinableFeedbackComponentProperties = {
   outline_c: OptionalNullable(Type.String()),
   outline_w: OptionalNullable(Type.Number({ minimum: 0 })),
-  // outline_m: Type.Unknown(),
 };
 
 const TransformableFeedbackComponentProperties = {
   opacity: OptionalNullable(Type.Number({ default: 1, maximum: 1, minimum: 0 })),
   rotate: OptionalNullable(Type.Number({ default: 0 })),
   scale: OptionalNullable(Type.Number({ default: 1 })),
-  // translate: Type.Unknown(),
 };
 
 export const BaseComponentValueType = Type.Union([Type.String(), Type.Number(), Type.Null()]);
