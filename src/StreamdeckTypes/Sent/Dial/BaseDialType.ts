@@ -1,10 +1,11 @@
 import { Static, Type } from '@sinclair/typebox';
 
+import { ControllerType } from '@/Events/Received/Plugin/ControllerType';
 import { BaseCoordinatesPayloadType } from '@/StreamdeckTypes/Sent/BaseCoordinatesPayloadType';
 import { BaseExtendedProperties } from '@/StreamdeckTypes/Sent/BaseExtendedType';
 
 export const BaseDialPayloadProperties = {
-  controller: Type.RegEx(/^Encoder$/),
+  controller: Type.Literal(ControllerType.Encoder),
   coordinates: Type.Optional(BaseCoordinatesPayloadType),
   settings: Type.Any(),
 };

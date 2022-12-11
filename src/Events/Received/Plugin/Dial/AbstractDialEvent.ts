@@ -1,4 +1,5 @@
 import AbstractReceivedExtendedEvent from '@/Events/Received/AbstractReceivedExtendedEvent';
+import { ControllerType } from '@/Events/Received/Plugin/ControllerType';
 import { BaseDialType } from '@/StreamdeckTypes/Sent/Dial/BaseDialType';
 
 export default abstract class AbstractDialEvent extends AbstractReceivedExtendedEvent {
@@ -8,7 +9,7 @@ export default abstract class AbstractDialEvent extends AbstractReceivedExtended
     return this.eventPayload.payload.settings;
   }
 
-  public get controller(): string {
+  public get controller(): ControllerType {
     return this.eventPayload.payload.controller;
   }
 

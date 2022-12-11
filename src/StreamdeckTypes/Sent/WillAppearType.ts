@@ -1,9 +1,9 @@
 import { Static, Type } from '@sinclair/typebox';
 
-import { BaseStateProperties } from '@/StreamdeckTypes/Sent/BaseStateType';
+import { BaseVisibilityProperties } from '@/StreamdeckTypes/Sent/BaseVisibilityType';
 
 export const WillAppearType = Type.Object({
-  ...BaseStateProperties,
+  ...BaseVisibilityProperties,
   event: Type.RegEx(/^willAppear$/),
 });
 export type WillAppearType = Static<typeof WillAppearType>;
