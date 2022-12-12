@@ -72,15 +72,15 @@ describe('EventsSent test', () => {
     expect(parsed.payload.a).to.equal('payload');
   });
   it('creates the SetFeedbackEvent', () => {
-    let event = new EventsSent().setFeedback({"value": "hello world"}, 'ctx');
-    expect(JSON.parse(JSON.stringify(event)).payload.value).to.equal("hello world");
+    let event = new EventsSent().setFeedback({ value: 'hello world' }, 'ctx');
+    expect(JSON.parse(JSON.stringify(event)).payload.value).to.equal('hello world');
 
-    event = new EventsSent().setFeedback({"title": {"value": "titled"}}, 'ctx');
-    expect(JSON.parse(JSON.stringify(event)).payload.title.value).to.equal("titled");
+    event = new EventsSent().setFeedback({ title: { value: 'titled' } }, 'ctx');
+    expect(JSON.parse(JSON.stringify(event)).payload.title.value).to.equal('titled');
   });
   it('creates the SetFeedbackLayoutEvent', () => {
-    let event = new EventsSent().setFeedbackLayout("$B0", "ctx");
-    expect(JSON.parse(JSON.stringify(event)).payload.layout).to.equal("$B0");
+    const event = new EventsSent().setFeedbackLayout('$B1', 'ctx');
+    expect(JSON.parse(JSON.stringify(event)).payload.layout).to.equal('$B1');
   });
   it('creates the SetImageEvent', () => {
     let event = new EventsSent().setImage('theimage', 'thecontext', 'software');
