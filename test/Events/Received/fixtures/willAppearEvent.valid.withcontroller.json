@@ -1,0 +1,15 @@
+{
+  "action": "my.willappear.action",
+  "context": "willappearcontext",
+  "device": "dev",
+  "event": "willAppear",
+  "payload": {
+    "controller": "Encoder",
+    "coordinates": {
+      "column": 1,
+      "row": 0
+    },
+    "isInMultiAction": false,
+    "settings": {}
+  }
+}

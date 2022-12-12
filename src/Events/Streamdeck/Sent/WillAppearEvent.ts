@@ -1,3 +1,4 @@
+import { ControllerType } from '@/Events/Received/Plugin/ControllerType';
 import { WillAppearType } from '@/StreamdeckTypes/Sent';
 
 export interface WillAppearOptions {
@@ -5,12 +6,14 @@ export interface WillAppearOptions {
   event: string;
   column: number;
   row: number;
+  controller: ControllerType;
   isInMultiAction: boolean;
   settings: unknown;
 }
 
 const WillAppearDefaults: WillAppearOptions = {
   column: 1,
+  controller: ControllerType.Keypad,
   device: 'device',
   event: 'willAppear',
   isInMultiAction: false,
@@ -28,6 +31,7 @@ export default class WillAppearEvent {
       device: options?.device || WillAppearDefaults.device,
       event: WillAppearDefaults.event,
       payload: {
+        controller: options?.controller || WillAppearDefaults.controller,
         coordinates: {
           column: options?.column || WillAppearDefaults.column,
           row: options?.row || WillAppearDefaults.row,
