@@ -6,8 +6,7 @@ export const SetFeedbackLayoutType = Type.Object({
   ...BaseSetterProperties,
   event: Type.RegEx(/^setFeedbackLayout$/),
   payload: Type.Object({
-    // FIXME: This should be constrained to only permitted layouts, but Elgato has yet to release docs.
-    layout: Type.String(),
+    layout: Type.RegEx(/^\$(A[01]|B[12]|C1|X[0-2])$/),
   }),
 });
 export type SetFeedbackLayoutType = Static<typeof SetFeedbackLayoutType>;
