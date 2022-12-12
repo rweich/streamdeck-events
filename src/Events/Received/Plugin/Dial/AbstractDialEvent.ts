@@ -9,6 +9,10 @@ export default abstract class AbstractDialEvent extends AbstractReceivedExtended
     return this.eventPayload.payload.settings;
   }
 
+  /**
+   * Get the Controller that fired this event.
+   * @returns {ControllerType} Will always return `Encoder`.
+   */
   public get controller(): ControllerType {
     return this.eventPayload.payload.controller;
   }
