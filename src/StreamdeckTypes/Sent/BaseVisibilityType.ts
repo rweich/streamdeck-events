@@ -8,7 +8,7 @@ export const BaseVisibilityProperties = {
   event: Type.RegEx(/^willAppear|willDisappear$/),
   payload: Type.Object({
     ...BaseStatePayloadProperties,
-    controller: Type.Enum(ControllerType),
+    controller: Type.Optional(Type.Enum(ControllerType, { default: ControllerType.Keypad })),
   }),
 };
 

@@ -3,6 +3,7 @@ import 'mocha';
 import { expect, use } from 'chai';
 import jsonschema from 'chai-json-schema';
 
+import { ControllerType } from '@/Events/Received/Plugin/ControllerType';
 import { WillAppearEvent } from '@/Events/Streamdeck/Sent';
 import { WillAppearType } from '@/StreamdeckTypes/Sent';
 
@@ -22,10 +23,12 @@ describe('WillAppearEvent test', () => {
     expect(parse.payload.coordinates?.column).to.equal(1);
     expect(parse.payload.coordinates?.row).to.equal(1);
     expect(parse.payload.isInMultiAction).to.be.false;
+    expect(parse.payload.controller).to.be.equal('Keypad');
   });
   it('returns the right values for the changed options', () => {
     const event = new WillAppearEvent('action312', 'context312', {
       column: 3,
+      controller: ControllerType.Encoder,
       device: 'lala',
       isInMultiAction: true,
       row: 4,
@@ -37,5 +40,6 @@ describe('WillAppearEvent test', () => {
     expect(parse.payload.isInMultiAction).to.be.true;
     expect((parse.payload.settings as Record<string, boolean>).foo).to.be.true;
     expect((parse.payload.settings as Record<string, string>).bar).to.equal('baz');
+    expect(parse.payload.controller).to.equal('Encoder');
   });
 });
