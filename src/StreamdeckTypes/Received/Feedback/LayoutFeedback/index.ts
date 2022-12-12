@@ -1,3 +1,5 @@
+import { Static } from '@sinclair/typebox';
+
 import { LayoutA0Feedback } from './LayoutA0Feedback';
 import { LayoutA1Feedback } from './LayoutA1Feedback';
 import { LayoutB1Feedback } from './LayoutB1Feedback';
@@ -16,13 +18,16 @@ export { LayoutX0Feedback } from './LayoutX0Feedback';
 export { LayoutX1Feedback } from './LayoutX1Feedback';
 export { LayoutX2Feedback } from './LayoutX2Feedback';
 
-export type LayoutFeedbackKey = '$A0' | '$A1' | '$B1' | '$B2' | '$C1' | '$X0' | '$X1' | '$X2';
-export type LayoutFeedback =
-  | LayoutA0Feedback
-  | LayoutA1Feedback
-  | LayoutB1Feedback
-  | LayoutB2Feedback
-  | LayoutC1Feedback
-  | LayoutX0Feedback
-  | LayoutX1Feedback
-  | LayoutX2Feedback;
+export const LayoutFeedbackMapping = {
+  $A0: LayoutA0Feedback,
+  $A1: LayoutA1Feedback,
+  $B1: LayoutB1Feedback,
+  $B2: LayoutB2Feedback,
+  $C1: LayoutC1Feedback,
+  $X0: LayoutX0Feedback,
+  $X1: LayoutX1Feedback,
+  $X2: LayoutX2Feedback,
+};
+
+export type LayoutFeedbackKey = keyof typeof LayoutFeedbackMapping;
+export type LayoutFeedback = Static<typeof LayoutFeedbackMapping[LayoutFeedbackKey]>;
