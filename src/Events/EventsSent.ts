@@ -101,7 +101,7 @@ export default class EventsSent {
     return new SetFeedbackEvent(payload, context);
   }
 
-  public setFeedbackLayout(layout: LayoutFeedbackKey | string, context: string) {
+  public setFeedbackLayout(layout: LayoutFeedbackKey, context: string) {
     return new SetFeedbackLayoutEvent(layout, context);
   }
 }
