@@ -11,6 +11,8 @@ import {
   RegisterEvent,
   SendToPluginEvent,
   SendToPropertyInspectorEvent,
+  SetFeedbackEvent,
+  SetFeedbackLayoutEvent,
   SetGlobalSettingsEvent,
   SetImageEvent,
   SetSettingsEvent,
@@ -28,6 +30,8 @@ import eventOpenUrl from './fixtures/openUrlEvent.valid.json';
 import eventRegister from './fixtures/registerEvent.valid.json';
 import eventSendToPlugin from './fixtures/sendToPluginEvent.valid.json';
 import eventSendToPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
+import eventSetFeedback from './fixtures/setFeedback/valid.json';
+import eventSetFeedbackLayout from './fixtures/setFeedbackLayout/valid.json';
 import eventSetGlobalSettings from './fixtures/setGlobalSettingsEvent.valid.json';
 import eventSetImage from './fixtures/setImageEvent.valid.json';
 import eventSetSettings from './fixtures/setSettingsEvent.valid.json';
@@ -75,6 +79,18 @@ describe('EventFactory test', () => {
     expect(new EventFactory().createByEventPayload(eventSendToPropertyInspector)).to.be.instanceOf(
       SendToPropertyInspectorEvent,
     );
+  });
+
+  it('should return a SetFeedbackEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventSetFeedback)).to.be.instanceof(
+      SetFeedbackEvent
+    );
+  });
+
+  it('should return a SetFeedbackLayoutEvent', () => {
+    expect(new EventFactory().createByEventPayload(eventSetFeedbackLayout)).to.be.instanceOf(
+      SetFeedbackLayoutEvent
+    )
   });
 
   it('should return a SetGlobalSettingsEvent', () => {

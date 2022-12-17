@@ -9,6 +9,7 @@ import { LayoutX0Feedback } from './LayoutX0Feedback';
 import { LayoutX1Feedback } from './LayoutX1Feedback';
 import { LayoutX2Feedback } from './LayoutX2Feedback';
 
+export { GenericLayoutFeedback } from './BaseLayoutFeedback';
 export { LayoutA0Feedback } from './LayoutA0Feedback';
 export { LayoutA1Feedback } from './LayoutA1Feedback';
 export { LayoutB1Feedback } from './LayoutB1Feedback';

@@ -900,10 +900,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@sinclair/typebox@0.24.48":
-  version "0.24.48"
-  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.48.tgz#bd558c6059df563d49a4d94df8e8e0510b662e3f"
-  integrity sha512-WPGpRNHbkOsfBDmh8QHU7a5NWzEuYNThST8x1cISvX0RpP+1+V8zjuJqNwGJkHGIlhdIIhv6qVYqXz2q5/gjAA==
+"@sinclair/typebox@0.24.49":
+  version "0.24.49"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.49.tgz#7a3a5569fe9e4faa47d8019246d37541c2d7a058"
+  integrity sha512-qWgJVeCThMWTJSAZHyHDlHBkJY0LARFoq/96RH4oIFAwJptMwB3Isq62c4zRVRIAF2r4RMOc2WOhtOLj5C4InA==
 
 "@tootallnate/once@2":
   version "2.0.0"

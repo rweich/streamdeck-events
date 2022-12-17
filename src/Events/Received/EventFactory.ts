@@ -10,6 +10,8 @@ import {
   ApplicationDidTerminateEvent,
   DeviceDidConnectEvent,
   DeviceDidDisconnectEvent,
+  DialPressEvent,
+  DialRotateEvent,
   KeyDownEvent,
   KeyUpEvent,
   PropertyInspectorDidAppearEvent,
@@ -17,10 +19,10 @@ import {
   SendToPluginEvent,
   SystemDidWakeUpEvent,
   TitleParametersDidChangeEvent,
+  TouchTapEvent,
   WillAppearEvent,
   WillDisappearEvent,
 } from './Plugin';
-import {DialPressEvent, DialRotateEvent, TouchTapEvent} from "@/Events/Received/Plugin/Dial";
 
 type EventNames = ReceivedPluginEventTypes['event'] | ReceivedPropertyInspectorEventTypes['event'];
 
@@ -81,6 +83,7 @@ export default class EventFactory {
         return new WillDisappearEvent(payload);
       default: // creates a typeerror when we forget to add an event
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        // noinspection JSUnusedLocalSymbols
         const checkIfAllEventsAreUsed: never = event;
         throw new UnknownEventError('unknown event: ' + payload.event + ' in data: ' + JSON.stringify(payload));
     }
