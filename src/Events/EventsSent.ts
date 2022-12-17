@@ -101,10 +101,42 @@ export default class EventsSent {
     return new SwitchToProfileEvent(profile, context, device);
   }
 
+  /**
+   * Send a command to the Stream Deck to update the Feedback displayed for a specific dial.
+   *
+   * SetFeedbackEvent's payload takes a key-value record of properties that will require some care to be taken, as it is
+   * not particularly type safe. Developers are encouraged to either use built-in layout types or define their own types
+   * for use in this event. As a general rule though, this payload works as follows:
+   * - Keys in the object represent the element in the feedback that will be modified
+   * - Values in the object will generally be an object that represents the changes that should be made to an element,
+   *   based on the element's type.
+   * - Values may also be a string or number, which will directly set the `value` of the associated element.
+   * - The keys `title` and `icon` can *only* have the value updated, either through direct assignment or by an object
+   *   containing a `value` key.
+   * - Unrecognized keys and values are ignored with no notification or error.
+   *
+   * To create custom feedback types, please refer to {@link LayoutA0Feedback} et al.
+   *
+   * @param payload The feedback object to send to the Stream Deck, based on at least GenericLayoutFeedback.
+   * @param context The opaque context representing the Stream Deck dial that needs to be updated.
+   */
   public setFeedback(payload: LayoutFeedback | GenericLayoutFeedback, context: string) {
     return new SetFeedbackEvent(payload, context);
   }
 
+  /**
+   * Send a command to the Stream Deck to update the Feedback Layout for a specific dial.
+   *
+   * The Stream Deck application ships with a number of layouts built-in (see {@link LayoutFeedbackKey} for this list),
+   * but custom layouts may be created and stored in the plugin archive which may then be used. An invalid feedback
+   * layout will fall back to only displaying the title and icon.
+   *
+   * Changing the layout feedback *will* reset all feedback currently on the device, so developers need to take care
+   * to repopulate feedback (if necessary) after sending this command.
+   *
+   * @param layout A layout key or path (relative to the plugin's root) to use as the layout for this dial.
+   * @param context The opaque context representing the Stream Deck dial that needs to be updated.
+   */
   public setFeedbackLayout(layout: LayoutFeedbackKey | string, context: string) {
     return new SetFeedbackLayoutEvent(layout, context);
   }
