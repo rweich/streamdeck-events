@@ -3,9 +3,9 @@ import { LayoutFeedbackKey } from '@/StreamdeckTypes/Received/Feedback/LayoutFee
 
 export default class SetFeedbackLayoutEvent extends AbstractSentSetterEvent {
   public readonly event = 'setFeedbackLayout';
-  public readonly layout: LayoutFeedbackKey;
+  public readonly layout: string;
 
-  constructor(layout: LayoutFeedbackKey, context: string) {
+  constructor(layout: string | LayoutFeedbackKey, context: string) {
     super(context);
     this.layout = layout;
   }

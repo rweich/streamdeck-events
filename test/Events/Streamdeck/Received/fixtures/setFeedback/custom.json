@@ -1,0 +1,11 @@
+{
+  "context": "FEDCBA9876543210FEDCBA9876543210",
+  "event": "setFeedback",
+  "payload": {
+    "mxProgress": {
+      "value": 40,
+      "bar_bg_c": "#FFFF00"
+    },
+    "value": "0%"
+  }
+}

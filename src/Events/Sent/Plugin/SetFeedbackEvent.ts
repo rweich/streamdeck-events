@@ -1,11 +1,11 @@
 import AbstractSentSetterEvent from '@/Events/Sent/AbstractSentSetterEvent';
-import { LayoutFeedback } from '@/StreamdeckTypes/Received/Feedback/LayoutFeedback';
+import { GenericLayoutFeedback, LayoutFeedback } from '@/StreamdeckTypes/Received/Feedback/LayoutFeedback';
 
 export default class SetFeedbackEvent extends AbstractSentSetterEvent {
   public readonly event = 'setFeedback';
-  public readonly payload: LayoutFeedback;
+  public readonly payload: GenericLayoutFeedback;
 
-  constructor(payload: LayoutFeedback, context: string) {
+  constructor(payload: LayoutFeedback | GenericLayoutFeedback, context: string) {
     super(context);
     this.payload = payload;
   }
