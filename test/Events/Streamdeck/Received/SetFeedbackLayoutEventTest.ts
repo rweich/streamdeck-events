@@ -3,9 +3,9 @@ import { expect } from 'chai';
 import EventValidationError from '@/Events/Received/Exception/EventValidationError';
 import { SetFeedbackLayoutEvent } from '@/Events/Streamdeck/Received';
 
+import eventCustom from './fixtures/setFeedbackLayout/custom.json';
 import eventMissingParameter from './fixtures/setFeedbackLayout/missingLayout.json';
 import eventValid from './fixtures/setFeedbackLayout/valid.json';
-import eventCustom from './fixtures/setFeedbackLayout/custom.json';
 import eventInvalidType from './fixtures/setFeedbackLayout/wrongEvent.json';
 
 describe('SetFeedbackLayoutEvent Test', () => {
@@ -20,7 +20,7 @@ describe('SetFeedbackLayoutEvent Test', () => {
   it('should create the event with a custom layout in the payload', () => {
     const event = new SetFeedbackLayoutEvent(eventCustom);
     expect(event.layout).to.equal('layouts/progress/progressv2.json');
-  })
+  });
 
   it('should throw a validation error on missing parameters', () => {
     expect(() => new SetFeedbackLayoutEvent(eventMissingParameter)).to.throw(
