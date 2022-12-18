@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.0](https://github.com/rweich/streamdeck-events/compare/v4.0.0...v4.1.0) (2022-12-18)
+
+
+### Features
+
+* Add support for custom layouts ([ade4b88](https://github.com/rweich/streamdeck-events/commit/ade4b881e7ef883598cd1bb6fc4c690e231ffc5e))
+
+
+### Documentation
+
+* Add some minor documentation for new events ([572029f](https://github.com/rweich/streamdeck-events/commit/572029f4d848ab05edef78a1c93acfc54d1745e0))
+
+
+### Miscellaneous Chores
+
+* Fix eslint complaints ([82048b8](https://github.com/rweich/streamdeck-events/commit/82048b879e733a1fa52b1655ec9835d92bfe1413))
+
 ## [4.0.0](https://github.com/rweich/streamdeck-events/compare/v3.1.4...v4.0.0) (2022-10-22)
 
 
