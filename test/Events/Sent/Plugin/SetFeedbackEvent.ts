@@ -30,17 +30,18 @@ describe('SetFeedbackEvent test', () => {
   });
 
   it('returns the right values on a custom layout', () => {
-    const event = new SetFeedbackEvent({
-      title: 'Dun Scaith',
+    const payload = {
       mxProgress: {
+        bar_fill_c: '#ffff00',
         value: 80,
-        bar_fill_c: "#ffff00"
-      }
-    }, 'context');
+      },
+      title: 'Dun Scaith',
+    };
+    const event = new SetFeedbackEvent(payload, 'context');
 
-    let transmutedEvent = JSON.parse(JSON.stringify(event));
+    const transmutedEvent = JSON.parse(JSON.stringify(event));
     expect(transmutedEvent.payload.title).to.equal('Dun Scaith');
     expect(transmutedEvent.payload.mxProgress.value).to.equal(80);
     expect(transmutedEvent.payload.mxProgress.bar_fill_c).to.equal('#ffff00');
-  })
+  });
 });

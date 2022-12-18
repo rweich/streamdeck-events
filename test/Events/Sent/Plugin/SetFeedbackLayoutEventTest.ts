@@ -21,5 +21,5 @@ describe('SetFeedbackLayoutEvent test', () => {
   it('returns the right values for a custom layout', () => {
     const event = new SetFeedbackLayoutEvent('layouts/progress.json', 'context');
     expect(JSON.parse(JSON.stringify(event)).payload.layout).to.equal('layouts/progress.json');
-  })
+  });
 });

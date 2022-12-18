@@ -82,15 +82,11 @@ describe('EventFactory test', () => {
   });
 
   it('should return a SetFeedbackEvent', () => {
-    expect(new EventFactory().createByEventPayload(eventSetFeedback)).to.be.instanceof(
-      SetFeedbackEvent
-    );
+    expect(new EventFactory().createByEventPayload(eventSetFeedback)).to.be.instanceof(SetFeedbackEvent);
   });
 
   it('should return a SetFeedbackLayoutEvent', () => {
-    expect(new EventFactory().createByEventPayload(eventSetFeedbackLayout)).to.be.instanceOf(
-      SetFeedbackLayoutEvent
-    )
+    expect(new EventFactory().createByEventPayload(eventSetFeedbackLayout)).to.be.instanceOf(SetFeedbackLayoutEvent);
   });
 
   it('should return a SetGlobalSettingsEvent', () => {
