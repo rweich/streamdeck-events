@@ -1,18 +1,18 @@
 import { BarFeedbackComponent } from './BarFeedbackComponent';
-import { GrooveBarFeedbackComponent } from './GrooveBarFeedbackComponent';
+import { GBarFeedbackComponent } from './GBarFeedbackComponent';
 import { PixmapFeedbackComponent } from './PixmapFeedbackComponent';
 import { PlaccardFeedbackComponent } from './PlaccardFeedbackComponent';
 import { TextFeedbackComponent } from './TextFeedbackComponent';
 
 export { BarFeedbackComponent } from './BarFeedbackComponent';
-export { GrooveBarFeedbackComponent } from './GrooveBarFeedbackComponent';
+export { GBarFeedbackComponent } from './GBarFeedbackComponent';
 export { PixmapFeedbackComponent } from './PixmapFeedbackComponent';
 export { PlaccardFeedbackComponent } from './PlaccardFeedbackComponent';
 export { TextFeedbackComponent } from './TextFeedbackComponent';
 
 export type AnyComponent =
   | BarFeedbackComponent
-  | GrooveBarFeedbackComponent
+  | GBarFeedbackComponent
   | PixmapFeedbackComponent
   | PlaccardFeedbackComponent
   | TextFeedbackComponent

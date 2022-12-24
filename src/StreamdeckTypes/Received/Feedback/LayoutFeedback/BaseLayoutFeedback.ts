@@ -2,7 +2,7 @@ import { Static, Type } from '@sinclair/typebox';
 
 import { PlaccardFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components';
 import { WrappedBarFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/BarFeedbackComponent';
-import { WrappedGrooveBarFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/GrooveBarFeedbackComponent';
+import { WrappedGBarFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/GBarFeedbackComponent';
 import { WrappedPixmapFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/PixmapFeedbackComponent';
 import { WrappedTextFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/TextFeedbackComponent';
 import { ValueWrapper } from '@/StreamdeckTypes/Received/Feedback/Misc/ValueWrapper';
@@ -25,7 +25,7 @@ export const IconLayoutFeedbackProperties = {
 export const GenericLayoutFeedback = Type.Object(IconLayoutFeedbackProperties, {
   additionalProperties: Type.Union([
     WrappedBarFeedbackComponent,
-    WrappedGrooveBarFeedbackComponent,
+    WrappedGBarFeedbackComponent,
     WrappedPixmapFeedbackComponent,
     PlaccardFeedbackComponent,
     WrappedTextFeedbackComponent,
