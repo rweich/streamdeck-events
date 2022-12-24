@@ -1,5 +1,6 @@
 import { Static, Type } from '@sinclair/typebox';
 
+import { PlaccardFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components';
 import { WrappedBarFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/BarFeedbackComponent';
 import { WrappedGrooveBarFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/GrooveBarFeedbackComponent';
 import { WrappedPixmapFeedbackComponent } from '@/StreamdeckTypes/Received/Feedback/Components/PixmapFeedbackComponent';
@@ -26,6 +27,7 @@ export const GenericLayoutFeedback = Type.Object(IconLayoutFeedbackProperties, {
     WrappedBarFeedbackComponent,
     WrappedGrooveBarFeedbackComponent,
     WrappedPixmapFeedbackComponent,
+    PlaccardFeedbackComponent,
     WrappedTextFeedbackComponent,
   ]),
 });
