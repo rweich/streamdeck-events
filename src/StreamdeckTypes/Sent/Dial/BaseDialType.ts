@@ -5,7 +5,7 @@ import { BaseCoordinatesPayloadType } from '@/StreamdeckTypes/Sent/BaseCoordinat
 import { BaseExtendedProperties } from '@/StreamdeckTypes/Sent/BaseExtendedType';
 
 export const BaseDialPayloadProperties = {
-  controller: Type.Literal(ControllerType.Encoder),
+  controller: Type.Literal(ControllerType.Encoder), // undocumented!
   coordinates: Type.Optional(BaseCoordinatesPayloadType),
   settings: Type.Any(),
 };

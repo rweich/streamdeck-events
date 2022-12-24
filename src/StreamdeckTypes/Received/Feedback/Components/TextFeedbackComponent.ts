@@ -4,10 +4,10 @@ import { FontFamily, FontStyle, TextAlignment } from '../Misc/TextTypes';
 import { BaseComponentValueType, BaseFeedbackComponentProperties, OptionalNullable } from './BaseFeedbackComponent';
 
 export const FontProperties = {
-  family: Type.Optional(Type.Enum(FontFamily)),
+  family: Type.Optional(Type.Enum(FontFamily)), // undocumented!
   size: Type.Optional(Type.Number()),
-  style: Type.Optional(Type.Enum(FontStyle)),
-  weight: Type.Optional(Type.Number()),
+  style: Type.Optional(Type.Enum(FontStyle)), // undocumented!
+  weight: Type.Optional(Type.Number({ maximum: 1000, minimum: 100 })),
 };
 export const FontProperty = Type.Object(FontProperties);
 export type FontProperty = Static<typeof FontProperty>;
