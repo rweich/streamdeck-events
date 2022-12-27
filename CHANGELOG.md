@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.0](https://github.com/rweich/streamdeck-events/compare/v4.1.0...v5.0.0) (2022-12-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* This commit does, unfortunately, have to break the API declared in 4.1.0 due to bad naming on my part in that version.
+
+### Bug Fixes
+
+* add missing "placcard" component type ([e380a15](https://github.com/rweich/streamdeck-events/commit/e380a15bed4316d65ec428328538960c51e3d1cd))
+* add missing constraints to some feedback elements ([3f049fa](https://github.com/rweich/streamdeck-events/commit/3f049fac9feed63833670a499d9cfbaea319a133))
+* synchronize bar types ([e0227b9](https://github.com/rweich/streamdeck-events/commit/e0227b992c1bc794469b8ef77592e1f5c81c9c68))
+
 ## [4.1.0](https://github.com/rweich/streamdeck-events/compare/v4.0.0...v4.1.0) (2022-12-18)
 
 
