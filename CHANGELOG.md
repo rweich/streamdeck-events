@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.1](https://github.com/rweich/streamdeck-events/compare/v5.0.0...v5.0.1) (2023-01-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump json5 from 1.0.1 to 1.0.2 ([118602e](https://github.com/rweich/streamdeck-events/commit/118602e5c9091c5bf3a3376ea65be9351ccccacb))
+
 ## [5.0.0](https://github.com/rweich/streamdeck-events/compare/v4.1.0...v5.0.0) (2022-12-27)
 
 
