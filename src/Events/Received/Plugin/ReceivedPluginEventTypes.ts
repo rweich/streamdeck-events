@@ -14,7 +14,13 @@ import {
   WillAppearEvent,
   WillDisappearEvent,
 } from '@/Events/Received/Plugin';
-import { DialPressEvent, DialRotateEvent, TouchTapEvent } from '@/Events/Received/Plugin/Dial';
+import {
+  DialDownEvent,
+  DialPressEvent,
+  DialRotateEvent,
+  DialUpEvent,
+  TouchTapEvent,
+} from '@/Events/Received/Plugin/Dial';
 
 export type ReceivedPluginEventTypes =
   | ReceivedEventTypes
@@ -22,8 +28,10 @@ export type ReceivedPluginEventTypes =
   | ApplicationDidTerminateEvent
   | DeviceDidConnectEvent
   | DeviceDidDisconnectEvent
+  | DialDownEvent
   | DialPressEvent
   | DialRotateEvent
+  | DialUpEvent
   | KeyDownEvent
   | KeyUpEvent
   | PropertyInspectorDidAppearEvent

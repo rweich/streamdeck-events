@@ -1,0 +1,17 @@
+{
+  "action": "ts.streamdeck.events.dialUpTest",
+  "context": "FEDCBA9876543210FEDCBA9876543210",
+  "device": "0123456789ABCDEF0123456789ABCDEF",
+  "event": "dialUp",
+  "payload": {
+    "controller": "Encoder",
+    "coordinates": {
+      "column": 1,
+      "row": 0
+    },
+    "settings": {
+      "key": "value",
+      "someNum": 1234
+    }
+  }
+}
