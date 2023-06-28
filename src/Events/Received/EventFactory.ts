@@ -10,8 +10,10 @@ import {
   ApplicationDidTerminateEvent,
   DeviceDidConnectEvent,
   DeviceDidDisconnectEvent,
+  DialDownEvent,
   DialPressEvent,
   DialRotateEvent,
+  DialUpEvent,
   KeyDownEvent,
   KeyUpEvent,
   PropertyInspectorDidAppearEvent,
@@ -51,10 +53,14 @@ export default class EventFactory {
         return new DeviceDidConnectEvent(payload);
       case 'deviceDidDisconnect':
         return new DeviceDidDisconnectEvent(payload);
+      case 'dialDown':
+        return new DialDownEvent(payload);
       case 'dialPress':
         return new DialPressEvent(payload);
       case 'dialRotate':
         return new DialRotateEvent(payload);
+      case 'dialUp':
+        return new DialUpEvent(payload);
       case 'didReceiveSettings':
         return new DidReceiveSettingsEvent(payload);
       case 'didReceiveGlobalSettings':
