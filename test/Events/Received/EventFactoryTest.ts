@@ -11,6 +11,8 @@ import {
   ApplicationDidTerminateEvent,
   DeviceDidConnectEvent,
   DeviceDidDisconnectEvent,
+  DialDownEvent,
+  DialUpEvent,
   KeyDownEvent,
   KeyUpEvent,
   PropertyInspectorDidAppearEvent,
@@ -28,9 +30,10 @@ import eventAppDidLaunch from './fixtures/applicationDidLaunchEvent.valid.json';
 import eventAppDidTerminate from './fixtures/applicationDidTerminateEvent.valid.json';
 import eventDeviceconnect from './fixtures/deviceDidConnectEvent.valid.json';
 import eventDeviceDisconnect from './fixtures/deviceDidDisconnectEvent.valid.json';
-// dial events
+import eventDialDown from './fixtures/dialDownEvent/valid.json';
 import eventDialPress from './fixtures/dialPressEvent/valid.json';
 import eventDialRotate from './fixtures/dialRotateEvent/valid.json';
+import eventDialUp from './fixtures/dialUpEvent/valid.json';
 import eventDidReceiveGlobalSettings from './fixtures/didReceiveGlobalSettingsEvent.valid.json';
 import eventDidReceiveSettings from './fixtures/didReceiveSettingsEvent.valid.json';
 import eventKeydown from './fixtures/keyDownEvent.valid.json';
@@ -140,5 +143,13 @@ describe('EventFactory test', () => {
 
   it('should return a touchTap event', () => {
     expect(new EventFactory().createByEventPayload(eventTouchTap)).to.be.instanceOf(TouchTapEvent);
+  });
+
+  it('should return a dialDown event', () => {
+    expect(new EventFactory().createByEventPayload(eventDialDown)).to.be.instanceOf(DialDownEvent);
+  });
+
+  it('should return a dialUp event', () => {
+    expect(new EventFactory().createByEventPayload(eventDialUp)).to.be.instanceOf(DialUpEvent);
   });
 });
