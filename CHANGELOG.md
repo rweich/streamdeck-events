@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.0](https://github.com/rweich/streamdeck-events/compare/v5.0.1...v5.1.0) (2023-07-02)
+
+
+### Features
+
+* Add support for dialDown and dialUp events ([9493ef1](https://github.com/rweich/streamdeck-events/commit/9493ef125ca29d87b75dda6e1126116ee6b46888))
+
+
+### Miscellaneous Chores
+
+* **deps:** bump http-cache-semantics from 4.1.0 to 4.1.1 ([fccd6d0](https://github.com/rweich/streamdeck-events/commit/fccd6d0073563424f24619b3bff71ff47fdbbeb3))
+* Mark placcard component as deprecated ([4761bcb](https://github.com/rweich/streamdeck-events/commit/4761bcba5ead307a4355a295cae00fb5b3500f0c))
+
 ## [5.0.1](https://github.com/rweich/streamdeck-events/compare/v5.0.0...v5.0.1) (2023-01-08)
 
 
