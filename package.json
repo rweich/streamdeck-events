@@ -47,7 +47,7 @@
     "typescript-transform-paths": "^3.4.3"
   },
   "engines": {
-    "node": ">=14.17"
+    "node": ">=18.17"
   },
   "repository": "rweich/streamdeck-events",
   "bugs": "https://github.com/rweich/streamdeck-events/issues",
