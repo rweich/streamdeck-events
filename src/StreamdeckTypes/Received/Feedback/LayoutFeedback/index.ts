@@ -31,4 +31,4 @@ export const LayoutFeedbackMapping = {
 };
 
 export type LayoutFeedbackKey = keyof typeof LayoutFeedbackMapping;
-export type LayoutFeedback = Static<typeof LayoutFeedbackMapping[LayoutFeedbackKey]>;
+export type LayoutFeedback = Static<(typeof LayoutFeedbackMapping)[LayoutFeedbackKey]>;
