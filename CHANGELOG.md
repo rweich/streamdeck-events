@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.0](https://github.com/rweich/streamdeck-events/compare/v5.1.0...v6.0.0) (2024-03-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* the minimal supported node version is now v18.17
+
+### Miscellaneous Chores
+
+* change ttypescript dependency to ts-patch ([46194f6](https://github.com/rweich/streamdeck-events/commit/46194f6acb96f7c69726f177593050f39bb9fbdd))
+* **deps:** bump semver from 5.7.1 to 5.7.2 ([1e416a3](https://github.com/rweich/streamdeck-events/commit/1e416a31072237c338324cb2e37431b77c062d0f))
+* remove support for node <18.17 ([9f37e45](https://github.com/rweich/streamdeck-events/commit/9f37e454c0864247f652a3807e971dfa5852cb7c))
+* update dev-dependencies (major) ([19d0195](https://github.com/rweich/streamdeck-events/commit/19d01955d08cc72dfb383f8f6a91cf2a45dc9edc))
+
 ## [5.1.0](https://github.com/rweich/streamdeck-events/compare/v5.0.1...v5.1.0) (2023-07-02)
 
 
