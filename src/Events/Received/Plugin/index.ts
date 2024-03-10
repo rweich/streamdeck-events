@@ -10,6 +10,7 @@ export { default as PropertyInspectorDidAppearEvent } from './PropertyInspectorD
 export { default as PropertyInspectorDidDisappearEvent } from './PropertyInspectorDidDisappearEvent';
 export { default as SendToPluginEvent } from './SendToPluginEvent';
 export { default as SystemDidWakeUpEvent } from './SystemDidWakeUpEvent';
+export { default as TimerUpdateEvent } from './TimerUpdateEvent';
 export { default as TitleParametersDidChangeEvent } from './TitleParametersDidChangeEvent';
 export { default as WillAppearEvent } from './WillAppearEvent';
 export { default as WillDisappearEvent } from './WillDisappearEvent';
