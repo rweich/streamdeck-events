@@ -19,6 +19,7 @@ import {
   PropertyInspectorDidDisappearEvent,
   SendToPluginEvent,
   SystemDidWakeUpEvent,
+  TimerUpdateEvent,
   TitleParametersDidChangeEvent,
   WillAppearEvent,
   WillDisappearEvent,
@@ -43,6 +44,7 @@ import eventPIDisappear from './fixtures/propertyInspectorDidDisappearEvent.vali
 import eventSendtoplugin from './fixtures/sendToPluginEvent.valid.json';
 import eventSendtoPropertyInspector from './fixtures/sendToPropertyInspectorEvent.valid.json';
 import eventSystemDidWakeUp from './fixtures/systemDidWakeUpEvent.valid.json';
+import eventTimerUpdate from './fixtures/timerUpdateEvent.valid.json';
 import eventTitleparamchange from './fixtures/titleParametersDidChangeEvent.valid.json';
 import eventTouchTap from './fixtures/touchTapEvent/valid.json';
 import eventWillappear from './fixtures/willAppearEvent.valid.json';
@@ -117,6 +119,10 @@ describe('EventFactory test', () => {
     expect(new EventFactory().createByEventPayload(eventSendtoPropertyInspector)).to.be.instanceOf(
       SendToPropertyInspectorEvent,
     );
+  });
+
+  it('should return a timerupdate event', () => {
+    expect(new EventFactory().createByEventPayload(eventTimerUpdate)).to.be.instanceOf(TimerUpdateEvent);
   });
 
   it('should return a titelparamchange event', () => {
