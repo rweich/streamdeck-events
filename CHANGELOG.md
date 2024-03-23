@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.1.0](https://github.com/rweich/streamdeck-events/compare/v6.0.0...v6.1.0) (2024-03-23)
+
+
+### Features
+
+* add timerUpdate event ([#37](https://github.com/rweich/streamdeck-events/issues/37)) ([2734a44](https://github.com/rweich/streamdeck-events/commit/2734a4435fc11e3e48550b1654e500d65185fe8e))
+
+
+### Documentation
+
+* update ci-link in readme ([28b99fa](https://github.com/rweich/streamdeck-events/commit/28b99fa9f2e0c38b35d4f51ba172cf7dfc599731))
+
 ## [6.0.0](https://github.com/rweich/streamdeck-events/compare/v5.1.0...v6.0.0) (2024-03-03)
 
 
